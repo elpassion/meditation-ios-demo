@@ -7,7 +7,13 @@ protocol HomeContainer {
 extension Container: HomeContainer {
 
     func homeViewController() -> UIViewController {
-        return HomeViewController()
+        return HomeViewController(viewModel: homeViewModel())
+    }
+
+    // MARK: - Privates
+
+    private func homeViewModel() -> HomeViewModeling {
+        return HomeViewModel()
     }
 
 }

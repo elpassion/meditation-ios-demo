@@ -2,9 +2,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    init() {
+    init(viewModel: HomeViewModeling) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
+
+    let viewModel: HomeViewModeling
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
@@ -13,6 +16,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .red
     }
 
+    // MARK: - Privates
 
 }
 
