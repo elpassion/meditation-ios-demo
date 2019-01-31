@@ -22,15 +22,17 @@ class HomeView: UIView {
     }
 
     private func setupLayout() {
-        [backgroundRipImageView, ripImageView].forEach { subview in
-            NSLayoutConstraint.activate([
-                subview.topAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.topAnchor),
-                subview.bottomAnchor.constraint(equalTo: centerYAnchor),
-                subview.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.75),
-                subview.heightAnchor.constraint(equalTo: subview.heightAnchor),
-                subview.centerXAnchor.constraint(equalTo: centerXAnchor)
-            ])
-        }
+        NSLayoutConstraint.activate([
+            ripImageView.topAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.topAnchor),
+            ripImageView.bottomAnchor.constraint(equalTo: centerYAnchor),
+            ripImageView.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.75),
+            ripImageView.heightAnchor.constraint(equalTo: ripImageView.widthAnchor),
+            ripImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            backgroundRipImageView.widthAnchor.constraint(equalTo: ripImageView.widthAnchor),
+            backgroundRipImageView.heightAnchor.constraint(equalTo: ripImageView.heightAnchor),
+            backgroundRipImageView.centerXAnchor.constraint(equalTo: ripImageView.centerXAnchor),
+            backgroundRipImageView.bottomAnchor.constraint(equalTo: ripImageView.bottomAnchor, constant: -40)
+        ])
     }
 
 }
