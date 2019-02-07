@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupSubviews()
         configureNotificationHandler()
-
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -37,9 +37,9 @@ class HomeViewController: UIViewController {
     }
 
     private func setupSubviews() {
+        viewModel.greeting = { [homeView] in homeView?.helloLabel.text = $0 }
         viewModel.backgroundRipImage = { [homeView] in homeView?.backgroundRipImageView.image = $0 }
         viewModel.ripImage = { [homeView] in homeView?.ripImageView.image = $0 }
-        viewModel.boardBackgroundImage = { [homeView] in homeView?.boardImageView.image = $0 }
         viewModel.viewDidLoad()
     }
 
