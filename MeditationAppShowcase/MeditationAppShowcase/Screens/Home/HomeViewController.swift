@@ -40,6 +40,10 @@ class HomeViewController: UIViewController {
         viewModel.greeting = { [homeView] in homeView?.helloLabel.text = $0 }
         viewModel.backgroundRipImage = { [homeView] in homeView?.backgroundRipImageView.image = $0 }
         viewModel.ripImage = { [homeView] in homeView?.ripImageView.image = $0 }
+        viewModel.relaxationPercentage = { [homeView] in homeView?.boardView.titleValueLabel.text = $0 }
+        viewModel.stress = { [homeView] in homeView?.boardView.stressValueLabel.text = $0 }
+        viewModel.meditate = { [homeView] in homeView?.boardView.meditateValueLabel.text = $0 }
+        viewModel.focus = { [homeView] in homeView?.boardView.focusValueLabel.text = $0 }
         viewModel.viewDidLoad()
     }
 

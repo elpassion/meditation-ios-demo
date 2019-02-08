@@ -16,7 +16,7 @@ class HomeView: GradientView {
     let helloLabel = SubviewFactory.helloLabel()
     let backgroundRipImageView = SubviewFactory.imageView()
     let ripImageView = SubviewFactory.imageView()
-    let boardImageView = SubviewFactory.imageView()
+    let boardView = SubviewFactory.homeBoardView()
 
     // MARK: - Privates
 
@@ -24,7 +24,7 @@ class HomeView: GradientView {
         addSubview(helloLabel)
         addSubview(backgroundRipImageView)
         addSubview(ripImageView)
-        addSubview(boardImageView)
+        addSubview(boardView)
     }
 
     private func setupLayout() {
@@ -40,16 +40,15 @@ class HomeView: GradientView {
             backgroundRipImageView.heightAnchor.constraint(equalTo: ripImageView.heightAnchor),
             backgroundRipImageView.centerXAnchor.constraint(equalTo: ripImageView.centerXAnchor),
             backgroundRipImageView.bottomAnchor.constraint(equalTo: ripImageView.bottomAnchor, constant: -40),
-            boardImageView.topAnchor.constraint(equalTo: centerYAnchor, constant: 46),
-            boardImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            boardImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            boardView.topAnchor.constraint(equalTo: centerYAnchor, constant: 46),
+            boardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            boardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
         ])
     }
 
     private func configureSubviews() {
-        boardImageView.image = UIImage(named: "home_board")
         let shadow = SketchShadow(color: .gray, x: 0, y: 2, blur: 4, spread: 0)
-        boardImageView.layer.apply(shadow)
+        boardView.layer.apply(shadow)
     }
 
 }
@@ -71,6 +70,12 @@ private extension HomeView {
             imageView.contentMode = .center
             imageView.translatesAutoresizingMaskIntoConstraints = false
             return imageView
+        }
+
+        static func homeBoardView() -> HomeBoardView {
+            let homeBoardView = HomeBoardView()
+            homeBoardView.translatesAutoresizingMaskIntoConstraints = false
+            return homeBoardView
         }
 
     }
