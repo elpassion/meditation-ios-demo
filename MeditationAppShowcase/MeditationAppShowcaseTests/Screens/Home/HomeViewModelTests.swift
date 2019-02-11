@@ -11,6 +11,7 @@ class HomeViewModelTests: XCTestCase {
     var stressSpy: String?
     var mediateSpy: String?
     var focusSpy: String?
+    var actionTitleSpy: String?
 
     override func setUp() {
         super.setUp()
@@ -22,6 +23,7 @@ class HomeViewModelTests: XCTestCase {
         sut.stress = { [weak self] in self?.stressSpy = $0 }
         sut.meditate = { [weak self] in self?.mediateSpy = $0 }
         sut.focus = { [weak self] in self?.focusSpy = $0 }
+        sut.actionTitle = { [weak self] in self?.actionTitleSpy = $0 }
         sut.viewDidLoad()
     }
 
@@ -56,6 +58,15 @@ class HomeViewModelTests: XCTestCase {
 
     func testFocus() {
         XCTAssert(focusSpy == "25%")
+    }
+
+    func testInitialActionTitle() {
+        XCTAssert(actionTitleSpy == "COME BACK TO LIFE")
+    }
+
+    func testActionTitleAfterTap() {
+        sut.action()
+        XCTAssert(actionTitleSpy == "START MEDITATION SESSION")
     }
 
 }
