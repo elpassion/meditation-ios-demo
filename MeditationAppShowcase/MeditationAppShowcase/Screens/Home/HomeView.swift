@@ -17,6 +17,7 @@ class HomeView: GradientView {
     let backgroundRipImageView = SubviewFactory.imageView()
     let ripImageView = SubviewFactory.imageView()
     let boardView = SubviewFactory.homeBoardView()
+    let actionButton = SubviewFactory.actionButton()
 
     // MARK: - Privates
 
@@ -25,6 +26,7 @@ class HomeView: GradientView {
         addSubview(backgroundRipImageView)
         addSubview(ripImageView)
         addSubview(boardView)
+        addSubview(actionButton)
     }
 
     private func setupLayout() {
@@ -42,7 +44,9 @@ class HomeView: GradientView {
             backgroundRipImageView.bottomAnchor.constraint(equalTo: ripImageView.bottomAnchor, constant: -40),
             boardView.topAnchor.constraint(equalTo: centerYAnchor, constant: 46),
             boardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            boardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            boardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            actionButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            actionButton.centerYAnchor.constraint(equalTo: boardView.bottomAnchor, constant: -28)
         ])
     }
 
@@ -76,6 +80,12 @@ private extension HomeView {
             let homeBoardView = HomeBoardView()
             homeBoardView.translatesAutoresizingMaskIntoConstraints = false
             return homeBoardView
+        }
+
+        static func actionButton() -> ActionButton {
+            let button = ActionButton()
+            button.translatesAutoresizingMaskIntoConstraints = false
+            return button
         }
 
     }

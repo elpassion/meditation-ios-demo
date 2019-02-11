@@ -4,7 +4,7 @@ class GradientView: UIView {
 
     init(style: GradientStyle) {
         super.init(frame: .zero)
-        isUserInteractionEnabled = false
+        isUserInteractionEnabled = true
         gradientLayer.colors = style.colors.map { $0.color.cgColor }
         gradientLayer.locations = style.colors.map { NSNumber(value: $0.location) }
         gradientLayer.startPoint = style.direction.startPoint

@@ -44,6 +44,8 @@ class HomeViewController: UIViewController {
         viewModel.stress = { [homeView] in homeView?.boardView.stressValueLabel.text = $0 }
         viewModel.meditate = { [homeView] in homeView?.boardView.meditateValueLabel.text = $0 }
         viewModel.focus = { [homeView] in homeView?.boardView.focusValueLabel.text = $0 }
+        viewModel.actionTitle = { [homeView] in homeView?.actionButton.setStyledTitle($0) }
+        homeView.actionButton.tap = { [viewModel] in viewModel.action() }
         viewModel.viewDidLoad()
     }
 
