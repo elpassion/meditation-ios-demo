@@ -13,9 +13,10 @@ class ActionButton: UIButton {
         let attributedString = NSMutableAttributedString(string: title)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 0.5
-        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle,
+        attributedString.addAttribute(.paragraphStyle,
                                       value: paragraphStyle,
-                                      range: NSMakeRange(0, attributedString.length))
+                                      range: NSRange(location: 0,
+                                                     length: attributedString.length))
         UIView.animate(withDuration: animationDuration,
                        delay: 0,
                        options: .curveEaseInOut,

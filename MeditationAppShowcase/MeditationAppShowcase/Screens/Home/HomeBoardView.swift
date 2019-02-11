@@ -64,7 +64,7 @@ class HomeBoardView: UIImageView {
             focusLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: yLabelOffset),
             focusLabel.centerXAnchor.constraint(equalTo: gridLayoutGuide.trailingAnchor),
             focusValueLabel.centerXAnchor.constraint(equalTo: focusLabel.centerXAnchor),
-            focusValueLabel.topAnchor.constraint(equalTo: focusLabel.bottomAnchor, constant: yValueOffset),
+            focusValueLabel.topAnchor.constraint(equalTo: focusLabel.bottomAnchor, constant: yValueOffset)
         ])
     }
 

@@ -2,7 +2,9 @@ import UIKit
 
 struct SketchShadow {
     let color: UIColor?
+    //swiftlint:disable identifier_name
     let x: CGFloat
+    //swiftlint:disable identifier_name
     let y: CGFloat
     let blur: CGFloat
     let spread: CGFloat

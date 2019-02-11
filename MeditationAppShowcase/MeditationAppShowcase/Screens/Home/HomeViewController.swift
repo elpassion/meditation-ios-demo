@@ -19,7 +19,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupSubviews()
         configureNotificationHandler()
-        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +61,10 @@ class HomeViewController: UIViewController {
         UIView.animateKeyframes(withDuration: 4.0,
                                 delay: 0.0,
                                 options: [.repeat, .autoreverse, .beginFromCurrentState, .calculationModeDiscrete],
-                                animations: { self.homeView.backgroundRipImageView.transform = CGAffineTransform(rotationAngle: 2 * initialRotation) },
+                                animations: {
+                                    let transform = CGAffineTransform(rotationAngle: 2 * initialRotation)
+                                    self.homeView.backgroundRipImageView.transform = transform
+                                },
                                 completion: nil)
     }
 
@@ -71,4 +73,3 @@ class HomeViewController: UIViewController {
     }
 
 }
-
