@@ -1,0 +1,12 @@
+platform :ios, '9.0'
+
+target 'MeditationAppShowcase' do
+
+  use_frameworks!
+
+  target 'MeditationAppShowcaseTests' do
+    inherit! :search_paths
+
+  end
+
+end
