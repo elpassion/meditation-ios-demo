@@ -10,6 +10,7 @@
 		060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060679F2220C8FCE00D6A3FE /* SketchShadow.swift */; };
 		06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E20220DCA5C006525F5 /* HomeBoardView.swift */; };
 		06248E33220DE276006525F5 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E32220DE276006525F5 /* HomeViewModelTests.swift */; };
+		06248E35220DEF39006525F5 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E34220DEF39006525F5 /* ActionButton.swift */; };
 		062FD7602208976900E237DA /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD75F2208976900E237DA /* NotificationHandler.swift */; };
 		062FD7712208A5C900E237DA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7702208A5C900E237DA /* GradientView.swift */; };
 		062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7722208A6F800E237DA /* Color_Hex.swift */; };
@@ -40,6 +41,7 @@
 		06248E26220DE150006525F5 /* MeditationAppShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationAppShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06248E2A220DE150006525F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06248E32220DE276006525F5 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		06248E34220DEF39006525F5 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		062FD75F2208976900E237DA /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		062FD7702208A5C900E237DA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062FD7722208A6F800E237DA /* Color_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Hex.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				062FD7702208A5C900E237DA /* GradientView.swift */,
 				062FD7722208A6F800E237DA /* Color_Hex.swift */,
 				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
+				06248E34220DEF39006525F5 /* ActionButton.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */,
 				06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */,
 				062FD7712208A5C900E237DA /* GradientView.swift in Sources */,
+				06248E35220DEF39006525F5 /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
