@@ -10,6 +10,7 @@ protocol HomeViewModeling: class {
     var meditate: ((String) -> Void)? { get set }
     var focus: ((String) -> Void)? { get set }
     var actionTitle: ((String) -> Void)? { get set }
+    var presentMeditation: (() -> Void)? { get set }
     func action()
 }
 
@@ -36,9 +37,11 @@ class HomeViewModel: HomeViewModeling {
     var meditate: ((String) -> Void)?
     var focus: ((String) -> Void)?
     var actionTitle: ((String) -> Void)?
+    var presentMeditation: (() -> Void)?
 
     func action() {
         actionTitle?("START MEDITATION SESSION")
+        presentMeditation?()
     }
 
 }

@@ -19,6 +19,8 @@ class HomeView: GradientView {
     let boardView = SubviewFactory.homeBoardView()
     let actionButton = SubviewFactory.actionButton()
 
+    let boardViewTopOffset: CGFloat = 46
+
     // MARK: - Privates
 
     private func addSubviews() {
@@ -42,9 +44,9 @@ class HomeView: GradientView {
             backgroundRipImageView.heightAnchor.constraint(equalTo: ripImageView.heightAnchor),
             backgroundRipImageView.centerXAnchor.constraint(equalTo: ripImageView.centerXAnchor),
             backgroundRipImageView.bottomAnchor.constraint(equalTo: ripImageView.bottomAnchor, constant: -40),
-            boardView.topAnchor.constraint(equalTo: centerYAnchor, constant: 46),
-            boardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            boardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            boardView.topAnchor.constraint(equalTo: centerYAnchor, constant: boardViewTopOffset),
+            boardView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            boardView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9),
             actionButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             actionButton.centerYAnchor.constraint(equalTo: boardView.bottomAnchor, constant: -28)
         ])

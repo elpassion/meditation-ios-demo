@@ -8,7 +8,8 @@ extension Container: HomeContainer {
 
     func homeViewController() -> UIViewController {
         return HomeViewController(viewModel: homeViewModel(),
-                                  notificationHandler: NotificationCenter.default)
+                                  notificationHandler: NotificationCenter.default,
+                                  presenter: ViewControllerPresenter())
     }
 
     // MARK: - Privates

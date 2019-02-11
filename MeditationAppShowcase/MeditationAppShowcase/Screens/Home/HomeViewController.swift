@@ -3,9 +3,11 @@ import UIKit
 class HomeViewController: UIViewController {
 
     init(viewModel: HomeViewModeling,
-         notificationHandler: NotificationHandling) {
+         notificationHandler: NotificationHandling,
+         presenter: ViewControllerPresenting) {
         self.viewModel = viewModel
         self.notificationHandler = notificationHandler
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -30,6 +32,7 @@ class HomeViewController: UIViewController {
 
     private let viewModel: HomeViewModeling
     private let notificationHandler: NotificationHandling
+    private let presenter: ViewControllerPresenting
 
     private var homeView: HomeView! {
         return view as? HomeView
@@ -45,6 +48,13 @@ class HomeViewController: UIViewController {
         viewModel.focus = { [homeView] in homeView?.boardView.focusValueLabel.text = $0 }
         viewModel.actionTitle = { [homeView] in homeView?.actionButton.setStyledTitle($0) }
         homeView.actionButton.tap = { [viewModel] in viewModel.action() }
+        viewModel.presentMeditation = { [weak self] in
+            guard let self = `self` else { return }
+            let vc = UIViewController()
+            vc.view.backgroundColor = .red
+            let completion = { self.presenter.present(viewController: vc, on: self) }
+            self.homeView.animateDismission(completion: completion)
+        }
         viewModel.viewDidLoad()
     }
 
