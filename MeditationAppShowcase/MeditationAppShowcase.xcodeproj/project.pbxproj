@@ -14,6 +14,7 @@
 		062FD7602208976900E237DA /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD75F2208976900E237DA /* NotificationHandler.swift */; };
 		062FD7712208A5C900E237DA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7702208A5C900E237DA /* GradientView.swift */; };
 		062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7722208A6F800E237DA /* Color_Hex.swift */; };
+		069A838F2211FC8100D3E223 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A838E2211FC8100D3E223 /* MeditationViewController.swift */; };
 		06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A782201F2A1001DE399 /* AppDelegate.swift */; };
 		06A71A7B2201F2A1001DE399 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A7A2201F2A1001DE399 /* HomeViewController.swift */; };
 		06A71A802201F2A3001DE399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A71A7F2201F2A3001DE399 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		062FD75F2208976900E237DA /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		062FD7702208A5C900E237DA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062FD7722208A6F800E237DA /* Color_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Hex.swift; sourceTree = "<group>"; };
+		069A838E2211FC8100D3E223 /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		06A71A752201F2A1001DE399 /* MeditationAppShowcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationAppShowcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A71A782201F2A1001DE399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A71A7A2201F2A1001DE399 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = Commons;
 			sourceTree = "<group>";
 		};
+		069A838D2211FC1B00D3E223 /* Meditation */ = {
+			isa = PBXGroup;
+			children = (
+				069A838E2211FC8100D3E223 /* MeditationViewController.swift */,
+			);
+			path = Meditation;
+			sourceTree = "<group>";
+		};
 		06A71A6C2201F2A1001DE399 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +178,7 @@
 		06A71A8D2201F6BB001DE399 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				069A838D2211FC1B00D3E223 /* Meditation */,
 				06A71A8E2201F6C8001DE399 /* Home */,
 			);
 			path = Screens;
@@ -393,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A71A7B2201F2A1001DE399 /* HomeViewController.swift in Sources */,
+				069A838F2211FC8100D3E223 /* MeditationViewController.swift in Sources */,
 				060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */,
 				062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */,
 				06A71A8C2201F59F001DE399 /* Container.swift in Sources */,
