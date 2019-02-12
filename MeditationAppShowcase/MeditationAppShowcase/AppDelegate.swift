@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  MeditationAppShowcase
-//
-//  Created by Bartlomiej Guminiak on 30/01/2019.
-//  Copyright © 2019 Bartlomiej Guminiak. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
