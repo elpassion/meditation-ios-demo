@@ -1,3 +1,9 @@
 import UIKit
 
-class Container {}
+class Container {
+
+    lazy var sharedActionButtonConfigurator = {
+        return ActionButtonConfigurator()
+    }()
+    
+}

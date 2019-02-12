@@ -9,7 +9,10 @@ extension Container: HomeContainer {
     func homeViewController() -> UIViewController {
         return HomeViewController(viewModel: homeViewModel(),
                                   notificationHandler: NotificationCenter.default,
-                                  presenter: ViewControllerPresenter())
+                                  presenter: ViewControllerPresenter(),
+                                  meditationViewControllerFactory: { [unowned self] in self.meditationViewController() },
+                                  actionButtonOperator: actionButtonConfigurator()
+        )
     }
 
     // MARK: - Privates

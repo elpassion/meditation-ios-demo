@@ -4,10 +4,14 @@ class HomeViewController: UIViewController {
 
     init(viewModel: HomeViewModeling,
          notificationHandler: NotificationHandling,
-         presenter: ViewControllerPresenting) {
+         presenter: ViewControllerPresenting,
+         meditationViewControllerFactory: @escaping () -> UIViewController,
+         actionButtonOperator: ActionButtonOperating) {
         self.viewModel = viewModel
         self.notificationHandler = notificationHandler
         self.presenter = presenter
+        self.meditationViewControllerFactory = meditationViewControllerFactory
+        self.actionButtonOperator = actionButtonOperator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -33,6 +37,8 @@ class HomeViewController: UIViewController {
     private let viewModel: HomeViewModeling
     private let notificationHandler: NotificationHandling
     private let presenter: ViewControllerPresenting
+    private let meditationViewControllerFactory: () -> UIViewController
+    private let actionButtonOperator: ActionButtonOperating
 
     private var homeView: HomeView! {
         return view as? HomeView
