@@ -11,6 +11,7 @@
 		062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022C82212F8DE008DFECD /* Container_Meditation.swift */; };
 		062022CB2212FD96008DFECD /* Container_Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CA2212FD96008DFECD /* Container_Commons.swift */; };
 		062022CD221301EA008DFECD /* ActionButtonConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */; };
+		062022CF2213365D008DFECD /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CE2213365D008DFECD /* NavigationView.swift */; };
 		06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E20220DCA5C006525F5 /* HomeBoardView.swift */; };
 		06248E33220DE276006525F5 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E32220DE276006525F5 /* HomeViewModelTests.swift */; };
 		06248E35220DEF39006525F5 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E34220DEF39006525F5 /* ActionButton.swift */; };
@@ -49,6 +50,7 @@
 		062022C82212F8DE008DFECD /* Container_Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Meditation.swift; sourceTree = "<group>"; };
 		062022CA2212FD96008DFECD /* Container_Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Commons.swift; sourceTree = "<group>"; };
 		062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonConfigurator.swift; sourceTree = "<group>"; };
+		062022CE2213365D008DFECD /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		06248E20220DCA5C006525F5 /* HomeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
 		06248E26220DE150006525F5 /* MeditationAppShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationAppShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06248E2A220DE150006525F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				069A838E2211FC8100D3E223 /* MeditationViewController.swift */,
 				069A83902211FF9800D3E223 /* MeditationView.swift */,
+				062022CE2213365D008DFECD /* NavigationView.swift */,
 			);
 			path = Meditation;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 			files = (
 				06A71A7B2201F2A1001DE399 /* HomeViewController.swift in Sources */,
 				069A838F2211FC8100D3E223 /* MeditationViewController.swift in Sources */,
+				062022CF2213365D008DFECD /* NavigationView.swift in Sources */,
 				069A83912211FF9800D3E223 /* MeditationView.swift in Sources */,
 				069A83942212033600D3E223 /* ViewControllerPresenter.swift in Sources */,
 				060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */,
