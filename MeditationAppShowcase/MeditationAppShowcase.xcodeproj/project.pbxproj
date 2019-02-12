@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060679F2220C8FCE00D6A3FE /* SketchShadow.swift */; };
+		062022CD221301EA008DFECD /* ActionButtonConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */; };
 		06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E20220DCA5C006525F5 /* HomeBoardView.swift */; };
 		06248E33220DE276006525F5 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E32220DE276006525F5 /* HomeViewModelTests.swift */; };
 		06248E35220DEF39006525F5 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E34220DEF39006525F5 /* ActionButton.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		060679F2220C8FCE00D6A3FE /* SketchShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchShadow.swift; sourceTree = "<group>"; };
+		062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonConfigurator.swift; sourceTree = "<group>"; };
 		06248E20220DCA5C006525F5 /* HomeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
 		06248E26220DE150006525F5 /* MeditationAppShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationAppShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06248E2A220DE150006525F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				062FD7722208A6F800E237DA /* Color_Hex.swift */,
 				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
 				06248E34220DEF39006525F5 /* ActionButton.swift */,
+				062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				069A83962212087E00D3E223 /* HomeView_Dismission.swift in Sources */,
 				06A71A97220213E2001DE399 /* HomeView.swift in Sources */,
 				06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */,
+				062022CD221301EA008DFECD /* ActionButtonConfigurator.swift in Sources */,
 				06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */,
 				06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */,
 				062FD7712208A5C900E237DA /* GradientView.swift in Sources */,
