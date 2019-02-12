@@ -12,6 +12,7 @@ class HomeViewModelTests: XCTestCase {
     var mediateSpy: String?
     var focusSpy: String?
     var actionTitleSpy: String?
+    var presentMeditationCounter = 0
 
     override func setUp() {
         super.setUp()
@@ -24,6 +25,7 @@ class HomeViewModelTests: XCTestCase {
         sut.meditate = { [weak self] in self?.mediateSpy = $0 }
         sut.focus = { [weak self] in self?.focusSpy = $0 }
         sut.actionTitle = { [weak self] in self?.actionTitleSpy = $0 }
+        sut.presentMeditation = { [weak self] in self?.presentMeditationCounter += 1 }
         sut.viewDidLoad()
     }
 
@@ -67,6 +69,12 @@ class HomeViewModelTests: XCTestCase {
     func testActionTitleAfterTap() {
         sut.action()
         XCTAssert(actionTitleSpy == "START MEDITATION SESSION")
+    }
+
+    func testPresentMeditationTap() {
+        presentMeditationCounter = 0
+        sut.action()
+        XCTAssert(presentMeditationCounter == 1)
     }
 
 }
