@@ -1,6 +1,12 @@
 import UIKit
 
-class ActionButton: UIButton {
+protocol ButtonInteracting: class {
+    func setStyledTitle(_ title: String, animationDuration: TimeInterval?)
+    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event)
+    func removeTarget(_ target: Any?, action: Selector?, for controlEvents: UIControl.Event)
+}
+
+class ActionButton: UIButton, ButtonInteracting {
 
     init() {
         super.init(frame: .zero)
@@ -9,7 +15,14 @@ class ActionButton: UIButton {
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
-    func setStyledTitle(_ title: String, animationDuration: TimeInterval = 0.25) {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.height / 2
+    }
+
+    // MARK: - ButtonInteracting
+
+    func setStyledTitle(_ title: String, animationDuration: TimeInterval?) {
         let attributedString = NSMutableAttributedString(string: title)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 0.5
@@ -17,7 +30,7 @@ class ActionButton: UIButton {
                                       value: paragraphStyle,
                                       range: NSRange(location: 0,
                                                      length: attributedString.length))
-        UIView.animate(withDuration: animationDuration,
+        UIView.animate(withDuration: animationDuration ?? 0,
                        delay: 0,
                        options: .curveEaseInOut,
                        animations: {
@@ -27,13 +40,6 @@ class ActionButton: UIButton {
                        completion: nil)
     }
 
-    var tap: (() -> Void)?
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = frame.height / 2
-    }
-
     // MARK: - Privates
 
     private func configure() {
@@ -41,12 +47,7 @@ class ActionButton: UIButton {
         titleLabel?.font = UIFont(name: "AvenirNext-Bold", size: 13.0)
         titleLabel?.textColor = .white
         contentEdgeInsets = UIEdgeInsets(top: 16, left: 40, bottom: 16, right: 40)
-        addTarget(self, action: #selector(tapAction), for: .touchUpInside)
         clipsToBounds = true
-    }
-
-    @objc private func tapAction() {
-        tap?()
     }
 
 }
