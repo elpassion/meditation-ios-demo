@@ -17,6 +17,10 @@ class HomeViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     override func loadView() {
         view = HomeView()
     }

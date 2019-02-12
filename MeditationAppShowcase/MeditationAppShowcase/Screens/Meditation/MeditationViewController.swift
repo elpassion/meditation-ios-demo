@@ -8,4 +8,7 @@ class MeditationViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 }
