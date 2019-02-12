@@ -30,6 +30,18 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateBackground()
+        actionButtonOperator.button?.addTarget(self,
+                                               action: #selector(actionButtonTap),
+                                               for: .touchUpInside)
+        let bottomOffset = homeView.frame.size.height - (homeView.boardView.frame.origin.y + homeView.boardView.frame.size.height)
+        actionButtonOperator.updateBottomOffset(bottomOffset, animated: true)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        actionButtonOperator.button?.removeTarget(self,
+                                                  action: nil,
+                                                  for: .allEvents)
     }
 
     // MARK: - Privates
@@ -52,13 +64,14 @@ class HomeViewController: UIViewController {
         viewModel.stress = { [homeView] in homeView?.boardView.stressValueLabel.text = $0 }
         viewModel.meditate = { [homeView] in homeView?.boardView.meditateValueLabel.text = $0 }
         viewModel.focus = { [homeView] in homeView?.boardView.focusValueLabel.text = $0 }
-        viewModel.actionTitle = { [homeView] in homeView?.actionButton.setStyledTitle($0) }
-        homeView.actionButton.tap = { [viewModel] in viewModel.action() }
+        viewModel.actionTitle = { [actionButtonOperator] in
+            actionButtonOperator.button?.setStyledTitle($0, animationDuration: 0.25)
+        }
         viewModel.presentMeditation = { [weak self] in
             guard let self = `self` else { return }
-            let vc = UIViewController()
-            vc.view.backgroundColor = .red
-            let completion = { self.presenter.present(viewController: vc, on: self) }
+            let meditationViewController = self.meditationViewControllerFactory()
+            let completion = { self.presenter.present(viewController: meditationViewController,
+                                                      on: self) }
             self.homeView.animateDismission(completion: completion)
         }
         viewModel.viewDidLoad()
@@ -86,6 +99,10 @@ class HomeViewController: UIViewController {
 
     @objc private func restartAnimation() {
         animateBackground()
+    }
+
+    @objc private func actionButtonTap() {
+        viewModel.action()
     }
 
 }
