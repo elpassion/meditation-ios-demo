@@ -4,11 +4,10 @@ extension HomeView {
 
     func animateDismission(completion: @escaping () -> Void) {
         let dismissionView = UIView(frame: .zero)
-        dismissionView.backgroundColor = .white
+        dismissionView.backgroundColor = UIColor(rgb: 0xFAFAFC)
         dismissionView.clipsToBounds = true
         dismissionView.layer.cornerRadius = 10
         dismissionView.translatesAutoresizingMaskIntoConstraints = false
-        dismissionView.alpha = 0.3
         addSubview(dismissionView)
 
         dismissionView.topAnchor.constraint(equalTo: boardView.topAnchor).isActive = true
@@ -21,16 +20,9 @@ extension HomeView {
                                        y: self.frame.height / dismissionView.frame.height)
         let scaledAndTranslated = scaled.translatedBy(x: 0,
                                                       y: -boardViewTopOffset)
-
         UIView.animate(withDuration: 1.0,
-                       delay: 0,
-                       options: [],
-                       animations: {
-                            dismissionView.transform = scaledAndTranslated
-                            dismissionView.alpha = 1
-                       },
+                       animations: { dismissionView.transform = scaledAndTranslated },
                        completion: { _ in completion() })
-
     }
 
 }
