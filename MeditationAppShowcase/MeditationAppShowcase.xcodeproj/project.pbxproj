@@ -19,6 +19,7 @@
 		0625D260221420F800F13B30 /* SongPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D25F221420F800F13B30 /* SongPickerViewModel.swift */; };
 		0625D263221421BF00F13B30 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D262221421BF00F13B30 /* MeditationViewModel.swift */; };
 		0625D265221433C800F13B30 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D264221433C800F13B30 /* CheckBoxView.swift */; };
+		0625D2672214536500F13B30 /* MeditationViewModel_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D2662214536500F13B30 /* MeditationViewModel_Data.swift */; };
 		062FD7602208976900E237DA /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD75F2208976900E237DA /* NotificationHandler.swift */; };
 		062FD7712208A5C900E237DA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7702208A5C900E237DA /* GradientView.swift */; };
 		062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7722208A6F800E237DA /* Color_Hex.swift */; };
@@ -64,6 +65,7 @@
 		0625D25F221420F800F13B30 /* SongPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPickerViewModel.swift; sourceTree = "<group>"; };
 		0625D262221421BF00F13B30 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
 		0625D264221433C800F13B30 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		0625D2662214536500F13B30 /* MeditationViewModel_Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel_Data.swift; sourceTree = "<group>"; };
 		062FD75F2208976900E237DA /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		062FD7702208A5C900E237DA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062FD7722208A6F800E237DA /* Color_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Hex.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				069A83902211FF9800D3E223 /* MeditationView.swift */,
 				062022CE2213365D008DFECD /* NavigationView.swift */,
 				0625D262221421BF00F13B30 /* MeditationViewModel.swift */,
+				0625D2662214536500F13B30 /* MeditationViewModel_Data.swift */,
 			);
 			path = Meditation;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				069A83912211FF9800D3E223 /* MeditationView.swift in Sources */,
 				069A83942212033600D3E223 /* ViewControllerPresenter.swift in Sources */,
 				060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */,
+				0625D2672214536500F13B30 /* MeditationViewModel_Data.swift in Sources */,
 				062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */,
 				0625D265221433C800F13B30 /* CheckBoxView.swift in Sources */,
 				06A71A8C2201F59F001DE399 /* Container.swift in Sources */,
