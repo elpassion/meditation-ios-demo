@@ -4,7 +4,7 @@ extension MeditationViewModel {
         return [
             SongPickerViewModel(appearanceAnimationDelay: 0,
                                 title: "Walking with the wolves",
-                                subtitle: "KArl Roys",
+                                subtitle: "Karl Roys",
                                 time: "2:50"),
             SongPickerViewModel(appearanceAnimationDelay: 0.1,
                                 title: "Meditation Intro",
