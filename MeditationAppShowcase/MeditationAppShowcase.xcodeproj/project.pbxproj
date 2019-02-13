@@ -131,6 +131,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		0625D2612214218100F13B30 /* SongPicker */ = {
+			isa = PBXGroup;
+			children = (
+				062022D022135030008DFECD /* SongPickerViewCell.swift */,
+				0625D25F221420F800F13B30 /* SongPickerViewModel.swift */,
+			);
+			path = SongPicker;
+			sourceTree = "<group>";
+		};
 		062FD75E220896DD00E237DA /* Commons */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,11 +157,10 @@
 		069A838D2211FC1B00D3E223 /* Meditation */ = {
 			isa = PBXGroup;
 			children = (
+				0625D2612214218100F13B30 /* SongPicker */,
 				069A838E2211FC8100D3E223 /* MeditationViewController.swift */,
 				069A83902211FF9800D3E223 /* MeditationView.swift */,
 				062022CE2213365D008DFECD /* NavigationView.swift */,
-				062022D022135030008DFECD /* SongPickerViewCell.swift */,
-				0625D25F221420F800F13B30 /* SongPickerViewModel.swift */,
 			);
 			path = Meditation;
 			sourceTree = "<group>";
