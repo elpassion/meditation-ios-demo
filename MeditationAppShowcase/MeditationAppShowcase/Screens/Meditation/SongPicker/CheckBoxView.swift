@@ -22,7 +22,6 @@ class CheckBoxView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundView.layer.cornerRadius = layer.cornerRadius
-        print(layer.cornerRadius)
     }
 
     // MARK: - Privates
