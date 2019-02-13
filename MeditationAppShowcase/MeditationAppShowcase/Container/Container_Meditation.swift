@@ -9,7 +9,8 @@ extension Container: MeditationContainer {
     // MARK: - MeditationContainer
 
     func meditationViewController() -> UIViewController {
-        return MeditationViewController(viewModel: meditationViewModel())
+        return MeditationViewController(viewModel: meditationViewModel(),
+                                        actionButtonOperator: actionButtonConfigurator())
     }
 
     func meditationViewModel() -> MeditationViewModeling {

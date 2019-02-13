@@ -1,9 +1,11 @@
 import UIKit
 
-class MeditationViewController: UIViewController {
+class MeditationViewController: UIViewController, UITableViewDataSource {
 
-    init(viewModel: MeditationViewModeling) {
+    init(viewModel: MeditationViewModeling,
+         actionButtonOperator: ActionButtonOperating) {
         self.viewModel = viewModel
+        self.actionButtonOperator = actionButtonOperator
         super.init(nibName: nil, bundle: nil)
     }
 
