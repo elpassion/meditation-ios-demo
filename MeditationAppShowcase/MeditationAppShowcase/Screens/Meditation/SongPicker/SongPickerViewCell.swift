@@ -64,8 +64,8 @@ class SongPickerViewCell: UITableViewCell {
 
     private func addSubviews() {
         contentView.addSubview(containerView)
-        containerView.addSubview(selectionView)
         containerView.addSubview(separatorView)
+        containerView.addSubview(selectionView)
         containerView.addSubview(checkBoxView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(subtitleLabel)
@@ -74,19 +74,21 @@ class SongPickerViewCell: UITableViewCell {
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor,
+                                               constant: 1),
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             containerView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+                                                  constant: -1),
             containerView.heightAnchor.constraint(equalToConstant: 76),
+            separatorView.leadingAnchor.constraint(equalTo: checkBoxView.leadingAnchor),
+            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            separatorView.heightAnchor.constraint(equalToConstant: 0.5),
+            separatorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             selectionView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             selectionView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             selectionView.topAnchor.constraint(equalTo: containerView.topAnchor),
             selectionView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-            separatorView.leadingAnchor.constraint(equalTo: checkBoxView.leadingAnchor),
-            separatorView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            separatorView.heightAnchor.constraint(equalToConstant: 0.5),
-            separatorView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             checkBoxView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             checkBoxView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
                                                   constant: 20),
