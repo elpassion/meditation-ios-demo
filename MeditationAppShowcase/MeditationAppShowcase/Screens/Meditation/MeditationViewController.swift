@@ -2,7 +2,8 @@ import UIKit
 
 class MeditationViewController: UIViewController {
 
-    init() {
+    init(viewModel: MeditationViewModeling) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -26,6 +27,8 @@ class MeditationViewController: UIViewController {
     }
 
     // MARK: - Privates
+
+    private let viewModel: MeditationViewModeling
 
     private var meditationView: MeditationView! {
         return view as? MeditationView
