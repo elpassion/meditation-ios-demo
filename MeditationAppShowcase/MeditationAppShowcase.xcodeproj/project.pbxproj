@@ -36,6 +36,7 @@
 		06A71A932201F946001DE399 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A71A922201F946001DE399 /* Default-568h@2x.png */; };
 		06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A9422020874001DE399 /* HomeViewModel.swift */; };
 		06A71A97220213E2001DE399 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A96220213E2001DE399 /* HomeView.swift */; };
+		06B5E37E221480A900004D09 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37D221480A900004D09 /* ActionType.swift */; };
 		4D95063E05FFE6287D43A500 /* Pods_MeditationAppShowcaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF00DA98E19AD68FF52853B /* Pods_MeditationAppShowcaseTests.framework */; };
 		B51F7A919D522D3A1ADF4AE6 /* Pods_MeditationAppShowcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AA68E81A1442D09C0598E3 /* Pods_MeditationAppShowcase.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		06A71A922201F946001DE399 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		06A71A9422020874001DE399 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06A71A96220213E2001DE399 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		06B5E37D221480A900004D09 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
 		1BD22306F69433F7625D32A0 /* Pods-MeditationAppShowcaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationAppShowcaseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeditationAppShowcaseTests/Pods-MeditationAppShowcaseTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0AA68E81A1442D09C0598E3 /* Pods_MeditationAppShowcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeditationAppShowcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6465AE799E0142DA342FE04 /* Pods-MeditationAppShowcaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeditationAppShowcaseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeditationAppShowcaseTests/Pods-MeditationAppShowcaseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +257,14 @@
 				06A71A812201F2A3001DE399 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		06B5E37A22147FF600004D09 /* ActionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06B5E37D221480A900004D09 /* ActionType.swift */,
+			);
+			path = ActionViewController;
 			sourceTree = "<group>";
 		};
 		5816F91E5DD055EA95DA51C7 /* Pods */ = {
@@ -462,6 +472,7 @@
 				069A83942212033600D3E223 /* ViewControllerPresenter.swift in Sources */,
 				060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */,
 				0625D2672214536500F13B30 /* MeditationViewModel_Data.swift in Sources */,
+				06B5E37E221480A900004D09 /* ActionType.swift in Sources */,
 				062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */,
 				0625D265221433C800F13B30 /* CheckBoxView.swift in Sources */,
 				06A71A8C2201F59F001DE399 /* Container.swift in Sources */,
