@@ -22,6 +22,7 @@
 		062FD7602208976900E237DA /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD75F2208976900E237DA /* NotificationHandler.swift */; };
 		062FD7712208A5C900E237DA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7702208A5C900E237DA /* GradientView.swift */; };
 		062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7722208A6F800E237DA /* Color_Hex.swift */; };
+		0677959D2215D9C200A26913 /* ActionView_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0677959C2215D9C200A26913 /* ActionView_Mode.swift */; };
 		069A838F2211FC8100D3E223 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A838E2211FC8100D3E223 /* MeditationViewController.swift */; };
 		069A83912211FF9800D3E223 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A83902211FF9800D3E223 /* MeditationView.swift */; };
 		069A83942212033600D3E223 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A83932212033600D3E223 /* ViewControllerPresenter.swift */; };
@@ -75,6 +76,7 @@
 		062FD75F2208976900E237DA /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		062FD7702208A5C900E237DA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062FD7722208A6F800E237DA /* Color_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Hex.swift; sourceTree = "<group>"; };
+		0677959C2215D9C200A26913 /* ActionView_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView_Mode.swift; sourceTree = "<group>"; };
 		069A838E2211FC8100D3E223 /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		069A83902211FF9800D3E223 /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		069A83932212033600D3E223 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				06248E34220DEF39006525F5 /* ActionControl.swift */,
 				06B5E38122149EFA00004D09 /* ActionViewController_Event.swift */,
 				06FD1C052215BE3D0075A6C1 /* NSAttributedString_ButtonTitle.swift */,
+				0677959C2215D9C200A26913 /* ActionView_Mode.swift */,
 			);
 			path = ActionController;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			files = (
 				06A71A7B2201F2A1001DE399 /* HomeViewController.swift in Sources */,
 				069A838F2211FC8100D3E223 /* MeditationViewController.swift in Sources */,
+				0677959D2215D9C200A26913 /* ActionView_Mode.swift in Sources */,
 				062022CF2213365D008DFECD /* NavigationView.swift in Sources */,
 				069A83912211FF9800D3E223 /* MeditationView.swift in Sources */,
 				069A83942212033600D3E223 /* ViewControllerPresenter.swift in Sources */,
