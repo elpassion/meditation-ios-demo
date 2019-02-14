@@ -17,13 +17,13 @@ class AppConfigurator: AppConfiguring, ActionControllerOperating {
         self.viewControllersFactory = viewControllersFactory
     }
 
-    // MARK: - ActionButtonConfiguring
+    // MARK: - AppConfiguring
 
     func configure(window: UIWindow) {
         window.rootViewController = viewControllersFactory.home()
-        window.makeKeyAndVisible()
 
         let actionViewController = viewControllersFactory.actionController()
+        self.actionViewController = actionViewController
         actionViewController.view.translatesAutoresizingMaskIntoConstraints = false
         window.addSubview(actionViewController.view)
 
@@ -32,9 +32,13 @@ class AppConfigurator: AppConfiguring, ActionControllerOperating {
 
         NSLayoutConstraint.activate([bottomConstraint, centerX])
         actionButtomBottomConstraint = bottomConstraint
+        actionViewController.view.layoutIfNeeded()
+
+        window.makeKeyAndVisible()
+        window.bringSubviewToFront(actionViewController.view)
     }
 
-    // MARK: - ActionButtonOperating
+    // MARK: - ActionControllerOperating
 
     var controller: ActionViewControlling? {
         return actionViewController
