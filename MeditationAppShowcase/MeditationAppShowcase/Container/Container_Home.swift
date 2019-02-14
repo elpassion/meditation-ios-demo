@@ -1,17 +1,21 @@
 import UIKit
 
-protocol HomeContainer {
+protocol HomeContaining {
     func homeViewController() -> UIViewController
 }
 
-extension Container: HomeContainer {
+extension Container: HomeContaining {
+
+    // MARK: - HomeContaining
 
     func homeViewController() -> UIViewController {
         return HomeViewController(viewModel: homeViewModel(),
                                   notificationHandler: NotificationCenter.default,
                                   presenter: ViewControllerPresenter(),
-                                  meditationViewControllerFactory: { [unowned self] in self.meditationViewController() },
-                                  actionButtonOperator: actionButtonConfigurator()
+                                  meditationViewControllerFactory: { [unowned self] in
+                                        self.meditationViewController()
+                                  },
+                                  actionControllerOperator: appConfigurator()
         )
     }
 

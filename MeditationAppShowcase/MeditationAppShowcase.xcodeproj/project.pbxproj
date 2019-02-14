@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060679F2220C8FCE00D6A3FE /* SketchShadow.swift */; };
 		062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022C82212F8DE008DFECD /* Container_Meditation.swift */; };
-		062022CB2212FD96008DFECD /* Container_Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CA2212FD96008DFECD /* Container_Commons.swift */; };
 		062022CD221301EA008DFECD /* ActionButtonConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */; };
 		062022CF2213365D008DFECD /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CE2213365D008DFECD /* NavigationView.swift */; };
 		062022D122135030008DFECD /* SongPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022D022135030008DFECD /* SongPickerViewCell.swift */; };
@@ -57,7 +56,6 @@
 /* Begin PBXFileReference section */
 		060679F2220C8FCE00D6A3FE /* SketchShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchShadow.swift; sourceTree = "<group>"; };
 		062022C82212F8DE008DFECD /* Container_Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Meditation.swift; sourceTree = "<group>"; };
-		062022CA2212FD96008DFECD /* Container_Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Commons.swift; sourceTree = "<group>"; };
 		062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonConfigurator.swift; sourceTree = "<group>"; };
 		062022CE2213365D008DFECD /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		062022D022135030008DFECD /* SongPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPickerViewCell.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 				06A71A8B2201F59F001DE399 /* Container.swift */,
 				06A71A902201F7A1001DE399 /* Container_Home.swift */,
 				062022C82212F8DE008DFECD /* Container_Meditation.swift */,
-				062022CA2212FD96008DFECD /* Container_Commons.swift */,
 				06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */,
 				06FD1C032215B6B60075A6C1 /* Container_ActionController.swift */,
 			);
@@ -504,7 +501,6 @@
 				06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */,
 				062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */,
 				062FD7712208A5C900E237DA /* GradientView.swift in Sources */,
-				062022CB2212FD96008DFECD /* Container_Commons.swift in Sources */,
 				06FD1C042215B6B60075A6C1 /* Container_ActionController.swift in Sources */,
 				0625D263221421BF00F13B30 /* MeditationViewModel.swift in Sources */,
 				06248E35220DEF39006525F5 /* ActionButton.swift in Sources */,

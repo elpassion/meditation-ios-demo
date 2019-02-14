@@ -6,6 +6,8 @@ protocol ActionControllerContaining {
 
 extension Container: ActionControllerContaining {
 
+    // MARK: - ActionControllerContaining
+
     func actionViewController() -> UIViewController & ActionViewControlling {
         return ActionViewController()
     }

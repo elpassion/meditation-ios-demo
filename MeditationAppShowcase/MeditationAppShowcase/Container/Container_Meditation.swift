@@ -1,19 +1,21 @@
 import UIKit
 
-protocol MeditationContainer {
+protocol MeditationContaining {
     func meditationViewController() -> UIViewController
 }
 
-extension Container: MeditationContainer {
+extension Container: MeditationContaining {
 
-    // MARK: - MeditationContainer
+    // MARK: - MeditationContaining
 
     func meditationViewController() -> UIViewController {
         return MeditationViewController(viewModel: meditationViewModel(),
-                                        actionButtonOperator: actionButtonConfigurator())
+                                        actionControllerOperator: appConfigurator())
     }
 
-    func meditationViewModel() -> MeditationViewModeling {
+    // MARK: - Privates
+
+    private func meditationViewModel() -> MeditationViewModeling {
         return MeditationViewModel()
     }
 

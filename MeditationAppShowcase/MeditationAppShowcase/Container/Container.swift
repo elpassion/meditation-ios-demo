@@ -2,8 +2,8 @@ import UIKit
 
 class Container {
 
-    lazy var sharedActionButtonConfigurator = {
-        return ActionButtonConfigurator()
+    lazy var sharedAppConfigurator = {
+        return AppConfigurator(viewControllersFactory: appViewControllersFactory())
     }()
-    
+
 }
