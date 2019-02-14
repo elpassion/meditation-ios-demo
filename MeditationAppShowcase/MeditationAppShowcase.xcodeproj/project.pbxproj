@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060679F2220C8FCE00D6A3FE /* SketchShadow.swift */; };
 		062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022C82212F8DE008DFECD /* Container_Meditation.swift */; };
-		062022CD221301EA008DFECD /* ActionButtonConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */; };
+		062022CD221301EA008DFECD /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CC221301EA008DFECD /* AppConfigurator.swift */; };
 		062022CF2213365D008DFECD /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CE2213365D008DFECD /* NavigationView.swift */; };
 		062022D122135030008DFECD /* SongPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022D022135030008DFECD /* SongPickerViewCell.swift */; };
 		06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E20220DCA5C006525F5 /* HomeBoardView.swift */; };
@@ -57,7 +57,7 @@
 /* Begin PBXFileReference section */
 		060679F2220C8FCE00D6A3FE /* SketchShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchShadow.swift; sourceTree = "<group>"; };
 		062022C82212F8DE008DFECD /* Container_Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Meditation.swift; sourceTree = "<group>"; };
-		062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonConfigurator.swift; sourceTree = "<group>"; };
+		062022CC221301EA008DFECD /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
 		062022CE2213365D008DFECD /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		062022D022135030008DFECD /* SongPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPickerViewCell.swift; sourceTree = "<group>"; };
 		06248E20220DCA5C006525F5 /* HomeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
@@ -158,13 +158,13 @@
 		062FD75E220896DD00E237DA /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				06FD1BFE2215A7440075A6C1 /* AppConfigurator */,
 				069A83922212032100D3E223 /* Presenters */,
 				062FD75F2208976900E237DA /* NotificationHandler.swift */,
 				062FD7702208A5C900E237DA /* GradientView.swift */,
 				062FD7722208A6F800E237DA /* Color_Hex.swift */,
 				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
 				06248E34220DEF39006525F5 /* ActionButton.swift */,
-				062022CC221301EA008DFECD /* ActionButtonConfigurator.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -278,6 +278,7 @@
 		06FD1BFE2215A7440075A6C1 /* AppConfigurator */ = {
 			isa = PBXGroup;
 			children = (
+				062022CC221301EA008DFECD /* AppConfigurator.swift */,
 				06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */,
 			);
 			path = AppConfigurator;
@@ -498,8 +499,8 @@
 				062022D122135030008DFECD /* SongPickerViewCell.swift in Sources */,
 				06A71A97220213E2001DE399 /* HomeView.swift in Sources */,
 				06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */,
-				062022CD221301EA008DFECD /* ActionButtonConfigurator.swift in Sources */,
 				06FD1C022215B5CB0075A6C1 /* Container_Configurator.swift in Sources */,
+				062022CD221301EA008DFECD /* AppConfigurator.swift in Sources */,
 				06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */,
 				06B5E38022148F9E00004D09 /* ActionView.swift in Sources */,
 				06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */,

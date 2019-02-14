@@ -1,12 +1,12 @@
 protocol AppConfiguratorContaining {
-    func appConfigurator() -> ActionControllerConfiguring & ActionControllerOperating
+    func appConfigurator() -> AppConfiguring & ActionControllerOperating
 }
 
 extension Container: AppConfiguratorContaining {
 
     // MARK: - AppConfiguratorContaining
 
-    func appConfigurator() -> ActionControllerConfiguring & ActionControllerOperating {
+    func appConfigurator() -> AppConfiguring & ActionControllerOperating {
         return sharedAppConfigurator
     }
 
