@@ -4,9 +4,9 @@ class ActionView: UIView {
 
     init() {
         super.init(frame: .zero)
-        backgroundColor = .red
         addSubviews()
         setupLayout()
+        backgroundColor = .clear
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }
@@ -26,6 +26,7 @@ class ActionView: UIView {
     private func setupLayout() {
         let distance: CGFloat = 40
         NSLayoutConstraint.activate([
+            rewindButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             rewindButton.centerYAnchor.constraint(equalTo: middleButton.centerYAnchor),
             rewindButton.trailingAnchor.constraint(equalTo: middleButton.leadingAnchor,
                                                    constant: -distance),
@@ -33,7 +34,8 @@ class ActionView: UIView {
             middleButton.topAnchor.constraint(equalTo: topAnchor),
             middleButton.bottomAnchor.constraint(equalTo: bottomAnchor),
             forwardButton.leadingAnchor.constraint(equalTo: middleButton.trailingAnchor,
-                                                   constant: distance)
+                                                   constant: distance),
+            forwardButton.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 

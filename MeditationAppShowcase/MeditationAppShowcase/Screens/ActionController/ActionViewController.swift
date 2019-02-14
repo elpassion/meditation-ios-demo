@@ -59,13 +59,13 @@ class ActionViewController: UIViewController, ActionViewControlling {
     private func configureButtons() {
         actionView.rewindButton.addTarget(self,
                                           action: #selector(rewindButtonAction),
-                                          for: .touchUpOutside)
+                                          for: .touchUpInside)
         actionView.middleButton.addTarget(self,
                                           action: #selector(middleButtonAction),
-                                          for: .touchUpOutside)
+                                          for: .touchUpInside)
         actionView.forwardButton.addTarget(self,
                                           action: #selector(forwardButtonAction),
-                                          for: .touchUpOutside)
+                                          for: .touchUpInside)
     }
 
     // MARK: - Transformations
@@ -125,7 +125,7 @@ class ActionViewController: UIViewController, ActionViewControlling {
                        delay: delay,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.5,
-                       options: .curveEaseInOut,
+                       options: [.curveEaseInOut, .allowUserInteraction],
                        animations: animations,
                        completion: nil)
     }
