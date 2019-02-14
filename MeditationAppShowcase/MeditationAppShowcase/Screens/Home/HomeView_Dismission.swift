@@ -20,7 +20,7 @@ extension HomeView {
                                        y: self.frame.height / dismissionView.frame.height)
         let scaledAndTranslated = scaled.translatedBy(x: 0,
                                                       y: -boardViewTopOffset)
-        UIView.animate(withDuration: 1.0,
+        UIView.animate(withDuration: 0.3,
                        animations: { dismissionView.transform = scaledAndTranslated },
                        completion: { _ in completion() })
     }
