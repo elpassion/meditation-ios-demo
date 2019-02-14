@@ -1,6 +1,8 @@
 protocol MeditationViewModeling: class {
     var songPickerViewModels: (([SongPickerViewModeling]) -> Void)? { get set }
+    var presentPlayMode: (() -> Void)? { get set }
     func viewDidAppear()
+    func actionButtonTap()
 }
 
 class MeditationViewModel: MeditationViewModeling {
@@ -9,10 +11,14 @@ class MeditationViewModel: MeditationViewModeling {
 
     var songPickerViewModels: (([SongPickerViewModeling]) -> Void)?
 
+    var presentPlayMode: (() -> Void)?
+
     func viewDidAppear() {
         songPickerViewModels?(preparedViewModels)
     }
 
-    // MARK: - Privates
+    func actionButtonTap() {
+        presentPlayMode?()
+    }
 
 }

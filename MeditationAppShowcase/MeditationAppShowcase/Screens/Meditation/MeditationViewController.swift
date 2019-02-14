@@ -1,11 +1,11 @@
 import UIKit
 
-class MeditationViewController: UIViewController, UITableViewDataSource {
+class MeditationViewController: UIViewController, UITableViewDataSource, ActionViewControllerDelegate {
 
     init(viewModel: MeditationViewModeling,
-         actionButtonOperator: ActionButtonOperating) {
+         actionControllerOperator: ActionControllerOperating) {
         self.viewModel = viewModel
-        self.actionButtonOperator = actionButtonOperator
+        self.actionControllerOperator = actionControllerOperator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -26,18 +26,20 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        actionButtonOperator.button?.addTarget(self,
-                                               action: #selector(actionButtonTap),
-                                               for: .touchUpInside)
+        actionControllerOperator.controller?.delegate = self
         meditationView.animateAppearance()
         viewModel.viewDidAppear()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        actionButtonOperator.button?.removeTarget(self,
-                                                  action: nil,
-                                                  for: .allEvents)
+        actionControllerOperator.controller?.delegate = nil
+    }
+
+    // MARK: - ActionViewControllerDelegate
+
+    func actionViewControllerDidPerformEvent(_ event: ActionViewController.Event) {
+        viewModel.actionButtonTap()
     }
 
     // MARK: - UITableViewDataSource
@@ -60,7 +62,7 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
     // MARK: - Privates
 
     private let viewModel: MeditationViewModeling
-    private let actionButtonOperator: ActionButtonOperating
+    private let actionControllerOperator: ActionControllerOperating
 
     private var songPickerViewModels = [SongPickerViewModeling]() {
         didSet {
@@ -80,6 +82,8 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
                                           forCellReuseIdentifier: SongPickerViewCell.description())
         meditationView.tableView.separatorStyle = .none
         viewModel.songPickerViewModels = { [weak self] in self?.songPickerViewModels = $0 }
+        viewModel.presentPlayMode = { [weak self] in self?.actionControllerOperator.controller?.currentMode = .player
+        }
     }
 
     private func configure(cell: SongPickerViewCell, with viewModel: SongPickerViewModeling) {
@@ -87,10 +91,6 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
         cell.titleLabel.text = viewModel.title
         cell.subtitleLabel.text = viewModel.subtitle
         cell.timeLabel.text = viewModel.time
-    }
-
-    @objc func actionButtonTap() {
-        print(meditationView.tableView.indexPathsForSelectedRows?.map { $0.row })
     }
 
 }
