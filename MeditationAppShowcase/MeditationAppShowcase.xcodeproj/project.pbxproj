@@ -165,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				06FD1BFE2215A7440075A6C1 /* AppConfigurator */,
-				06B5E37A22147FF600004D09 /* ActionViewController */,
 				069A83922212032100D3E223 /* Presenters */,
 				062FD75F2208976900E237DA /* NotificationHandler.swift */,
 				062FD7702208A5C900E237DA /* GradientView.swift */,
@@ -244,6 +243,7 @@
 		06A71A8D2201F6BB001DE399 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				06B5E37A22147FF600004D09 /* ActionController */,
 				069A838D2211FC1B00D3E223 /* Meditation */,
 				06A71A8E2201F6C8001DE399 /* Home */,
 			);
@@ -272,7 +272,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		06B5E37A22147FF600004D09 /* ActionViewController */ = {
+		06B5E37A22147FF600004D09 /* ActionController */ = {
 			isa = PBXGroup;
 			children = (
 				06B5E37B2214801500004D09 /* ActionViewController.swift */,
@@ -282,7 +282,7 @@
 				06B5E38122149EFA00004D09 /* ActionViewController_Event.swift */,
 				06FD1C052215BE3D0075A6C1 /* NSAttributedString_ButtonTitle.swift */,
 			);
-			path = ActionViewController;
+			path = ActionController;
 			sourceTree = "<group>";
 		};
 		06FD1BFE2215A7440075A6C1 /* AppConfigurator */ = {
