@@ -45,7 +45,7 @@ class ActionViewController: UIViewController, ActionViewControlling {
 
     // MARK: - Privates
 
-    private let animationDuration: TimeInterval = 0.25
+    private let animationDuration: TimeInterval = 0.6
 
     private var actionView: ActionView! {
         return view as? ActionView
@@ -60,7 +60,7 @@ class ActionViewController: UIViewController, ActionViewControlling {
         actionView.rewindButton.addTarget(self,
                                           action: #selector(rewindButtonAction),
                                           for: .touchUpInside)
-        actionView.middleButton.addTarget(self,
+        actionView.middleControl.addTarget(self,
                                           action: #selector(middleButtonAction),
                                           for: .touchUpInside)
         actionView.forwardButton.addTarget(self,
@@ -71,24 +71,22 @@ class ActionViewController: UIViewController, ActionViewControlling {
     // MARK: - Transformations
 
     private func singleToSingle(title: String) {
-        let attributedString = NSAttributedString(buttonTitle: title)
         animate(animations: {
-            self.actionView.middleButton.setAttributedTitle(attributedString,
-                                                            for: .normal)
-            self.actionView.middleButton.layoutIfNeeded()
+            self.actionView.set(mode: .singleButton(title: title))
+            self.actionView.middleControl.layoutIfNeeded()
         })
     }
 
     private func singleButtonToPlayer() {
+
         animate(animations: {
-            self.actionView.middleButton.setAttributedTitle(NSAttributedString(string: "  "),
-                                                            for: .normal)
-            self.actionView.middleButton.layoutIfNeeded()
+            self.actionView.set(mode: .player)
+            self.actionView.middleControl.layoutIfNeeded()
         },
         delay: 0)
 
-        let actionButtonCenterX = actionView.middleButton.frame.origin.x +
-            actionView.middleButton.frame.size.width / 2
+        let actionButtonCenterX = actionView.middleControl.frame.origin.x +
+            actionView.middleControl.frame.size.width / 2
         let rewindButtonCenterX = actionView.rewindButton.frame.origin.x +
             actionView.rewindButton.frame.size.width / 2
         let forwardButtonCenterX = actionView.forwardButton.frame.origin.x +
@@ -110,12 +108,11 @@ class ActionViewController: UIViewController, ActionViewControlling {
     }
 
     private func playerToSingleButton(title: String) {
+        actionView.rewindButton.alpha = 0
+        actionView.forwardButton.alpha = 0
         animate(animations: {
-            self.actionView.rewindButton.alpha = 0
-            self.actionView.forwardButton.alpha = 0
-            self.actionView.middleButton.setAttributedTitle(NSAttributedString(buttonTitle: title),
-                                                            for: .normal)
-            self.actionView.middleButton.layoutIfNeeded()
+            self.actionView.set(mode: .singleButton(title: title))
+            self.actionView.middleControl.layoutIfNeeded()
         })
     }
 
@@ -123,7 +120,7 @@ class ActionViewController: UIViewController, ActionViewControlling {
                          delay: TimeInterval = 0) {
         UIView.animate(withDuration: animationDuration,
                        delay: delay,
-                       usingSpringWithDamping: 0.5,
+                       usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 0.5,
                        options: [.curveEaseInOut, .allowUserInteraction],
                        animations: animations,
