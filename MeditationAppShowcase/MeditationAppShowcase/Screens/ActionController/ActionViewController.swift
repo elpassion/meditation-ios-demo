@@ -2,6 +2,9 @@ import UIKit
 
 protocol ActionViewControlling: class {
     var currentMode: ActionViewController.Mode { get set }
+    func addTarget(_ target: AnyHashable, action: Selector)
+    func removeTarget(_ target: AnyHashable)
+
     var delegate: ActionViewControllerDelegate? { get set }
 }
 
@@ -41,10 +44,19 @@ class ActionViewController: UIViewController, ActionViewControlling {
         }
     }
 
+    func addTarget(_ target: AnyHashable, action: Selector) {
+        allTargets[target] = action
+    }
+
+    func removeTarget(_ target: AnyHashable) {
+        allTargets.removeValue(forKey: target)
+    }
+
     weak var delegate: ActionViewControllerDelegate?
 
     // MARK: - Privates
 
+    private var allTargets = [AnyHashable: Selector]()
     private let animationDuration: TimeInterval = 0.6
 
     private var actionView: ActionView! {
@@ -138,6 +150,10 @@ class ActionViewController: UIViewController, ActionViewControlling {
     }
 
     @objc private func middleButtonAction() {
+        allTargets.forEach { (target, selector) in
+            UIViewController().per
+        }
+
         switch currentMode {
         case .singleButton: delegate?.actionViewControllerDidPerformEvent(.button)
         case .player: delegate?.actionViewControllerDidPerformEvent(.play)

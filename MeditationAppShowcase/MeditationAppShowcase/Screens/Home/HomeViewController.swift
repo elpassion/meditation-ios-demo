@@ -29,6 +29,9 @@ class HomeViewController: UIViewController, ActionViewControllerDelegate {
         super.viewDidLoad()
         setupSubviews()
         configureNotificationHandler()
+
+
+        actionControllerOperator.controller?.addTarget(self, action: #selector(action))
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -108,6 +111,10 @@ class HomeViewController: UIViewController, ActionViewControllerDelegate {
 
     @objc private func restartAnimation() {
         animateBackground()
+    }
+
+    @objc func action() {
+        print("action")
     }
 
 }
