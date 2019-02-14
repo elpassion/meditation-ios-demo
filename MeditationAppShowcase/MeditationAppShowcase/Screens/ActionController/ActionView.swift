@@ -52,7 +52,6 @@ private extension ActionView {
 
         static func middleButton() -> ActionButton {
             let button = ActionButton()
-            button.setTitle("sada dasf ", for: .normal) //TODO:
             button.translatesAutoresizingMaskIntoConstraints = false
             return button
         }
