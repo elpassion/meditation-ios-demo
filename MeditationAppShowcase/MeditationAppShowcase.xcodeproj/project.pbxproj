@@ -35,7 +35,7 @@
 		06A71A932201F946001DE399 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A71A922201F946001DE399 /* Default-568h@2x.png */; };
 		06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A9422020874001DE399 /* HomeViewModel.swift */; };
 		06A71A97220213E2001DE399 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A96220213E2001DE399 /* HomeView.swift */; };
-		06B5E37E221480A900004D09 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37D221480A900004D09 /* ActionType.swift */; };
+		06B5E37E221480A900004D09 /* ActionViewController_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */; };
 		06B5E38022148F9E00004D09 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37F22148F9E00004D09 /* ActionView.swift */; };
 		06FD1C002215AB130075A6C1 /* AppViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */; };
 		06FD1C022215B5CB0075A6C1 /* Container_Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */; };
@@ -87,7 +87,7 @@
 		06A71A922201F946001DE399 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		06A71A9422020874001DE399 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06A71A96220213E2001DE399 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		06B5E37D221480A900004D09 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
+		06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController_Mode.swift; sourceTree = "<group>"; };
 		06B5E37F22148F9E00004D09 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewControllersFactory.swift; sourceTree = "<group>"; };
 		06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Configurator.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 		06B5E37A22147FF600004D09 /* ActionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				06B5E37D221480A900004D09 /* ActionType.swift */,
+				06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */,
 				06B5E37F22148F9E00004D09 /* ActionView.swift */,
 			);
 			path = ActionViewController;
@@ -489,7 +489,7 @@
 				069A83942212033600D3E223 /* ViewControllerPresenter.swift in Sources */,
 				060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */,
 				0625D2672214536500F13B30 /* MeditationViewModel_Data.swift in Sources */,
-				06B5E37E221480A900004D09 /* ActionType.swift in Sources */,
+				06B5E37E221480A900004D09 /* ActionViewController_Mode.swift in Sources */,
 				062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */,
 				0625D265221433C800F13B30 /* CheckBoxView.swift in Sources */,
 				06A71A8C2201F59F001DE399 /* Container.swift in Sources */,
