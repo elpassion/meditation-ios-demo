@@ -36,6 +36,7 @@
 		06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A9422020874001DE399 /* HomeViewModel.swift */; };
 		06A71A97220213E2001DE399 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A96220213E2001DE399 /* HomeView.swift */; };
 		06B5E37E221480A900004D09 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37D221480A900004D09 /* ActionType.swift */; };
+		06B5E38022148F9E00004D09 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37F22148F9E00004D09 /* ActionView.swift */; };
 		06FD1C002215AB130075A6C1 /* AppViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */; };
 		06FD1C022215B5CB0075A6C1 /* Container_Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */; };
 		06FD1C042215B6B60075A6C1 /* Container_ActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1C032215B6B60075A6C1 /* Container_ActionController.swift */; };
@@ -87,6 +88,7 @@
 		06A71A9422020874001DE399 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06A71A96220213E2001DE399 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		06B5E37D221480A900004D09 /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
+		06B5E37F22148F9E00004D09 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewControllersFactory.swift; sourceTree = "<group>"; };
 		06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Configurator.swift; sourceTree = "<group>"; };
 		06FD1C032215B6B60075A6C1 /* Container_ActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_ActionController.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				06B5E37D221480A900004D09 /* ActionType.swift */,
+				06B5E37F22148F9E00004D09 /* ActionView.swift */,
 			);
 			path = ActionViewController;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				062022CD221301EA008DFECD /* ActionButtonConfigurator.swift in Sources */,
 				06FD1C022215B5CB0075A6C1 /* Container_Configurator.swift in Sources */,
 				06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */,
+				06B5E38022148F9E00004D09 /* ActionView.swift in Sources */,
 				06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */,
 				062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */,
 				062FD7712208A5C900E237DA /* GradientView.swift in Sources */,
