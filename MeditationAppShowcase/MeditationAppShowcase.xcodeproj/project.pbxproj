@@ -169,7 +169,6 @@
 				062FD7702208A5C900E237DA /* GradientView.swift */,
 				062FD7722208A6F800E237DA /* Color_Hex.swift */,
 				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
-				06248E34220DEF39006525F5 /* ActionButton.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -277,6 +276,7 @@
 				06B5E37B2214801500004D09 /* ActionViewController.swift */,
 				06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */,
 				06B5E37F22148F9E00004D09 /* ActionView.swift */,
+				06248E34220DEF39006525F5 /* ActionButton.swift */,
 				06B5E38122149EFA00004D09 /* ActionViewController_Event.swift */,
 			);
 			path = ActionViewController;
