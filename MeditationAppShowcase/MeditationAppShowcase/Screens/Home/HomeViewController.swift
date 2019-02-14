@@ -1,17 +1,17 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, ActionViewControllerDelegate {
 
     init(viewModel: HomeViewModeling,
          notificationHandler: NotificationHandling,
          presenter: ViewControllerPresenting,
          meditationViewControllerFactory: @escaping () -> UIViewController,
-         actionButtonOperator: ActionButtonOperating) {
+         actionControllerOperator: ActionControllerOperating) {
         self.viewModel = viewModel
         self.notificationHandler = notificationHandler
         self.presenter = presenter
         self.meditationViewControllerFactory = meditationViewControllerFactory
-        self.actionButtonOperator = actionButtonOperator
+        self.actionControllerOperator = actionControllerOperator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -34,18 +34,23 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateBackground()
-        actionButtonOperator.button?.addTarget(self,
-                                               action: #selector(actionButtonTap),
-                                               for: .touchUpInside)
-        let bottomOffset = homeView.frame.size.height - (homeView.boardView.frame.origin.y + homeView.boardView.frame.size.height)
-        actionButtonOperator.updateBottomOffset(bottomOffset, animated: true)
+        actionControllerOperator.controller?.delegate = self
+        let bottomOffset = homeView.frame.size.height -
+            (homeView.boardView.frame.origin.y + homeView.boardView.frame.size.height) - 20
+        actionControllerOperator.updateBottomOffset(bottomOffset, animated: true)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        actionButtonOperator.button?.removeTarget(self,
-                                                  action: nil,
-                                                  for: .allEvents)
+        actionControllerOperator.controller?.delegate = nil
+    }
+
+    // MARK: - ActionViewControllerDelegate
+
+    func actionViewControllerDidPerformEvent(_ event: ActionViewController.Event) {
+        if event == .button {
+            viewModel.action()
+        }
     }
 
     // MARK: - Privates
@@ -54,7 +59,7 @@ class HomeViewController: UIViewController {
     private let notificationHandler: NotificationHandling
     private let presenter: ViewControllerPresenting
     private let meditationViewControllerFactory: () -> UIViewController
-    private let actionButtonOperator: ActionButtonOperating
+    private let actionControllerOperator: ActionControllerOperating
 
     private var homeView: HomeView! {
         return view as? HomeView
@@ -68,8 +73,8 @@ class HomeViewController: UIViewController {
         viewModel.stress = { [homeView] in homeView?.boardView.stressValueLabel.text = $0 }
         viewModel.meditate = { [homeView] in homeView?.boardView.meditateValueLabel.text = $0 }
         viewModel.focus = { [homeView] in homeView?.boardView.focusValueLabel.text = $0 }
-        viewModel.actionTitle = { [actionButtonOperator] in
-            actionButtonOperator.button?.setStyledTitle($0, animationDuration: 0.25)
+        viewModel.actionTitle = { [actionControllerOperator] in
+            actionControllerOperator.controller?.currentMode = .singleButton(title: $0)
         }
         viewModel.presentMeditation = { [weak self] in
             guard let self = `self` else { return }
@@ -103,10 +108,6 @@ class HomeViewController: UIViewController {
 
     @objc private func restartAnimation() {
         animateBackground()
-    }
-
-    @objc private func actionButtonTap() {
-        viewModel.action()
     }
 
 }
