@@ -71,7 +71,7 @@ class ActionViewController: UIViewController, ActionViewControlling {
     // MARK: - Transformations
 
     private func singleToSingle(title: String) {
-        let attributedString = styledTitle(title)
+        let attributedString = NSAttributedString(buttonTitle: title)
         animate(animations: {
             self.actionView.middleButton.setAttributedTitle(attributedString,
                                                             for: .normal)
@@ -110,25 +110,13 @@ class ActionViewController: UIViewController, ActionViewControlling {
     }
 
     private func playerToSingleButton(title: String) {
-        let attributedString = styledTitle(title)
         animate(animations: {
             self.actionView.rewindButton.alpha = 0
             self.actionView.forwardButton.alpha = 0
-            self.actionView.middleButton.setAttributedTitle(attributedString,
+            self.actionView.middleButton.setAttributedTitle(NSAttributedString(buttonTitle: title),
                                                             for: .normal)
             self.actionView.middleButton.layoutIfNeeded()
         })
-    }
-
-    private func styledTitle(_ title: String) -> NSAttributedString {
-        let attributedString = NSMutableAttributedString(string: title)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 0.5
-        attributedString.addAttribute(.paragraphStyle,
-                                      value: paragraphStyle,
-                                      range: NSRange(location: 0,
-                                                     length: attributedString.length))
-        return attributedString
     }
 
     private func animate(animations: @escaping () -> Void,
