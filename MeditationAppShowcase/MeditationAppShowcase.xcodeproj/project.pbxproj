@@ -23,6 +23,10 @@
 		062FD7712208A5C900E237DA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7702208A5C900E237DA /* GradientView.swift */; };
 		062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7722208A6F800E237DA /* Color_Hex.swift */; };
 		0677959D2215D9C200A26913 /* ActionView_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0677959C2215D9C200A26913 /* ActionView_Mode.swift */; };
+		06959544221823DE009F966A /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06959543221823DE009F966A /* EventEmitter.swift */; };
+		06959546221823F6009F966A /* Invoctable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06959545221823F6009F966A /* Invoctable.swift */; };
+		0695954822182416009F966A /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695954722182416009F966A /* Disposable.swift */; };
+		0695954A22182432009F966A /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695954922182432009F966A /* Subscription.swift */; };
 		069A838F2211FC8100D3E223 /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A838E2211FC8100D3E223 /* MeditationViewController.swift */; };
 		069A83912211FF9800D3E223 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A83902211FF9800D3E223 /* MeditationView.swift */; };
 		069A83942212033600D3E223 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A83932212033600D3E223 /* ViewControllerPresenter.swift */; };
@@ -40,6 +44,7 @@
 		06B5E37E221480A900004D09 /* ActionViewController_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */; };
 		06B5E38022148F9E00004D09 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37F22148F9E00004D09 /* ActionView.swift */; };
 		06B5E38222149EFA00004D09 /* ActionViewController_Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E38122149EFA00004D09 /* ActionViewController_Event.swift */; };
+		06B6E86E22187DA4005102C6 /* ActionEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E86D22187DA4005102C6 /* ActionEmitter.swift */; };
 		06FD1C002215AB130075A6C1 /* AppViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */; };
 		06FD1C022215B5CB0075A6C1 /* Container_Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */; };
 		06FD1C042215B6B60075A6C1 /* Container_ActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD1C032215B6B60075A6C1 /* Container_ActionController.swift */; };
@@ -77,6 +82,10 @@
 		062FD7702208A5C900E237DA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062FD7722208A6F800E237DA /* Color_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Hex.swift; sourceTree = "<group>"; };
 		0677959C2215D9C200A26913 /* ActionView_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView_Mode.swift; sourceTree = "<group>"; };
+		06959543221823DE009F966A /* EventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
+		06959545221823F6009F966A /* Invoctable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoctable.swift; sourceTree = "<group>"; };
+		0695954722182416009F966A /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		0695954922182432009F966A /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		069A838E2211FC8100D3E223 /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		069A83902211FF9800D3E223 /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		069A83932212033600D3E223 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
@@ -96,6 +105,7 @@
 		06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController_Mode.swift; sourceTree = "<group>"; };
 		06B5E37F22148F9E00004D09 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		06B5E38122149EFA00004D09 /* ActionViewController_Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController_Event.swift; sourceTree = "<group>"; };
+		06B6E86D22187DA4005102C6 /* ActionEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEmitter.swift; sourceTree = "<group>"; };
 		06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewControllersFactory.swift; sourceTree = "<group>"; };
 		06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Configurator.swift; sourceTree = "<group>"; };
 		06FD1C032215B6B60075A6C1 /* Container_ActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_ActionController.swift; sourceTree = "<group>"; };
@@ -166,6 +176,7 @@
 		062FD75E220896DD00E237DA /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				06959541221823A0009F966A /* Utilities */,
 				06FD1BFE2215A7440075A6C1 /* AppConfigurator */,
 				069A83922212032100D3E223 /* Presenters */,
 				062FD75F2208976900E237DA /* NotificationHandler.swift */,
@@ -174,6 +185,25 @@
 				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		06959541221823A0009F966A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				06959542221823C7009F966A /* Observer */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		06959542221823C7009F966A /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				06959543221823DE009F966A /* EventEmitter.swift */,
+				06959545221823F6009F966A /* Invoctable.swift */,
+				0695954722182416009F966A /* Disposable.swift */,
+				0695954922182432009F966A /* Subscription.swift */,
+			);
+			path = Observer;
 			sourceTree = "<group>";
 		};
 		069A838D2211FC1B00D3E223 /* Meditation */ = {
@@ -284,6 +314,7 @@
 				06B5E38122149EFA00004D09 /* ActionViewController_Event.swift */,
 				06FD1C052215BE3D0075A6C1 /* NSAttributedString_ButtonTitle.swift */,
 				0677959C2215D9C200A26913 /* ActionView_Mode.swift */,
+				06B6E86D22187DA4005102C6 /* ActionEmitter.swift */,
 			);
 			path = ActionController;
 			sourceTree = "<group>";
@@ -496,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A71A7B2201F2A1001DE399 /* HomeViewController.swift in Sources */,
+				0695954822182416009F966A /* Disposable.swift in Sources */,
 				069A838F2211FC8100D3E223 /* MeditationViewController.swift in Sources */,
 				0677959D2215D9C200A26913 /* ActionView_Mode.swift in Sources */,
 				062022CF2213365D008DFECD /* NavigationView.swift in Sources */,
@@ -503,15 +535,18 @@
 				069A83942212033600D3E223 /* ViewControllerPresenter.swift in Sources */,
 				060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */,
 				06B5E38222149EFA00004D09 /* ActionViewController_Event.swift in Sources */,
+				06959544221823DE009F966A /* EventEmitter.swift in Sources */,
 				0625D2672214536500F13B30 /* MeditationViewModel_Data.swift in Sources */,
 				06B5E37E221480A900004D09 /* ActionViewController_Mode.swift in Sources */,
 				062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */,
 				0625D265221433C800F13B30 /* CheckBoxView.swift in Sources */,
 				06A71A8C2201F59F001DE399 /* Container.swift in Sources */,
+				06959546221823F6009F966A /* Invoctable.swift in Sources */,
 				06FD1C062215BE3D0075A6C1 /* NSAttributedString_ButtonTitle.swift in Sources */,
 				062FD7602208976900E237DA /* NotificationHandler.swift in Sources */,
 				06A71A912201F7A1001DE399 /* Container_Home.swift in Sources */,
 				069A83962212087E00D3E223 /* HomeView_Dismission.swift in Sources */,
+				0695954A22182432009F966A /* Subscription.swift in Sources */,
 				062022D122135030008DFECD /* SongPickerViewCell.swift in Sources */,
 				06A71A97220213E2001DE399 /* HomeView.swift in Sources */,
 				06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */,
@@ -519,6 +554,7 @@
 				06FD1C022215B5CB0075A6C1 /* Container_Configurator.swift in Sources */,
 				062022CD221301EA008DFECD /* AppConfigurator.swift in Sources */,
 				06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */,
+				06B6E86E22187DA4005102C6 /* ActionEmitter.swift in Sources */,
 				06B5E38022148F9E00004D09 /* ActionView.swift in Sources */,
 				06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */,
 				062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */,

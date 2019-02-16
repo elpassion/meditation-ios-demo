@@ -1,6 +1,6 @@
 extension ActionViewController {
 
-    enum Event {
+    enum Action {
         case button, play, rewind, forward
     }
 

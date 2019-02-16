@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: UIViewController, ActionViewControllerDelegate {
+class HomeViewController: UIViewController {
 
     init(viewModel: HomeViewModeling,
          notificationHandler: NotificationHandling,
@@ -29,31 +29,22 @@ class HomeViewController: UIViewController, ActionViewControllerDelegate {
         super.viewDidLoad()
         setupSubviews()
         configureNotificationHandler()
-
-
-        actionControllerOperator.controller?.addTarget(self, action: #selector(action))
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateBackground()
-        actionControllerOperator.controller?.delegate = self
         let bottomOffset = homeView.frame.size.height -
             (homeView.boardView.frame.origin.y + homeView.boardView.frame.size.height) - 20
         actionControllerOperator.updateBottomOffset(bottomOffset, animated: true)
+        disposable = actionControllerOperator.controller?.actionHandler.addHandler(
+            target: self,
+            handler: HomeViewController.handle)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        actionControllerOperator.controller?.delegate = nil
-    }
-
-    // MARK: - ActionViewControllerDelegate
-
-    func actionViewControllerDidPerformEvent(_ event: ActionViewController.Event) {
-        if event == .button {
-            viewModel.action()
-        }
+        disposable?.dispose()
     }
 
     // MARK: - Privates
@@ -63,6 +54,7 @@ class HomeViewController: UIViewController, ActionViewControllerDelegate {
     private let presenter: ViewControllerPresenting
     private let meditationViewControllerFactory: () -> UIViewController
     private let actionControllerOperator: ActionControllerOperating
+    private var disposable: Disposable?
 
     private var homeView: HomeView! {
         return view as? HomeView
@@ -101,7 +93,10 @@ class HomeViewController: UIViewController, ActionViewControllerDelegate {
         homeView.backgroundRipImageView.transform = CGAffineTransform(rotationAngle: -initialRotation)
         UIView.animateKeyframes(withDuration: 4.0,
                                 delay: 0.0,
-                                options: [.repeat, .autoreverse, .beginFromCurrentState, .calculationModeDiscrete],
+                                options: [.repeat,
+                                          .autoreverse,
+                                          .beginFromCurrentState,
+                                          .calculationModeDiscrete],
                                 animations: {
                                     let transform = CGAffineTransform(rotationAngle: 2 * initialRotation)
                                     self.homeView.backgroundRipImageView.transform = transform
@@ -109,12 +104,16 @@ class HomeViewController: UIViewController, ActionViewControllerDelegate {
                                 completion: nil)
     }
 
+    // MARK: - Handlers
+
     @objc private func restartAnimation() {
         animateBackground()
     }
 
-    @objc func action() {
-        print("action")
+    private func handle(action: ActionViewController.Action) {
+        if action == .button {
+            viewModel.action()
+        }
     }
 
 }

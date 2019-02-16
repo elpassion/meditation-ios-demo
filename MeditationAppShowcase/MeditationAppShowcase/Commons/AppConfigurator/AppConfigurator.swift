@@ -6,12 +6,15 @@ protocol AppConfiguring {
 
 protocol ActionControllerOperating {
     var controller: ActionViewControlling? { get }
+}
+
+protocol ActionViewControllerOperating {
     func updateBottomOffset(_ bottomOffset: CGFloat, animated: Bool)
     var currentBottomOffset: CGFloat { get }
     var currentHeight: CGFloat { get }
 }
 
-class AppConfigurator: AppConfiguring, ActionControllerOperating {
+class AppConfigurator: AppConfiguring, ActionControllerOperating, ActionViewControllerOperating {
 
     init(viewControllersFactory: AppViewControllersFactory) {
         self.viewControllersFactory = viewControllersFactory
@@ -43,6 +46,8 @@ class AppConfigurator: AppConfiguring, ActionControllerOperating {
     var controller: ActionViewControlling? {
         return actionViewController
     }
+
+    // MARK: - ActionViewControllerOperating
 
     func updateBottomOffset(_ bottomOffset: CGFloat, animated: Bool) {
         UIView.animate(withDuration: animated ? 0.25 : 0,

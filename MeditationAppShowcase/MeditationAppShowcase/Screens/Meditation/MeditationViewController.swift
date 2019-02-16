@@ -1,6 +1,6 @@
 import UIKit
 
-class MeditationViewController: UIViewController, UITableViewDataSource, ActionViewControllerDelegate {
+class MeditationViewController: UIViewController, UITableViewDataSource {
 
     init(viewModel: MeditationViewModeling,
          actionControllerOperator: ActionControllerOperating) {
@@ -26,20 +26,16 @@ class MeditationViewController: UIViewController, UITableViewDataSource, ActionV
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        actionControllerOperator.controller?.delegate = self
         meditationView.animateAppearance()
         viewModel.viewDidAppear()
+        disposable = actionControllerOperator.controller?.actionHandler.addHandler(
+            target: self,
+            handler: MeditationViewController.handle)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        actionControllerOperator.controller?.delegate = nil
-    }
-
-    // MARK: - ActionViewControllerDelegate
-
-    func actionViewControllerDidPerformEvent(_ event: ActionViewController.Event) {
-        viewModel.actionButtonTap()
+        disposable?.dispose()
     }
 
     // MARK: - UITableViewDataSource
@@ -63,6 +59,7 @@ class MeditationViewController: UIViewController, UITableViewDataSource, ActionV
 
     private let viewModel: MeditationViewModeling
     private let actionControllerOperator: ActionControllerOperating
+    private var disposable: Disposable?
 
     private var songPickerViewModels = [SongPickerViewModeling]() {
         didSet {
@@ -91,6 +88,14 @@ class MeditationViewController: UIViewController, UITableViewDataSource, ActionV
         cell.titleLabel.text = viewModel.title
         cell.subtitleLabel.text = viewModel.subtitle
         cell.timeLabel.text = viewModel.time
+    }
+
+    // MARK: - Handlers
+
+    private func handle(action: ActionViewController.Action) {
+        if action == .button {
+            actionControllerOperator.controller?.currentMode = .player
+        }
     }
 
 }

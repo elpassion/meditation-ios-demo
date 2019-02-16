@@ -2,19 +2,14 @@ import UIKit
 
 protocol ActionViewControlling: class {
     var currentMode: ActionViewController.Mode { get set }
-    func addTarget(_ target: AnyHashable, action: Selector)
-    func removeTarget(_ target: AnyHashable)
-
-    var delegate: ActionViewControllerDelegate? { get set }
-}
-
-protocol ActionViewControllerDelegate: class {
-    func actionViewControllerDidPerformEvent(_ event: ActionViewController.Event)
+    var actionHandler: ActionHandling { get }
+//    var actionHandler: EventHandling<ActionViewController.Action> { get }
 }
 
 class ActionViewController: UIViewController, ActionViewControlling {
 
-    init() {
+    init(actionEmitter: ActionHandling & ActionEmitter = ActionEmitter()) {
+        self.actionEmitter = actionEmitter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -44,19 +39,13 @@ class ActionViewController: UIViewController, ActionViewControlling {
         }
     }
 
-    func addTarget(_ target: AnyHashable, action: Selector) {
-        allTargets[target] = action
+    var actionHandler: ActionHandling {
+        return actionEmitter
     }
-
-    func removeTarget(_ target: AnyHashable) {
-        allTargets.removeValue(forKey: target)
-    }
-
-    weak var delegate: ActionViewControllerDelegate?
 
     // MARK: - Privates
 
-    private var allTargets = [AnyHashable: Selector]()
+    private let actionEmitter: ActionHandling & ActionEmitter //TODO: move to viewModel
     private let animationDuration: TimeInterval = 0.6
 
     private var actionView: ActionView! {
@@ -142,21 +131,17 @@ class ActionViewController: UIViewController, ActionViewControlling {
     // MARK: - Action Handlers
 
     @objc private func rewindButtonAction() {
-        delegate?.actionViewControllerDidPerformEvent(.rewind)
+        actionEmitter.emit(.rewind)
     }
 
     @objc private func forwardButtonAction() {
-        delegate?.actionViewControllerDidPerformEvent(.forward)
+        actionEmitter.emit(.forward)
     }
 
     @objc private func middleButtonAction() {
-        allTargets.forEach { (target, selector) in
-            UIViewController().per
-        }
-
         switch currentMode {
-        case .singleButton: delegate?.actionViewControllerDidPerformEvent(.button)
-        case .player: delegate?.actionViewControllerDidPerformEvent(.play)
+        case .singleButton: actionEmitter.emit(.button)
+        case .player: actionEmitter.emit(.play)
         }
     }
 
