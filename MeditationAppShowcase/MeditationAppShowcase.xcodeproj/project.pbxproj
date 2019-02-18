@@ -27,6 +27,7 @@
 		067A63F1221ABD58001A20DF /* AppConfigurator_ActionViewControllerOperating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63F0221ABD58001A20DF /* AppConfigurator_ActionViewControllerOperating.swift */; };
 		067A63F3221ADC86001A20DF /* MeditationView_Animating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63F2221ADC86001A20DF /* MeditationView_Animating.swift */; };
 		067A63F5221AE13D001A20DF /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63F4221AE13D001A20DF /* SongView.swift */; };
+		067A63F7221AE456001A20DF /* SongView_Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63F6221AE456001A20DF /* SongView_Modes.swift */; };
 		067A63FA221B1188001A20DF /* CheckBox_Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63F9221B1188001A20DF /* CheckBox_Selection.swift */; };
 		06959544221823DE009F966A /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06959543221823DE009F966A /* EventEmitter.swift */; };
 		06959546221823F6009F966A /* Invoctable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06959545221823F6009F966A /* Invoctable.swift */; };
@@ -93,6 +94,7 @@
 		067A63F0221ABD58001A20DF /* AppConfigurator_ActionViewControllerOperating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator_ActionViewControllerOperating.swift; sourceTree = "<group>"; };
 		067A63F2221ADC86001A20DF /* MeditationView_Animating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView_Animating.swift; sourceTree = "<group>"; };
 		067A63F4221AE13D001A20DF /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
+		067A63F6221AE456001A20DF /* SongView_Modes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView_Modes.swift; sourceTree = "<group>"; };
 		067A63F9221B1188001A20DF /* CheckBox_Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox_Selection.swift; sourceTree = "<group>"; };
 		06959543221823DE009F966A /* EventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
 		06959545221823F6009F966A /* Invoctable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoctable.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				067A63F4221AE13D001A20DF /* SongView.swift */,
+				067A63F6221AE456001A20DF /* SongView_Modes.swift */,
 			);
 			path = Song;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */,
 				062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */,
 				062FD7712208A5C900E237DA /* GradientView.swift in Sources */,
+				067A63F7221AE456001A20DF /* SongView_Modes.swift in Sources */,
 				06FD1C042215B6B60075A6C1 /* Container_ActionController.swift in Sources */,
 				0625D263221421BF00F13B30 /* MeditationViewModel.swift in Sources */,
 				06248E35220DEF39006525F5 /* ActionControl.swift in Sources */,
