@@ -4,20 +4,18 @@ protocol AppConfiguring {
     func configure(window: UIWindow)
 }
 
-protocol ActionControllerOperating {
-    var controller: ActionViewControlling? { get }
-}
-
 protocol ActionViewControllerOperating {
     func updateBottomOffset(_ bottomOffset: CGFloat, animated: Bool)
     var currentBottomOffset: CGFloat { get }
     var currentHeight: CGFloat { get }
 }
 
-class AppConfigurator: AppConfiguring, ActionControllerOperating, ActionViewControllerOperating {
+class AppConfigurator: AppConfiguring, ActionViewControllerOperating {
 
-    init(viewControllersFactory: AppViewControllersFactory) {
+    init(viewControllersFactory: AppViewControllersFactory,
+         animator: Animating) {
         self.viewControllersFactory = viewControllersFactory
+        self.animator = animator
     }
 
     // MARK: - AppConfiguring
@@ -25,36 +23,32 @@ class AppConfigurator: AppConfiguring, ActionControllerOperating, ActionViewCont
     func configure(window: UIWindow) {
         window.rootViewController = viewControllersFactory.home()
 
-        let actionViewController = viewControllersFactory.actionController()
+        let actionViewController = viewControllersFactory.action()
         self.actionViewController = actionViewController
         actionViewController.view.translatesAutoresizingMaskIntoConstraints = false
         window.addSubview(actionViewController.view)
 
-        let centerX = actionViewController.view.centerXAnchor.constraint(equalTo: window.centerXAnchor)
         let bottomConstraint = actionViewController.view.bottomAnchor.constraint(equalTo: window.bottomAnchor)
 
-        NSLayoutConstraint.activate([bottomConstraint, centerX])
-        actionButtomBottomConstraint = bottomConstraint
-        actionViewController.view.layoutIfNeeded()
+        NSLayoutConstraint.activate([
+            actionViewController.view.centerXAnchor.constraint(equalTo: window.centerXAnchor),
+            bottomConstraint
+        ])
+        actionViewControllerBottomConstraint = bottomConstraint
 
         window.makeKeyAndVisible()
         window.bringSubviewToFront(actionViewController.view)
     }
 
-    // MARK: - ActionControllerOperating
-
-    var controller: ActionViewControlling? {
-        return actionViewController
-    }
-
     // MARK: - ActionViewControllerOperating
+    // TODO: move that functionality somewhere else
 
     func updateBottomOffset(_ bottomOffset: CGFloat, animated: Bool) {
-        UIView.animate(withDuration: animated ? 0.25 : 0,
-                       animations: {
-                            self.actionButtomBottomConstraint?.constant = -bottomOffset
+        animator.animate(duration: animated ? 0.25 : 0,
+                         animations: {
+                            self.actionViewControllerBottomConstraint?.constant = -bottomOffset
                             self.actionViewController?.view.layoutIfNeeded()
-                       })
+        })
         currentBottomOffset = bottomOffset
     }
 
@@ -67,7 +61,8 @@ class AppConfigurator: AppConfiguring, ActionControllerOperating, ActionViewCont
     // MARK: - Privates
 
     private let viewControllersFactory: AppViewControllersFactory
-    private var actionViewController: (UIViewController & ActionViewControlling)?
-    private var actionButtomBottomConstraint: NSLayoutConstraint?
+    private let animator: Animating
+    private var actionViewController: UIViewController?
+    private var actionViewControllerBottomConstraint: NSLayoutConstraint?
 
 }

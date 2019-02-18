@@ -1,12 +1,14 @@
 protocol AppConfiguratorContaining {
-    func appConfigurator() -> AppConfiguring & ActionControllerOperating
+    func appConfigurator()
+        -> AppConfiguring & ActionViewControllerOperating
 }
 
 extension Container: AppConfiguratorContaining {
 
     // MARK: - AppConfiguratorContaining
 
-    func appConfigurator() -> AppConfiguring & ActionControllerOperating {
+    func appConfigurator()
+        -> AppConfiguring & ActionViewControllerOperating {
         return sharedAppConfigurator
     }
 
@@ -14,7 +16,7 @@ extension Container: AppConfiguratorContaining {
 
     func appViewControllersFactory() -> AppViewControllersFactory {
         return AppViewControllersFactory(home: { [unowned self] in self.homeViewController() },
-                                         actionController: { [unowned self] in self.actionViewController() }
+                                         action: { [unowned self] in self.actionViewController() }
         )
     }
 
