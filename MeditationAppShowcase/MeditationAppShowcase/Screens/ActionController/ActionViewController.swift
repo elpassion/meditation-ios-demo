@@ -124,6 +124,8 @@ class ActionViewController: UIViewController {
                          delay: TimeInterval = 0) {
         animator.animate(duration: animationDuration,
                          delay: delay,
+                         usingSpringWithDamping: 0.6,
+                         initialSpringVelocity: 0.5,
                          options: [.curveEaseInOut, .allowUserInteraction],
                          animations: animations)
     }
