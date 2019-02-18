@@ -18,7 +18,7 @@ class CheckBoxView: UIView {
         backgroundView.layer.cornerRadius = layer.cornerRadius
     }
 
-    let backgroundView = SubviewFactory.backgroundView()
+    let backgroundView = UIView(frame: .zero)
     let tickImageView = SubviewFactory.tickImageView()
     let actionColor = UIColor(rgb: 0x28286B)
 
@@ -29,15 +29,10 @@ class CheckBoxView: UIView {
         addSubview(backgroundView)
         backgroundView.addSubview(tickImageView)
         backgroundView.clipsToBounds = true
-        let borderWidth: CGFloat = 1
-        NSLayoutConstraint.activate([
-            backgroundView.topAnchor.constraint(equalTo: topAnchor, constant: borderWidth),
-            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: borderWidth),
-            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -borderWidth),
-            backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -borderWidth),
-            tickImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            tickImageView.centerYAnchor.constraint(equalTo: bottomAnchor, constant: -4)
-        ])
+        backgroundView.pinEdges(edges: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1),
+                                to: self)
+        tickImageView.pinCenterX(to: centerXAnchor)
+        tickImageView.pinCenterY(to: bottomAnchor, offset: -4)
     }
 
 }
@@ -46,17 +41,10 @@ private extension CheckBoxView {
 
     struct SubviewFactory {
 
-        static func backgroundView() -> UIView {
-            let view = UIView(frame: .zero)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }
-
         static func tickImageView() -> UIImageView {
             let imageView = UIImageView(frame: .zero)
             imageView.image = UIImage(named: "tick")
             imageView.contentMode = .center
-            imageView.translatesAutoresizingMaskIntoConstraints = false
             return imageView
         }
 

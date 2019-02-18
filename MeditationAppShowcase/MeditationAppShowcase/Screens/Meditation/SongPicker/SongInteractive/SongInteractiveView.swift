@@ -11,8 +11,8 @@ class SongInteractiveView: UIView {
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
-    let interactiveView = SubviewFactory.interactiveView()
-    let songView = SubviewFactory.songView()
+    let interactiveView = UIView(frame: .zero)
+    let songView = SongView()
 
     let selectedBackgroundColor = UIColor(rgb: 0x6CD1C5)
     let unselectedBackgroundColor = UIColor(rgb: 0xF9FAFB)
@@ -25,6 +25,7 @@ class SongInteractiveView: UIView {
         interactiveView.layer.apply(shadow)
         interactiveView.clipsToBounds = true
         interactiveView.layer.cornerRadius = 3.0
+        songView.backgroundColor = .clear
     }
 
     private func addSubviews() {
@@ -35,27 +36,6 @@ class SongInteractiveView: UIView {
     private func setupLayout() {
         interactiveView.pinEdges(to: self)
         songView.pinEdges(to: self)
-    }
-
-}
-
-private extension SongInteractiveView {
-
-    struct SubviewFactory {
-
-        static func interactiveView() -> UIView {
-            let view = UIView(frame: .zero)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }
-
-        static func songView() -> SongView {
-            let songView = SongView()
-            songView.translatesAutoresizingMaskIntoConstraints = false
-            songView.backgroundColor = .clear
-            return songView
-        }
-
     }
 
 }

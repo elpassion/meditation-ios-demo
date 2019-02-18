@@ -11,7 +11,7 @@ class SongView: UIView {
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
-    let checkBoxView = SubviewFactory.checkBoxView()
+    let checkBoxView = CheckBoxView()
     let titleLabel = SubviewFactory.titleLabel()
     let subtitleLabel = SubviewFactory.subtitleLabel()
     let timeLabel = SubviewFactory.timeLabel()
@@ -32,24 +32,14 @@ class SongView: UIView {
 
     private func setupLayut() {
         pinHeight(76)
-
-        NSLayoutConstraint.activate([
-            checkBoxView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            checkBoxView.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                  constant: 20),
-            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: topAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: centerYAnchor,
-                                               constant: -2),
-            titleLabel.leadingAnchor.constraint(equalTo: checkBoxView.trailingAnchor,
-                                                constant: 32),
-            subtitleLabel.topAnchor.constraint(equalTo: centerYAnchor,
-                                               constant: 2),
-            subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            subtitleLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor),
-            timeLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                constant: -20)
-        ])
+        checkBoxView.pinCenterY(to: centerYAnchor)
+        checkBoxView.pinLeading(to: leadingAnchor, offset: 20)
+        titleLabel.pinLeading(to: checkBoxView.trailingAnchor, offset: 32)
+        titleLabel.pinBottom(to: centerYAnchor, offset: -2)
+        subtitleLabel.pinTop(to: centerYAnchor, offset: 2)
+        subtitleLabel.pinLeading(to: titleLabel.leadingAnchor)
+        timeLabel.pinCenterY(to: centerYAnchor)
+        timeLabel.pinTrailing(to: trailingAnchor, offset: -20)
     }
 
 }
@@ -58,30 +48,21 @@ private extension SongView {
 
     struct SubviewFactory {
 
-        static func checkBoxView() -> CheckBoxView {
-            let view = CheckBoxView()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }
-
         static func titleLabel() -> UILabel {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "AvenirNext-DemiBold", size: 14.0)
-            label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }
 
         static func subtitleLabel() -> UILabel {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "AvenirNext-Regular", size: 12.0)
-            label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }
 
         static func timeLabel() -> UILabel {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "AvenirNext-DemiBold", size: 14.0)
-            label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }
 
