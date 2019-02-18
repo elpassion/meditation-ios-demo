@@ -2,10 +2,6 @@ import UIKit
 
 class SongView: UIView {
 
-    enum `Mode` {
-        case selectable, selected, active
-    }
-
     init() {
         super.init(frame: .zero)
         configureSubviews()
@@ -35,11 +31,13 @@ class SongView: UIView {
     }
 
     private func setupLayut() {
+        pinHeight(76)
+
         NSLayoutConstraint.activate([
             checkBoxView.centerYAnchor.constraint(equalTo: centerYAnchor),
             checkBoxView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                   constant: 20),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: topAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: centerYAnchor,
                                                constant: -2),
             titleLabel.leadingAnchor.constraint(equalTo: checkBoxView.trailingAnchor,
@@ -47,7 +45,7 @@ class SongView: UIView {
             subtitleLabel.topAnchor.constraint(equalTo: centerYAnchor,
                                                constant: 2),
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            subtitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
+            subtitleLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor),
             timeLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                 constant: -20)
