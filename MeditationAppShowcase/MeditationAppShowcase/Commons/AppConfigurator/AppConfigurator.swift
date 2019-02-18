@@ -22,16 +22,10 @@ class AppConfigurator: AppConfiguring, ActionViewControllerOperating {
 
         let actionViewController = viewControllersFactory.action()
         self.actionViewController = actionViewController
-        actionViewController.view.translatesAutoresizingMaskIntoConstraints = false
         window.addSubview(actionViewController.view)
 
-        let bottomConstraint = actionViewController.view.bottomAnchor.constraint(equalTo: window.bottomAnchor)
-
-        NSLayoutConstraint.activate([
-            actionViewController.view.centerXAnchor.constraint(equalTo: window.centerXAnchor),
-            bottomConstraint
-        ])
-        actionViewControllerBottomConstraint = bottomConstraint
+        actionViewController.view.pinCenterX(to: window.centerXAnchor)
+        actionViewControllerBottomConstraint = actionViewController.view.pinBottom(to: window.bottomAnchor)
 
         window.makeKeyAndVisible()
         window.bringSubviewToFront(actionViewController.view)
