@@ -1,24 +1,37 @@
 protocol MeditationViewModeling: class {
     var songPickerViewModels: (([SongPickerViewModeling]) -> Void)? { get set }
-    var presentPlayMode: (() -> Void)? { get set }
     func viewDidAppear()
-    func actionButtonTap()
+    func viewWillDisappear()
 }
 
 class MeditationViewModel: MeditationViewModeling {
+
+    init(actionOperator: ActionOperating) {
+        self.actionOperator = actionOperator
+    }
 
     // MARK: - MeditationViewModeling
 
     var songPickerViewModels: (([SongPickerViewModeling]) -> Void)?
 
-    var presentPlayMode: (() -> Void)?
-
     func viewDidAppear() {
         songPickerViewModels?(preparedViewModels)
+        disposable = actionOperator.actionHandler.addHandler(
+            target: self,
+            handler: MeditationViewModel.handleAction)
     }
 
-    func actionButtonTap() {
-        presentPlayMode?()
+    func viewWillDisappear() {
+        disposable?.dispose()
+    }
+
+    // MARK: - Privates
+
+    private let actionOperator: ActionOperating
+    private var disposable: Disposable?
+
+    private func handleAction(action: ActionViewController.Action) {
+        actionOperator.set(mode: .player)
     }
 
 }

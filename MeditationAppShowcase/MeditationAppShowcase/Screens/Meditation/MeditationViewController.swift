@@ -2,10 +2,8 @@ import UIKit
 
 class MeditationViewController: UIViewController, UITableViewDataSource {
 
-    init(viewModel: MeditationViewModeling,
-         actionControllerOperator: ActionControllerOperating) {
+    init(viewModel: MeditationViewModeling) {
         self.viewModel = viewModel
-        self.actionControllerOperator = actionControllerOperator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -28,14 +26,11 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
         super.viewDidAppear(animated)
         meditationView.animateAppearance()
         viewModel.viewDidAppear()
-        disposable = actionControllerOperator.controller?.actionHandler.addHandler(
-            target: self,
-            handler: MeditationViewController.handle)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        disposable?.dispose()
+        viewModel.viewWillDisappear()
     }
 
     // MARK: - UITableViewDataSource
@@ -58,8 +53,6 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
     // MARK: - Privates
 
     private let viewModel: MeditationViewModeling
-    private let actionControllerOperator: ActionControllerOperating
-    private var disposable: Disposable?
 
     private var songPickerViewModels = [SongPickerViewModeling]() {
         didSet {
@@ -79,8 +72,6 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
                                           forCellReuseIdentifier: SongPickerViewCell.description())
         meditationView.tableView.separatorStyle = .none
         viewModel.songPickerViewModels = { [weak self] in self?.songPickerViewModels = $0 }
-        viewModel.presentPlayMode = { [weak self] in self?.actionControllerOperator.controller?.currentMode = .player
-        }
     }
 
     private func configure(cell: SongPickerViewCell, with viewModel: SongPickerViewModeling) {
@@ -88,14 +79,6 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
         cell.titleLabel.text = viewModel.title
         cell.subtitleLabel.text = viewModel.subtitle
         cell.timeLabel.text = viewModel.time
-    }
-
-    // MARK: - Handlers
-
-    private func handle(action: ActionViewController.Action) {
-        if action == .button {
-            actionControllerOperator.controller?.currentMode = .player
-        }
     }
 
 }
