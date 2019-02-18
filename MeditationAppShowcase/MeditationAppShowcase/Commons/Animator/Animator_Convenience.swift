@@ -1,12 +1,17 @@
 import UIKit
 
 extension Animating {
-    func animate(duration: TimeInterval,
-                 animations: @escaping () -> Void) {
+
+    func animate(duration: TimeInterval = 0,
+                 delay: TimeInterval = 0,
+                 options: UIView.AnimationOptions? = nil,
+                 animations: @escaping () -> Void,
+                 completion: (() -> Void)? = nil) {
         animate(duration: duration,
-                delay: 0,
-                options: nil,
+                delay: delay,
+                options: options,
                 animations: animations,
-                completion: nil)
+                completion: completion)
     }
+
 }
