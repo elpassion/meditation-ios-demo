@@ -18,25 +18,6 @@ class MeditationView: GradientView {
     let tableView = SubviewFactory.tableView()
     let tabBarView = SubviewFactory.tabBarView()
 
-    func animateAppearance() {
-        UIView.animate(withDuration: 0.2,
-                       delay: 0.05,
-                       options: .curveEaseOut,
-                       animations: {
-                        self.navigationView.transform = .identity
-                        self.tabBarView.transform = .identity
-        },
-                       completion: nil)
-        UIView.animate(withDuration: 0.3,
-                       delay: 0.1,
-                       options: .curveEaseInOut,
-                       animations: {
-                            self.tableView.transform = .identity
-                            self.tableView.alpha = 1
-                       },
-                       completion: nil)
-    }
-
     // MARK: - Privates
 
     private let navigationBarHeight: CGFloat = 56
