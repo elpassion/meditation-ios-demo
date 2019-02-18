@@ -16,53 +16,90 @@ extension UIView {
 
     // MARK: - Size
 
-    func pinHeight(_ height: CGFloat) {
+    @discardableResult
+    func pinHeight(_ height: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: height).isActive = true
+        let constraint = heightAnchor.constraint(equalToConstant: height)
+        constraint.isActive = true
+        return constraint
     }
 
-    func pinWidth(to widthDimention: NSLayoutDimension, multiplier: CGFloat = 1) {
+    @discardableResult
+    func pinWidth(to widthDimention: NSLayoutDimension,
+                  multiplier: CGFloat = 1) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        widthAnchor.constraint(equalTo: widthDimention, multiplier: multiplier).isActive = true
+        let constraint = widthAnchor.constraint(equalTo: widthDimention,
+                                                multiplier: multiplier)
+        constraint.isActive = true
+        return constraint
     }
 
-    func pinHeight(to heightDimention: NSLayoutDimension, multiplier: CGFloat = 1) {
+    @discardableResult
+    func pinHeight(to heightDimention: NSLayoutDimension,
+                   multiplier: CGFloat = 1) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalTo: heightDimention, multiplier: multiplier).isActive = true
+        let constraint = heightAnchor.constraint(equalTo: heightDimention,
+                                                 multiplier: multiplier)
+        constraint.isActive = true
+        return constraint
     }
 
     // MARK: - Sides
 
-    func pinTop(to yAxis: NSLayoutAnchor<NSLayoutYAxisAnchor>, offset: CGFloat = 0) {
+    @discardableResult
+    func pinTop(to yAxis: NSLayoutAnchor<NSLayoutYAxisAnchor>,
+                offset: CGFloat = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        topAnchor.constraint(equalTo: yAxis, constant: offset).isActive = true
+        let constraint = topAnchor.constraint(equalTo: yAxis, constant: offset)
+        constraint.isActive = true
+        return constraint
     }
 
-    func pinLeading(to xAxis: NSLayoutAnchor<NSLayoutXAxisAnchor>, offset: CGFloat = 0) {
+    @discardableResult
+    func pinLeading(to xAxis: NSLayoutAnchor<NSLayoutXAxisAnchor>,
+                    offset: CGFloat = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        leadingAnchor.constraint(equalTo: xAxis, constant: offset).isActive = true
+        let constraint = leadingAnchor.constraint(equalTo: xAxis, constant: offset)
+        constraint.isActive = true
+        return constraint
     }
 
-    func pinTrailing(to xAxis: NSLayoutAnchor<NSLayoutXAxisAnchor>, offset: CGFloat = 0) {
+    @discardableResult
+    func pinTrailing(to xAxis: NSLayoutAnchor<NSLayoutXAxisAnchor>,
+                     offset: CGFloat = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        trailingAnchor.constraint(equalTo: xAxis, constant: offset).isActive = true
+        let constraint = trailingAnchor.constraint(equalTo: xAxis, constant: offset)
+        constraint.isActive = true
+        return constraint
     }
 
-    func pinBottom(to yAxis: NSLayoutAnchor<NSLayoutYAxisAnchor>, offset: CGFloat = 0) {
+    @discardableResult
+    func pinBottom(to yAxis: NSLayoutAnchor<NSLayoutYAxisAnchor>,
+                   offset: CGFloat = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        bottomAnchor.constraint(equalTo: yAxis, constant: offset).isActive = true
+        let constraint = bottomAnchor.constraint(equalTo: yAxis, constant: offset)
+        constraint.isActive = true
+        return constraint
     }
 
     // MARK: - Centers
 
-    func pinCenterX(to xAxis: NSLayoutAnchor<NSLayoutXAxisAnchor>, offset: CGFloat = 0) {
+    @discardableResult
+    func pinCenterX(to xAxis: NSLayoutAnchor<NSLayoutXAxisAnchor>,
+                    offset: CGFloat = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        centerXAnchor.constraint(equalTo: xAxis, constant: offset).isActive = true
+        let contraint = centerXAnchor.constraint(equalTo: xAxis, constant: offset)
+        contraint.isActive = true
+        return contraint
     }
 
-    func pinCenterY(to yAxis: NSLayoutAnchor<NSLayoutYAxisAnchor>, offset: CGFloat = 0) {
+    @discardableResult
+    func pinCenterY(to yAxis: NSLayoutAnchor<NSLayoutYAxisAnchor>,
+                    offset: CGFloat = 0) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
-        centerYAnchor.constraint(equalTo: yAxis, constant: offset).isActive = true
+        let constraint = centerYAnchor.constraint(equalTo: yAxis, constant: offset)
+        constraint.isActive = true
+        return constraint
     }
 
 }
