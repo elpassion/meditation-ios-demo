@@ -76,9 +76,9 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
 
     private func configure(cell: SongPickerViewCell, with viewModel: SongPickerViewModeling) {
         cell.animateAppearance(delay: viewModel.appearanceAnimationDelay)
-        cell.titleLabel.text = viewModel.title
-        cell.subtitleLabel.text = viewModel.subtitle
-        cell.timeLabel.text = viewModel.time
+        cell.interactiveView.songView.titleLabel.text = viewModel.title
+        cell.interactiveView.songView.subtitleLabel.text = viewModel.subtitle
+        cell.interactiveView.songView.timeLabel.text = viewModel.time
     }
 
 }

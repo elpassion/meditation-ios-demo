@@ -15,7 +15,7 @@ class SongPickerViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        interactiveView.setSelected(selected)
+        interactiveView.update(mode: selected ? .selected : .selectable)
         separatorView.backgroundColor = selected ? .clear : UIColor(rgb: 0xD7D7E7)
     }
 
