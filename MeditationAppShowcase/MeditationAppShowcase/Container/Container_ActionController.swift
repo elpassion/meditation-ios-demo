@@ -10,14 +10,7 @@ extension Container: ActionContaining {
 
     func actionViewController() -> UIViewController {
         return ActionViewController(viewModel: sharedActionViewModel,
-                                    animator: actionViewControllerAnimator())
-    }
-
-    // MARK: - Privates
-
-    private func actionViewControllerAnimator() -> Animating {
-        return Animator(type: .dynamic(damping: 0.6,
-                                       velocity: 0.5))
+                                    animator: Animator())
     }
 
 }

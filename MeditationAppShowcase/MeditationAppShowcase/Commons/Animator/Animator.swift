@@ -1,51 +1,69 @@
 import UIKit
 
 protocol Animating {
-    func animate(duration: TimeInterval,
+    func animate(withDuration duration: TimeInterval,
                  delay: TimeInterval,
-                 options: UIView.AnimationOptions?,
+                 options: UIView.AnimationOptions,
                  animations: @escaping () -> Void,
                  completion: (() -> Void)?)
+
+    func animate(withDuration duration: TimeInterval,
+                 delay: TimeInterval,
+                 usingSpringWithDamping dampingRatio: CGFloat,
+                 initialSpringVelocity velocity: CGFloat,
+                 options: UIView.AnimationOptions,
+                 animations: @escaping () -> Void,
+                 completion: (() -> Void)?)
+
+    func animateKeyframes(withDuration duration: TimeInterval,
+                          delay: TimeInterval,
+                          options: UIView.KeyframeAnimationOptions,
+                          animations: @escaping () -> Void,
+                          completion: (() -> Void)?)
 }
 
 class Animator: Animating {
 
-    enum `Type` {
-        case linear
-        case dynamic(damping: CGFloat, velocity: CGFloat)
-    }
-
-    init(type: Type) {
-        self.type = type
-    }
-
     // MARK: - Animating
 
-    func animate(duration: TimeInterval,
+    func animate(withDuration duration: TimeInterval,
                  delay: TimeInterval,
-                 options: UIView.AnimationOptions?,
+                 options: UIView.AnimationOptions,
                  animations: @escaping () -> Void,
                  completion: (() -> Void)?) {
-        switch type {
-        case .linear:
-            UIView.animate(withDuration: duration,
-                           delay: delay,
-                           options: options ?? [],
-                           animations: animations,
-                           completion: { _ in completion?() })
-        case .dynamic(let damping, let velocity):
-            UIView.animate(withDuration: duration,
-                           delay: delay,
-                           usingSpringWithDamping: damping,
-                           initialSpringVelocity: velocity,
-                           options: options ?? [],
-                           animations: animations,
-                           completion: { _ in completion?() })
-        }
+        UIView.animate(withDuration: duration,
+                       delay: delay,
+                       options: options,
+                       animations: animations,
+                       completion: { _ in completion?() })
     }
 
-    // MARK: - Privates
+    func animate(withDuration duration: TimeInterval,
+                 delay: TimeInterval,
+                 usingSpringWithDamping dampingRatio: CGFloat,
+                 initialSpringVelocity velocity: CGFloat,
+                 options: UIView.AnimationOptions,
+                 animations: @escaping () -> Void,
+                 completion: (() -> Void)?) {
+        UIView.animate(withDuration: duration,
+                       delay: delay,
+                       usingSpringWithDamping: dampingRatio,
+                       initialSpringVelocity: velocity,
+                       options: options,
+                       animations: animations,
+                       completion: { _ in completion?() })
+    }
 
-    private let type: Type
+    func animateKeyframes(withDuration duration: TimeInterval,
+                          delay: TimeInterval,
+                          options: UIView.KeyframeAnimationOptions,
+                          animations: @escaping () -> Void,
+                          completion: (() -> Void)?) {
+        UIView.animateKeyframes(withDuration: duration,
+                                delay: delay,
+                                options: options,
+                                animations: animations,
+                                completion: { _ in completion?() })
+    }
 
 }

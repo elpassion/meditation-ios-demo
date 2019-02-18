@@ -4,7 +4,7 @@ class Container {
 
     lazy var sharedAppConfigurator = {
         return AppConfigurator(viewControllersFactory: appViewControllersFactory(),
-                               animator: Animator(type: .linear))
+                               animator: Animator())
     }()
 
     lazy var sharedActionViewModel = {
