@@ -178,9 +178,9 @@
 		0625D2612214218100F13B30 /* SongPicker */ = {
 			isa = PBXGroup;
 			children = (
+				067A63F8221B116E001A20DF /* CheckBox */,
 				062022D022135030008DFECD /* SongPickerViewCell.swift */,
 				0625D25F221420F800F13B30 /* SongPickerViewModel.swift */,
-				0625D264221433C800F13B30 /* CheckBoxView.swift */,
 			);
 			path = SongPicker;
 			sourceTree = "<group>";
@@ -212,6 +212,7 @@
 		067A63F8221B116E001A20DF /* CheckBox */ = {
 			isa = PBXGroup;
 			children = (
+				0625D264221433C800F13B30 /* CheckBoxView.swift */,
 				067A63F9221B1188001A20DF /* CheckBox_Selection.swift */,
 			);
 			path = CheckBox;

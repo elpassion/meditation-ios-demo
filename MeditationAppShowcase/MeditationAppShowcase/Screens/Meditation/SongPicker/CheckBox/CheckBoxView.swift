@@ -13,22 +13,16 @@ class CheckBoxView: UIView {
         return CGSize(width: 20, height: 20)
     }
 
-    func setSelected(_ isSelected: Bool) {
-        UIView.animate(withDuration: 0.3) {
-            self.backgroundView.backgroundColor = isSelected ? self.actionColor : .white
-        }
-    }
-
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundView.layer.cornerRadius = layer.cornerRadius
     }
 
-    // MARK: - Privates
+    let backgroundView = SubviewFactory.backgroundView()
+    let tickImageView = SubviewFactory.tickImageView()
+    let actionColor = UIColor(rgb: 0x28286B)
 
-    private let backgroundView = SubviewFactory.backgroundView()
-    private let tickImageView = SubviewFactory.tickImageView()
-    private let actionColor = UIColor(rgb: 0x28286B)
+    // MARK: - Privates
 
     private func configureSubviews() {
         backgroundColor = actionColor
