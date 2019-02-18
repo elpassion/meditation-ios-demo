@@ -1,11 +1,7 @@
 class EventEmitter<T> {
 
     typealias EventHandler = (T) -> Void
-    var eventHandlers = [Invocable]() {
-        didSet {
-            print(eventHandlers)
-        }
-    }
+    var eventHandlers = [Invocable]()
 
     func emit(_ data: T) {
         for handler in eventHandlers {
