@@ -41,7 +41,6 @@ class AppConfigurator: AppConfiguring, ActionViewControllerOperating {
     }
 
     // MARK: - ActionViewControllerOperating
-    // TODO: move that functionality somewhere else
 
     func updateBottomOffset(_ bottomOffset: CGFloat, animated: Bool) {
         animator.animate(duration: animated ? 0.25 : 0,
