@@ -2,6 +2,8 @@ import UIKit
 
 protocol HomeViewModeling: class {
     func viewDidLoad()
+    func viewDidAppear()
+    func viewWillDisappear()
     var greeting: ((String) -> Void)? { get set }
     var backgroundRipImage: ((UIImage?) -> Void)? { get set }
     var ripImage: ((UIImage?) -> Void)? { get set }
@@ -9,12 +11,14 @@ protocol HomeViewModeling: class {
     var stress: ((String) -> Void)? { get set }
     var meditate: ((String) -> Void)? { get set }
     var focus: ((String) -> Void)? { get set }
-    var actionTitle: ((String) -> Void)? { get set }
     var presentMeditation: (() -> Void)? { get set }
-    func action()
 }
 
 class HomeViewModel: HomeViewModeling {
+
+    init(actionOperator: ActionOperating) {
+        self.actionOperator = actionOperator
+    }
 
     // MARK: - HomeViewModeling
 
@@ -26,7 +30,17 @@ class HomeViewModel: HomeViewModeling {
         stress?("89%")
         meditate?("5 min")
         focus?("25%")
-        actionTitle?("COME BACK TO LIFE")
+    }
+
+    func viewDidAppear() {
+        actionOperator.set(mode: .singleButton(title: "COME BACK TO LIFE"))
+        disposable = actionOperator.actionHandler.addHandler(
+            target: self,
+            handler: HomeViewModel.handleAction)
+    }
+
+    func viewWillDisappear() {
+        disposable?.dispose()
     }
 
     var greeting: ((String) -> Void)?
@@ -36,11 +50,15 @@ class HomeViewModel: HomeViewModeling {
     var stress: ((String) -> Void)?
     var meditate: ((String) -> Void)?
     var focus: ((String) -> Void)?
-    var actionTitle: ((String) -> Void)?
     var presentMeditation: (() -> Void)?
 
-    func action() {
-        actionTitle?("START MEDITATION SESSION")
+    // MARK: - Privates
+
+    private let actionOperator: ActionOperating
+    private var disposable: Disposable?
+
+    private func handleAction(action: ActionViewController.Action) {
+        actionOperator.set(mode: .singleButton(title: "START MEDITATION SESSION"))
         presentMeditation?()
     }
 

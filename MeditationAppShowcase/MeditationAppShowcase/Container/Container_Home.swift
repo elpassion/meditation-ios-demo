@@ -15,7 +15,8 @@ extension Container: HomeContaining {
                                   meditationViewControllerFactory: { [unowned self] in
                                         self.meditationViewController()
                                   },
-                                  actionViewControllerOperator: appConfigurator()
+                                  actionViewControllerOperator: appConfigurator(),
+                                  animator: Animator()
         )
     }
 
