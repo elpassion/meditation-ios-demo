@@ -23,6 +23,7 @@
 		062FD7712208A5C900E237DA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7702208A5C900E237DA /* GradientView.swift */; };
 		062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7722208A6F800E237DA /* Color_Hex.swift */; };
 		0677959D2215D9C200A26913 /* ActionView_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0677959C2215D9C200A26913 /* ActionView_Mode.swift */; };
+		067A63EF221AB412001A20DF /* Animator_Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63EE221AB412001A20DF /* Animator_Convenience.swift */; };
 		06959544221823DE009F966A /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06959543221823DE009F966A /* EventEmitter.swift */; };
 		06959546221823F6009F966A /* Invoctable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06959545221823F6009F966A /* Invoctable.swift */; };
 		0695954822182416009F966A /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695954722182416009F966A /* Disposable.swift */; };
@@ -84,6 +85,7 @@
 		062FD7702208A5C900E237DA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062FD7722208A6F800E237DA /* Color_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Hex.swift; sourceTree = "<group>"; };
 		0677959C2215D9C200A26913 /* ActionView_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView_Mode.swift; sourceTree = "<group>"; };
+		067A63EE221AB412001A20DF /* Animator_Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator_Convenience.swift; sourceTree = "<group>"; };
 		06959543221823DE009F966A /* EventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
 		06959545221823F6009F966A /* Invoctable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoctable.swift; sourceTree = "<group>"; };
 		0695954722182416009F966A /* Disposable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		062FD75E220896DD00E237DA /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				067A63ED221AB3F4001A20DF /* Animator */,
 				06959541221823A0009F966A /* Utilities */,
 				06FD1BFE2215A7440075A6C1 /* AppConfigurator */,
 				069A83922212032100D3E223 /* Presenters */,
@@ -187,9 +190,17 @@
 				062FD7702208A5C900E237DA /* GradientView.swift */,
 				062FD7722208A6F800E237DA /* Color_Hex.swift */,
 				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
-				06F8933C221976F100EFC626 /* Animator.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		067A63ED221AB3F4001A20DF /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				06F8933C221976F100EFC626 /* Animator.swift */,
+				067A63EE221AB412001A20DF /* Animator_Convenience.swift */,
+			);
+			path = Animator;
 			sourceTree = "<group>";
 		};
 		06959541221823A0009F966A /* Utilities */ = {
@@ -561,6 +572,7 @@
 				062022CD221301EA008DFECD /* AppConfigurator.swift in Sources */,
 				06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */,
 				06B6E870221885EB005102C6 /* ActionViewModel.swift in Sources */,
+				067A63EF221AB412001A20DF /* Animator_Convenience.swift in Sources */,
 				06B6E86E22187DA4005102C6 /* ActionEmitter.swift in Sources */,
 				06F8933D221976F100EFC626 /* Animator.swift in Sources */,
 				06B5E38022148F9E00004D09 /* ActionView.swift in Sources */,
