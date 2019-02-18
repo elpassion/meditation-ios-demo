@@ -41,7 +41,7 @@ class MeditationView: GradientView {
             navigationView.heightAnchor.constraint(equalToConstant: navigationBarHeight),
             tableView.topAnchor.constraint(equalTo: navigationView.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: offset),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -offset),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: tabBarView.topAnchor),
             bottomGradientView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bottomGradientView.trailingAnchor.constraint(equalTo: trailingAnchor),
