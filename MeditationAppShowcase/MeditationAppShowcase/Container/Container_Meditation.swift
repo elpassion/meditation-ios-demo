@@ -9,14 +9,13 @@ extension Container: MeditationContaining {
     // MARK: - MeditationContaining
 
     func meditationViewController() -> UIViewController {
-        return MeditationViewController(viewModel: meditationViewModel(),
-                                        actionControllerOperator: appConfigurator())
+        return MeditationViewController(viewModel: meditationViewModel())
     }
 
     // MARK: - Privates
 
     private func meditationViewModel() -> MeditationViewModeling {
-        return MeditationViewModel()
+        return MeditationViewModel(actionOperator: sharedActionViewModel)
     }
 
 }

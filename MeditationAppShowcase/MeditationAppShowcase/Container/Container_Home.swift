@@ -15,14 +15,14 @@ extension Container: HomeContaining {
                                   meditationViewControllerFactory: { [unowned self] in
                                         self.meditationViewController()
                                   },
-                                  actionControllerOperator: appConfigurator()
+                                  actionViewControllerOperator: appConfigurator()
         )
     }
 
     // MARK: - Privates
 
     private func homeViewModel() -> HomeViewModeling {
-        return HomeViewModel()
+        return HomeViewModel(actionOperator: sharedActionViewModel)
     }
 
 }
