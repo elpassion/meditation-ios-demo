@@ -21,6 +21,16 @@ extension UIView {
         heightAnchor.constraint(equalToConstant: height).isActive = true
     }
 
+    func pinWidth(to widthDimention: NSLayoutDimension, multiplier: CGFloat = 1) {
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalTo: widthDimention, multiplier: multiplier).isActive = true
+    }
+
+    func pinHeight(to heightDimention: NSLayoutDimension, multiplier: CGFloat = 1) {
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalTo: heightDimention, multiplier: multiplier).isActive = true
+    }
+
     // MARK: - Sides
 
     func pinTop(to yAxis: NSLayoutAnchor<NSLayoutYAxisAnchor>, offset: CGFloat = 0) {

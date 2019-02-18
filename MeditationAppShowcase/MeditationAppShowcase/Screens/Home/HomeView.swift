@@ -16,7 +16,7 @@ class HomeView: GradientView {
     let helloLabel = SubviewFactory.helloLabel()
     let backgroundRipImageView = SubviewFactory.imageView()
     let ripImageView = SubviewFactory.imageView()
-    let boardView = SubviewFactory.homeBoardView()
+    let boardView = HomeBoardView()
 
     let boardViewTopOffset: CGFloat = 46
 
@@ -30,22 +30,19 @@ class HomeView: GradientView {
     }
 
     private func setupLayout() {
-        NSLayoutConstraint.activate([
-            helloLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            helloLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            ripImageView.topAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.topAnchor),
-            ripImageView.bottomAnchor.constraint(equalTo: centerYAnchor, constant: 40),
-            ripImageView.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 0.75),
-            ripImageView.heightAnchor.constraint(equalTo: ripImageView.widthAnchor),
-            ripImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            backgroundRipImageView.widthAnchor.constraint(equalTo: ripImageView.widthAnchor),
-            backgroundRipImageView.heightAnchor.constraint(equalTo: ripImageView.heightAnchor),
-            backgroundRipImageView.centerXAnchor.constraint(equalTo: ripImageView.centerXAnchor),
-            backgroundRipImageView.bottomAnchor.constraint(equalTo: ripImageView.bottomAnchor, constant: -40),
-            boardView.topAnchor.constraint(equalTo: centerYAnchor, constant: boardViewTopOffset),
-            boardView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            boardView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9)
-        ])
+        helloLabel.pinTop(to: safeAreaLayoutGuide.topAnchor, offset: 16)
+        helloLabel.pinCenterX(to: centerXAnchor)
+        ripImageView.pinBottom(to: centerYAnchor, offset: 40)
+        ripImageView.pinWidth(to: widthAnchor, multiplier: 0.75)
+        ripImageView.pinHeight(to: ripImageView.widthAnchor)
+        ripImageView.pinCenterX(to: centerXAnchor)
+        backgroundRipImageView.pinWidth(to: ripImageView.widthAnchor)
+        backgroundRipImageView.pinHeight(to: ripImageView.heightAnchor)
+        backgroundRipImageView.pinCenterX(to: ripImageView.centerXAnchor)
+        backgroundRipImageView.pinBottom(to: ripImageView.bottomAnchor, offset: -40)
+        boardView.pinTop(to: centerYAnchor, offset: boardViewTopOffset)
+        boardView.pinCenterX(to: centerXAnchor)
+        boardView.pinWidth(to: widthAnchor, multiplier: 0.9)
     }
 
     private func configureSubviews() {
@@ -63,21 +60,13 @@ private extension HomeView {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "AvenirNext-Medium", size: 15.0)
             label.textColor = UIColor(rgb: 0x292969)
-            label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }
 
         static func imageView() -> UIImageView {
             let imageView = UIImageView(frame: .zero)
             imageView.contentMode = .center
-            imageView.translatesAutoresizingMaskIntoConstraints = false
             return imageView
-        }
-
-        static func homeBoardView() -> HomeBoardView {
-            let homeBoardView = HomeBoardView()
-            homeBoardView.translatesAutoresizingMaskIntoConstraints = false
-            return homeBoardView
         }
 
     }
