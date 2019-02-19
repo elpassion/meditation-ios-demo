@@ -9,13 +9,9 @@ extension HomeView {
         dismissionView.clipsToBounds = true
         dismissionView.layer.cornerRadius = 10
         addSubview(dismissionView)
-
-        dismissionView.pinTop(to: boardView.topAnchor)
-        dismissionView.pinLeading(to: boardView.leadingAnchor)
-        dismissionView.pinTrailing(to: boardView.trailingAnchor)
-        dismissionView.pinBottom(to: boardView.bottomAnchor)
-
+        dismissionView.pinEdges(to: boardView)
         dismissionView.layoutIfNeeded()
+
         let scaled = CGAffineTransform(scaleX: self.frame.width / dismissionView.frame.width,
                                        y: self.frame.height / dismissionView.frame.height)
         let scaledAndTranslated = scaled.translatedBy(x: 0,
@@ -23,6 +19,11 @@ extension HomeView {
         animator.animate(duration: 0.3,
                          animations: { dismissionView.transform = scaledAndTranslated },
                          completion: completion)
+
+        animator.animate(duration: 0.5,
+                         delay: 0.3,
+                         animations: { dismissionView.transform = .identity },
+                         completion: { dismissionView.removeFromSuperview() })
     }
 
 }

@@ -71,6 +71,9 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
         meditationView.tableView.register(SongPickerViewCell.self,
                                           forCellReuseIdentifier: SongPickerViewCell.description())
         meditationView.tableView.separatorStyle = .none
+        meditationView.navigationView.arrowButton.addTarget(self,
+                                                            action: #selector(backAction),
+                                                            for: .touchUpInside)
         viewModel.songPickerViewModels = { [weak self] in self?.songPickerViewModels = $0 }
     }
 
@@ -79,6 +82,12 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
         cell.interactiveView.songView.titleLabel.text = viewModel.title
         cell.interactiveView.songView.subtitleLabel.text = viewModel.subtitle
         cell.interactiveView.songView.timeLabel.text = viewModel.time
+    }
+
+    // MARK: - Handlers
+
+    @objc private func backAction() {
+        viewModel.backAction()
     }
 
 }

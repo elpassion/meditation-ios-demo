@@ -12,18 +12,20 @@ extension Container: HomeContaining {
         return HomeViewController(viewModel: homeViewModel(),
                                   notificationHandler: NotificationCenter.default,
                                   presenter: ViewControllerPresenter(),
-                                  meditationViewControllerFactory: { [unowned self] in
-                                        self.meditationViewController()
+                                  meditationViewControllerFactory: { [unowned self] viewModel in
+                                        self.meditationViewController(viewModel: viewModel)
                                   },
                                   actionViewControllerOperator: appConfigurator(),
                                   animator: Animator()
         )
     }
 
-    // MARK: - Privates
-
     private func homeViewModel() -> HomeViewModeling {
-        return HomeViewModel(actionOperator: sharedActionViewModel)
+        return HomeViewModel(actionOperator: sharedActionViewModel,
+                             meditationViewModelFactory: { [unowned self] in
+                                self.meditationViewModel()
+                             }
+        )
     }
 
 }

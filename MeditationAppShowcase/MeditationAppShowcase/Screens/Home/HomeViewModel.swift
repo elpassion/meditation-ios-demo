@@ -11,13 +11,16 @@ protocol HomeViewModeling: class {
     var stress: ((String) -> Void)? { get set }
     var meditate: ((String) -> Void)? { get set }
     var focus: ((String) -> Void)? { get set }
-    var presentMeditation: (() -> Void)? { get set }
+    var presentMeditation: ((MeditationViewModeling) -> Void)? { get set }
+    var dismissMeditation: (() -> Void)? { get set }
 }
 
 class HomeViewModel: HomeViewModeling {
 
-    init(actionOperator: ActionOperating) {
+    init(actionOperator: ActionOperating,
+         meditationViewModelFactory: @escaping () -> MeditationViewModeling) {
         self.actionOperator = actionOperator
+        self.meditationViewModelFactory = meditationViewModelFactory
     }
 
     // MARK: - HomeViewModeling
@@ -50,16 +53,24 @@ class HomeViewModel: HomeViewModeling {
     var stress: ((String) -> Void)?
     var meditate: ((String) -> Void)?
     var focus: ((String) -> Void)?
-    var presentMeditation: (() -> Void)?
+    var presentMeditation: ((MeditationViewModeling) -> Void)?
+    var dismissMeditation: (() -> Void)?
 
     // MARK: - Privates
 
     private let actionOperator: ActionOperating
+    private let meditationViewModelFactory: () -> MeditationViewModeling
     private var disposable: Disposable?
+    private var meditationViewModel: MeditationViewModeling?
 
     private func handleAction(action: ActionViewController.Action) {
         actionOperator.set(mode: .singleButton(title: "START MEDITATION SESSION"))
-        presentMeditation?()
+        let meditationViewModel = meditationViewModelFactory()
+        presentMeditation?(meditationViewModel)
+        meditationViewModel.closeMeditation = { [weak self] in
+            self?.dismissMeditation?()
+            self?.meditationViewModel = nil
+        }
     }
 
 }

@@ -1,20 +1,18 @@
 import UIKit
 
 protocol MeditationContaining {
-    func meditationViewController() -> UIViewController
+    func meditationViewController(viewModel: MeditationViewModeling) -> UIViewController
 }
 
 extension Container: MeditationContaining {
 
     // MARK: - MeditationContaining
 
-    func meditationViewController() -> UIViewController {
-        return MeditationViewController(viewModel: meditationViewModel())
+    func meditationViewController(viewModel: MeditationViewModeling) -> UIViewController {
+        return MeditationViewController(viewModel: viewModel)
     }
 
-    // MARK: - Privates
-
-    private func meditationViewModel() -> MeditationViewModeling {
+    func meditationViewModel() -> MeditationViewModeling {
         return MeditationViewModel(actionOperator: sharedActionViewModel)
     }
 

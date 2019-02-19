@@ -2,6 +2,8 @@ protocol MeditationViewModeling: class {
     var songPickerViewModels: (([SongPickerViewModeling]) -> Void)? { get set }
     func viewDidAppear()
     func viewWillDisappear()
+    func backAction()
+    var closeMeditation: (() -> Void)? { get set }
 }
 
 class MeditationViewModel: MeditationViewModeling {
@@ -24,6 +26,14 @@ class MeditationViewModel: MeditationViewModeling {
     func viewWillDisappear() {
         disposable?.dispose()
     }
+
+    func backAction() {
+        closeMeditation?()
+    }
+
+    // MARK: - MeditationViewOperating
+
+    var closeMeditation: (() -> Void)?
 
     // MARK: - Privates
 

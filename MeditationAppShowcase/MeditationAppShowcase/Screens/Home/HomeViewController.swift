@@ -5,7 +5,7 @@ class HomeViewController: UIViewController {
     init(viewModel: HomeViewModeling,
          notificationHandler: NotificationHandling,
          presenter: ViewControllerPresenting,
-         meditationViewControllerFactory: @escaping () -> UIViewController,
+         meditationViewControllerFactory: @escaping (MeditationViewModeling) -> UIViewController,
          actionViewControllerOperator: ActionViewControllerOperating,
          animator: Animating) {
         self.viewModel = viewModel
@@ -53,7 +53,7 @@ class HomeViewController: UIViewController {
     private let viewModel: HomeViewModeling
     private let notificationHandler: NotificationHandling
     private let presenter: ViewControllerPresenting
-    private let meditationViewControllerFactory: () -> UIViewController
+    private let meditationViewControllerFactory: (MeditationViewModeling) -> UIViewController
     private let actionViewControllerOperator: ActionViewControllerOperating
     private let animator: Animating
 
@@ -69,7 +69,8 @@ class HomeViewController: UIViewController {
         viewModel.stress = { [homeView] in homeView?.boardView.stressValueLabel.text = $0 }
         viewModel.meditate = { [homeView] in homeView?.boardView.meditateValueLabel.text = $0 }
         viewModel.focus = { [homeView] in homeView?.boardView.focusValueLabel.text = $0 }
-        viewModel.presentMeditation = { [weak self] in self?.presentMeditation() }
+        viewModel.presentMeditation = { [weak self] viewModel in self?.presentMeditation(viewModel) }
+        viewModel.dismissMeditation = { [weak self] in self?.dismissMeditation() }
         viewModel.viewDidLoad()
     }
 
@@ -90,11 +91,20 @@ class HomeViewController: UIViewController {
 
     // MARK: - Presentation
 
-    private func presentMeditation() {
-        let completion = { self.presenter.present(
-            viewController: self.meditationViewControllerFactory(),
-            on: self) }
+    private var meditationViewController: UIViewController?
+
+    private func presentMeditation(_ viewModel: MeditationViewModeling) {
+        let viewController = self.meditationViewControllerFactory(viewModel)
+        let completion = { self.presenter.present(viewController: viewController,
+                                                  on: self) }
         homeView.animateDismission(completion: completion)
+        meditationViewController = viewController
+    }
+
+    private func dismissMeditation() {
+        guard let viewController = meditationViewController else { return }
+        presenter.dismiss(viewController: viewController)
+        meditationViewController = nil
     }
 
     // MARK: - Handlers
