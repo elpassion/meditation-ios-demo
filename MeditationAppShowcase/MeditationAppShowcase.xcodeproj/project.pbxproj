@@ -30,7 +30,7 @@
 		067A63F7221AE456001A20DF /* SongView_Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63F6221AE456001A20DF /* SongView_Selection.swift */; };
 		067A63FA221B1188001A20DF /* CheckBox_Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63F9221B1188001A20DF /* CheckBox_Selection.swift */; };
 		067A6400221B1444001A20DF /* SongInteractiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63FF221B1444001A20DF /* SongInteractiveView.swift */; };
-		067A6402221B1791001A20DF /* UIView_Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A6401221B1791001A20DF /* UIView_Layout.swift */; };
+		067A6402221B1791001A20DF /* LayoutBuildingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A6401221B1791001A20DF /* LayoutBuildingHelpers.swift */; };
 		067A6404221B1D4C001A20DF /* SongInteractionView_Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A6403221B1D4C001A20DF /* SongInteractionView_Modes.swift */; };
 		067A6406221B1F1C001A20DF /* SongInteractiveView_Animating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A6405221B1F1C001A20DF /* SongInteractiveView_Animating.swift */; };
 		06959544221823DE009F966A /* EventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06959543221823DE009F966A /* EventEmitter.swift */; };
@@ -101,7 +101,7 @@
 		067A63F6221AE456001A20DF /* SongView_Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView_Selection.swift; sourceTree = "<group>"; };
 		067A63F9221B1188001A20DF /* CheckBox_Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox_Selection.swift; sourceTree = "<group>"; };
 		067A63FF221B1444001A20DF /* SongInteractiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInteractiveView.swift; sourceTree = "<group>"; };
-		067A6401221B1791001A20DF /* UIView_Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Layout.swift; sourceTree = "<group>"; };
+		067A6401221B1791001A20DF /* LayoutBuildingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutBuildingHelpers.swift; sourceTree = "<group>"; };
 		067A6403221B1D4C001A20DF /* SongInteractionView_Modes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInteractionView_Modes.swift; sourceTree = "<group>"; };
 		067A6405221B1F1C001A20DF /* SongInteractiveView_Animating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInteractiveView_Animating.swift; sourceTree = "<group>"; };
 		06959543221823DE009F966A /* EventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEmitter.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 				062FD7702208A5C900E237DA /* GradientView.swift */,
 				062FD7722208A6F800E237DA /* Color_Hex.swift */,
 				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
-				067A6401221B1791001A20DF /* UIView_Layout.swift */,
+				067A6401221B1791001A20DF /* LayoutBuildingHelpers.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -628,7 +628,7 @@
 				062022CD221301EA008DFECD /* AppConfigurator.swift in Sources */,
 				06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */,
 				067A6406221B1F1C001A20DF /* SongInteractiveView_Animating.swift in Sources */,
-				067A6402221B1791001A20DF /* UIView_Layout.swift in Sources */,
+				067A6402221B1791001A20DF /* LayoutBuildingHelpers.swift in Sources */,
 				06B6E870221885EB005102C6 /* ActionViewModel.swift in Sources */,
 				067A63EF221AB412001A20DF /* Animator_Convenience.swift in Sources */,
 				06B6E86E22187DA4005102C6 /* ActionEmitter.swift in Sources */,
