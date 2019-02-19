@@ -12,7 +12,7 @@ class ActionView: UIView {
     required init?(coder aDecoder: NSCoder) { return nil }
 
     let rewindButton = SubviewFactory.rewindButton()
-    let middleControl = SubviewFactory.middleControl()
+    let middleControl = ActionControl()
     let playImageView = SubviewFactory.playImageView()
     let forwardButton = SubviewFactory.forwardButton()
 
@@ -27,26 +27,18 @@ class ActionView: UIView {
 
     private func setupLayout() {
         let distance: CGFloat = 40
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 73),
-            rewindButton.topAnchor.constraint(equalTo: middleControl.topAnchor),
-            rewindButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            rewindButton.trailingAnchor.constraint(equalTo: middleControl.leadingAnchor,
-                                                   constant: -distance),
-            rewindButton.bottomAnchor.constraint(equalTo: middleControl.bottomAnchor),
-            middleControl.centerXAnchor.constraint(equalTo: centerXAnchor),
-            middleControl.centerYAnchor.constraint(equalTo: centerYAnchor),
-            playImageView.topAnchor.constraint(equalTo: middleControl.topAnchor),
-            playImageView.leadingAnchor.constraint(equalTo: middleControl.leadingAnchor,
-                                                       constant: 6),
-            playImageView.trailingAnchor.constraint(equalTo: middleControl.trailingAnchor),
-            playImageView.bottomAnchor.constraint(equalTo: middleControl.bottomAnchor),
-            forwardButton.topAnchor.constraint(equalTo: middleControl.topAnchor),
-            forwardButton.leadingAnchor.constraint(equalTo: middleControl.trailingAnchor,
-                                                   constant: distance),
-            forwardButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            forwardButton.bottomAnchor.constraint(equalTo: middleControl.bottomAnchor)
-        ])
+        pinHeight(73)
+        rewindButton.pinTop(to: middleControl.topAnchor)
+        rewindButton.pinLeading(to: leadingAnchor)
+        rewindButton.pinTrailing(to: middleControl.leadingAnchor, offset: -distance)
+        rewindButton.pinBottom(to: middleControl.bottomAnchor)
+        middleControl.pinCenter(to: self)
+        playImageView.pinEdges(to: middleControl,
+                               edgeInsets: UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 0))
+        forwardButton.pinTop(to: middleControl.topAnchor)
+        forwardButton.pinLeading(to: middleControl.trailingAnchor, offset: distance)
+        forwardButton.pinTrailing(to: trailingAnchor)
+        forwardButton.pinBottom(to: middleControl.bottomAnchor)
     }
 
 }
@@ -57,20 +49,12 @@ private extension ActionView {
 
         static func rewindButton() -> UIButton {
             let button = UIButton(frame: .zero)
-            button.translatesAutoresizingMaskIntoConstraints = false
             button.setImage(UIImage(named: "back"), for: .normal)
-            return button
-        }
-
-        static func middleControl() -> ActionControl {
-            let button = ActionControl()
-            button.translatesAutoresizingMaskIntoConstraints = false
             return button
         }
 
         static func playImageView() -> UIImageView {
             let imageView = UIImageView(frame: .zero)
-            imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .center
             imageView.image = UIImage(named: "play")
             return imageView
@@ -78,7 +62,6 @@ private extension ActionView {
 
         static func forwardButton() -> UIButton {
             let button = UIButton(frame: .zero)
-            button.translatesAutoresizingMaskIntoConstraints = false
             button.setImage(UIImage(named: "next"), for: .normal)
             return button
         }

@@ -14,7 +14,7 @@ class MeditationView: GradientView {
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
-    let navigationView = SubviewFactory.navigationView()
+    let navigationView = NavigationView()
     let tableView = SubviewFactory.tableView()
     let tabBarView = SubviewFactory.tabBarView()
 
@@ -33,27 +33,24 @@ class MeditationView: GradientView {
     }
 
     private func setupLayout() {
-        let offset: CGFloat = 16
-        NSLayoutConstraint.activate([
-            navigationView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            navigationView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            navigationView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            navigationView.heightAnchor.constraint(equalToConstant: navigationBarHeight),
-            tableView.topAnchor.constraint(equalTo: navigationView.bottomAnchor, constant: 16),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: offset),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            tableView.bottomAnchor.constraint(equalTo: tabBarView.topAnchor),
-            bottomGradientView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bottomGradientView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bottomGradientView.heightAnchor.constraint(equalToConstant: bottomGradientHeight),
-            bottomGradientView.bottomAnchor.constraint(equalTo: tabBarView.centerYAnchor),
-            tabBarView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tabBarView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tabBarView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
-        ])
+        navigationView.pinTop(to: safeAreaLayoutGuide.topAnchor)
+        navigationView.pinLeading(to: leadingAnchor)
+        navigationView.pinTrailing(to: trailingAnchor)
+        navigationView.pinHeight(navigationBarHeight)
+        tableView.pinTop(to: navigationView.bottomAnchor, offset: 16)
+        tableView.pinLeading(to: leadingAnchor, offset: 16)
+        tableView.pinTrailing(to: trailingAnchor)
+        tableView.pinBottom(to: tabBarView.topAnchor)
+        bottomGradientView.pinLeading(to: leadingAnchor)
+        bottomGradientView.pinTrailing(to: trailingAnchor)
+        bottomGradientView.pinHeight(bottomGradientHeight)
+        bottomGradientView.pinBottom(to: tabBarView.centerYAnchor)
+        tabBarView.pinLeading(to: leadingAnchor)
+        tabBarView.pinTrailing(to: trailingAnchor)
+        tabBarView.pinBottom(to: safeAreaLayoutGuide.bottomAnchor)
     }
 
-    func prepareAnimations() {
+    private func prepareAnimations() {
         navigationView.transform = CGAffineTransform(translationX: 0, y: -navigationBarHeight)
         tableView.transform = CGAffineTransform(translationX: 0, y: 50)
         tableView.alpha = 0
@@ -76,16 +73,9 @@ private extension MeditationView {
 
     struct SubviewFactory {
 
-        static func navigationView() -> NavigationView {
-            let view = NavigationView()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }
-
         static func tableView() -> UITableView {
             let tableView = UITableView(frame: .zero)
             tableView.backgroundColor = UIColor(rgb: 0xF9FAFB)
-            tableView.translatesAutoresizingMaskIntoConstraints = false
             return tableView
         }
 
@@ -99,7 +89,6 @@ private extension MeditationView {
                                                                      color: UIColor(rgb: 0xF3F5F6))],
                                       direction: .vertical)
             let gradientView = GradientView(style: gradientStyle)
-            gradientView.translatesAutoresizingMaskIntoConstraints = false
             return gradientView
         }
 
@@ -107,7 +96,6 @@ private extension MeditationView {
             let imageView = UIImageView(frame: .zero)
             imageView.image = UIImage(named: "tabBar")
             imageView.contentMode = .center
-            imageView.translatesAutoresizingMaskIntoConstraints = false
             return imageView
         }
 

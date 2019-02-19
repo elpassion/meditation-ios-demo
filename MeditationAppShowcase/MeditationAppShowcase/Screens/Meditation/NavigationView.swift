@@ -22,14 +22,12 @@ class NavigationView: UIView {
     }
 
     private func setupLayout() {
-        NSLayoutConstraint.activate([
-            arrowButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
-            arrowButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-            arrowButton.heightAnchor.constraint(equalToConstant: 44),
-            arrowButton.widthAnchor.constraint(equalToConstant: 44),
-            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4)
-        ])
+        arrowButton.pinLeading(to: leadingAnchor, offset: 4)
+        arrowButton.pinCenterY(to: titleLabel.centerYAnchor)
+        arrowButton.pinHeight(44)
+        arrowButton.pinSize(CGSize(width: 44, height: 44))
+        titleLabel.pinCenterX(to: centerXAnchor)
+        titleLabel.pinBottom(to: bottomAnchor, offset: -4)
     }
 
 }
@@ -41,7 +39,6 @@ private extension NavigationView {
         static func arrorButton() -> UIButton {
             let button = UIButton(frame: .zero)
             button.setImage(UIImage(named: "backArrow"), for: .normal)
-            button.translatesAutoresizingMaskIntoConstraints = false
             return button
         }
 
@@ -50,7 +47,6 @@ private extension NavigationView {
             label.font = UIFont(name: "AvenirNext-Medium", size: 15.0)
             label.textColor = UIColor(rgb: 0x292967)
             label.text = "Meditation"
-            label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }
 

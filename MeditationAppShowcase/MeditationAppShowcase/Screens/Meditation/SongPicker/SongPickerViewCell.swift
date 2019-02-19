@@ -42,8 +42,8 @@ class SongPickerViewCell: UITableViewCell {
     }
 
     private func setupLayout() {
-        interactiveView.pinEdges(edges: UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 16),
-                                 to: contentView)
+        interactiveView.pinEdges(to: contentView,
+                                 edgeInsets: UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 16))
         separatorView.pinLeading(to: interactiveView.songView.checkBoxView.leadingAnchor)
         separatorView.pinTrailing(to: trailingAnchor)
         separatorView.pinHeight(0.5)

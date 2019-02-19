@@ -18,31 +18,23 @@ class ActionControl: UIControl {
 
     var titleContentInsets = UIEdgeInsets.zero {
         didSet {
-            titleTopConstraint.constant = titleContentInsets.top
-            titleLeadingConstraint.constant = titleContentInsets.left
-            titleTrailingConstraint.constant = -titleContentInsets.right
-            titleBottomConstraint.constant = -titleContentInsets.bottom
+            titleEdgeConstraints?.top.constant = titleContentInsets.top
+            titleEdgeConstraints?.leading.constant = titleContentInsets.left
+            titleEdgeConstraints?.trailing.constant = -titleContentInsets.right
+            titleEdgeConstraints?.bottom.constant = -titleContentInsets.bottom
             titleLabel.layoutIfNeeded()
         }
     }
 
     // MARK: - Privates
 
-    private lazy var titleTopConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor)
-    private lazy var titleLeadingConstraint = titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
-    private lazy var titleTrailingConstraint = titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-    private lazy var titleBottomConstraint = titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+    private var titleEdgeConstraints: EdgeLayoutConstraints?
 
     private func configure() {
         backgroundColor = UIColor(rgb: 0xEA417E)
         clipsToBounds = true
         addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleTopConstraint,
-            titleLeadingConstraint,
-            titleTrailingConstraint,
-            titleBottomConstraint
-        ])
+        titleEdgeConstraints = titleLabel.pinEdges(to: self)
     }
 
 }
@@ -56,7 +48,6 @@ private extension ActionControl {
             label.font = UIFont(name: "AvenirNext-Bold", size: 13.0)
             label.textColor = .white
             label.contentMode = .center
-            label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }
 

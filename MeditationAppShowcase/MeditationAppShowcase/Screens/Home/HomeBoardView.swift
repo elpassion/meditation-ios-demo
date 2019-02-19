@@ -18,7 +18,7 @@ class HomeBoardView: UIImageView {
 
     // MARK: - Privates
 
-    private let titleContainer = SubviewFactory.titleContainer()
+    private let titleContainer = UIView(frame: .zero)
     private let titleLabel = SubviewFactory.titleLabel()
     private let stressLabel = SubviewFactory.subtitleLabel()
     private let meditateLabel = SubviewFactory.subtitleLabel()
@@ -41,31 +41,30 @@ class HomeBoardView: UIImageView {
     private func setupLayout() {
         let yLabelOffset: CGFloat = -8
         let yValueOffset: CGFloat = 2
-        NSLayoutConstraint.activate([
-            titleContainer.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleContainer.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            titleLabel.topAnchor.constraint(equalTo: titleContainer.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: titleContainer.leadingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: titleContainer.bottomAnchor),
-            titleValueLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 4),
-            titleValueLabel.trailingAnchor.constraint(equalTo: titleContainer.trailingAnchor),
-            titleValueLabel.topAnchor.constraint(equalTo: titleContainer.topAnchor),
-            titleValueLabel.bottomAnchor.constraint(equalTo: titleContainer.bottomAnchor),
-            gridLayoutGuide.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6),
-            gridLayoutGuide.centerXAnchor.constraint(equalTo: centerXAnchor),
-            stressLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: yLabelOffset),
-            stressLabel.centerXAnchor.constraint(equalTo: gridLayoutGuide.leadingAnchor),
-            stressValueLabel.centerXAnchor.constraint(equalTo: stressLabel.centerXAnchor),
-            stressValueLabel.topAnchor.constraint(equalTo: stressLabel.bottomAnchor, constant: yValueOffset),
-            meditateLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: yLabelOffset),
-            meditateLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            meditateValueLabel.centerXAnchor.constraint(equalTo: meditateLabel.centerXAnchor),
-            meditateValueLabel.topAnchor.constraint(equalTo: meditateLabel.bottomAnchor, constant: yValueOffset),
-            focusLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: yLabelOffset),
-            focusLabel.centerXAnchor.constraint(equalTo: gridLayoutGuide.trailingAnchor),
-            focusValueLabel.centerXAnchor.constraint(equalTo: focusLabel.centerXAnchor),
-            focusValueLabel.topAnchor.constraint(equalTo: focusLabel.bottomAnchor, constant: yValueOffset)
-        ])
+
+        titleContainer.pinCenterX(to: centerXAnchor)
+        titleContainer.pinTop(to: topAnchor, offset: 20)
+        titleLabel.pinTop(to: titleContainer.topAnchor)
+        titleLabel.pinLeading(to: titleContainer.leadingAnchor)
+        titleLabel.pinBottom(to: titleContainer.bottomAnchor)
+        titleValueLabel.pinLeading(to: titleLabel.trailingAnchor, offset: 4)
+        titleValueLabel.pinTrailing(to: titleContainer.trailingAnchor)
+        titleValueLabel.pinTop(to: titleContainer.topAnchor)
+        titleValueLabel.pinBottom(to: titleContainer.bottomAnchor)
+        gridLayoutGuide.pinWidth(to: widthAnchor, multiplier: 0.6)
+        gridLayoutGuide.pinCenterX(to: centerXAnchor)
+        stressLabel.pinCenterY(to: centerYAnchor, offset: yLabelOffset)
+        stressLabel.pinCenterX(to: gridLayoutGuide.leadingAnchor)
+        stressValueLabel.pinCenterX(to: stressLabel.centerXAnchor)
+        stressValueLabel.pinTop(to: stressLabel.bottomAnchor, offset: yValueOffset)
+        meditateLabel.pinCenterY(to: centerYAnchor, offset: yLabelOffset)
+        meditateLabel.pinCenterX(to: centerXAnchor)
+        meditateValueLabel.pinCenterX(to: meditateLabel.centerXAnchor)
+        meditateValueLabel.pinTop(to: meditateLabel.bottomAnchor, offset: yValueOffset)
+        focusLabel.pinCenterY(to: centerYAnchor, offset: yLabelOffset)
+        focusLabel.pinCenterX(to: gridLayoutGuide.trailingAnchor)
+        focusValueLabel.pinCenterX(to: focusLabel.centerXAnchor)
+        focusValueLabel.pinTop(to: focusLabel.bottomAnchor, offset: yValueOffset)
     }
 
     private func configureSubviews() {
@@ -82,12 +81,6 @@ class HomeBoardView: UIImageView {
 private extension HomeBoardView {
 
     struct SubviewFactory {
-
-        static func titleContainer() -> UIView {
-            let view = UIView(frame: .zero)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }
 
         static func titleLabel() -> UILabel {
             return label(textColor: UIColor(rgb: 0x292967),
@@ -111,7 +104,6 @@ private extension HomeBoardView {
 
         private static func label(textColor: UIColor?, font: UIFont?) -> UILabel {
             let label = UILabel(frame: .zero)
-            label.translatesAutoresizingMaskIntoConstraints = false
             label.font = font
             label.textColor = textColor
             return label
