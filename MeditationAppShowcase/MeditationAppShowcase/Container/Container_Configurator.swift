@@ -16,7 +16,8 @@ extension Container: AppConfiguratorContaining {
 
     func appViewControllersFactory() -> AppViewControllersFactory {
         return AppViewControllersFactory(home: { [unowned self] in self.homeViewController() },
-                                         action: { [unowned self] in self.actionViewController() }
+                                         action: { [unowned self] in self.actionViewController() },
+                                         tabBar: { [unowned self] in self.tabBarViewController(viewControllers: $0) }
         )
     }
 

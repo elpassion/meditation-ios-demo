@@ -22,6 +22,7 @@ extension Container: HomeContaining {
 
     private func homeViewModel() -> HomeViewModeling {
         return HomeViewModel(actionOperator: sharedActionViewModel,
+                             tabBarOperator: tabBarViewModel(),
                              meditationViewModelFactory: { [unowned self] in
                                 self.meditationViewModel()
                              }
