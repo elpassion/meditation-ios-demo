@@ -23,6 +23,7 @@
 		062FD7712208A5C900E237DA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7702208A5C900E237DA /* GradientView.swift */; };
 		062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062FD7722208A6F800E237DA /* Color_Hex.swift */; };
 		06325AAF221D1E1D00418954 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06325AAE221D1E1D00418954 /* TabBarViewController.swift */; };
+		06325AB1221D1F1100418954 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06325AB0221D1F1100418954 /* TabBarView.swift */; };
 		06325AB3221D22B200418954 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06325AB2221D22B200418954 /* TabBarViewModel.swift */; };
 		0677959D2215D9C200A26913 /* ActionView_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0677959C2215D9C200A26913 /* ActionView_Mode.swift */; };
 		067A63EF221AB412001A20DF /* Animator_Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63EE221AB412001A20DF /* Animator_Convenience.swift */; };
@@ -96,6 +97,7 @@
 		062FD7702208A5C900E237DA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		062FD7722208A6F800E237DA /* Color_Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Hex.swift; sourceTree = "<group>"; };
 		06325AAE221D1E1D00418954 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		06325AB0221D1F1100418954 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		06325AB2221D22B200418954 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		0677959C2215D9C200A26913 /* ActionView_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView_Mode.swift; sourceTree = "<group>"; };
 		067A63EE221AB412001A20DF /* Animator_Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator_Convenience.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				06325AAE221D1E1D00418954 /* TabBarViewController.swift */,
+				06325AB0221D1F1100418954 /* TabBarView.swift */,
 				06325AB2221D22B200418954 /* TabBarViewModel.swift */,
 			);
 			path = TabBar;
@@ -611,6 +614,7 @@
 				06325AB3221D22B200418954 /* TabBarViewModel.swift in Sources */,
 				06A71A7B2201F2A1001DE399 /* HomeViewController.swift in Sources */,
 				0695954822182416009F966A /* Disposable.swift in Sources */,
+				06325AB1221D1F1100418954 /* TabBarView.swift in Sources */,
 				069A838F2211FC8100D3E223 /* MeditationViewController.swift in Sources */,
 				067A63F5221AE13D001A20DF /* SongView.swift in Sources */,
 				0677959D2215D9C200A26913 /* ActionView_Mode.swift in Sources */,
