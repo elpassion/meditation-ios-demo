@@ -8,8 +8,10 @@ protocol MeditationViewModeling: class {
 
 class MeditationViewModel: MeditationViewModeling {
 
-    init(actionOperator: ActionOperating) {
+    init(actionOperator: ActionOperating,
+         tabBarOperator: TabBarOperating) {
         self.actionOperator = actionOperator
+        self.tabBarOperator = tabBarOperator
     }
 
     // MARK: - MeditationViewModeling
@@ -21,6 +23,7 @@ class MeditationViewModel: MeditationViewModeling {
         disposable = actionOperator.actionHandler.addHandler(
             target: self,
             handler: MeditationViewModel.handleAction)
+        tabBarOperator.isBarVisible = true
     }
 
     func viewWillDisappear() {
@@ -38,6 +41,7 @@ class MeditationViewModel: MeditationViewModeling {
     // MARK: - Privates
 
     private let actionOperator: ActionOperating
+    private let tabBarOperator: TabBarOperating
     private var disposable: Disposable?
 
     private func handleAction(action: ActionViewController.Action) {
