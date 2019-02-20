@@ -115,13 +115,13 @@ extension LayoutGuideCompatible {
     )
 
     @discardableResult
-    func pinEdges(to view: UIView,
+    func pinEdges(to container: LayoutGuideCompatible,
                   edgeInsets: UIEdgeInsets = .zero) -> EdgeLayoutConstraints {
         return EdgeLayoutConstraints(
-            top: pinTop(to: view.topAnchor, offset: edgeInsets.top),
-            leading: pinLeading(to: view.leadingAnchor, offset: edgeInsets.left),
-            trailing: pinTrailing(to: view.trailingAnchor, offset: -edgeInsets.right),
-            bottom: pinBottom(to: view.bottomAnchor, offset: -edgeInsets.bottom)
+            top: pinTop(to: container.topAnchor, offset: edgeInsets.top),
+            leading: pinLeading(to: container.leadingAnchor, offset: edgeInsets.left),
+            trailing: pinTrailing(to: container.trailingAnchor, offset: -edgeInsets.right),
+            bottom: pinBottom(to: container.bottomAnchor, offset: -edgeInsets.bottom)
         )
     }
 
@@ -151,11 +151,11 @@ extension LayoutGuideCompatible {
     )
 
     @discardableResult
-    func pinCenter(to view: UIView,
+    func pinCenter(to container: LayoutGuideCompatible,
                    offset: CGPoint = .zero) -> CenterLayoutConstraints {
         return CenterLayoutConstraints(
-            centerX: pinCenterX(to: view.centerXAnchor),
-            centerY: pinCenterY(to: view.centerYAnchor)
+            centerX: pinCenterX(to: container.centerXAnchor),
+            centerY: pinCenterY(to: container.centerYAnchor)
         )
     }
 
