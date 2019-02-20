@@ -18,8 +18,10 @@ protocol HomeViewModeling: class {
 class HomeViewModel: HomeViewModeling {
 
     init(actionOperator: ActionOperating,
+         tabBarOperator: TabBarOperating,
          meditationViewModelFactory: @escaping () -> MeditationViewModeling) {
         self.actionOperator = actionOperator
+        self.tabBarOperator = tabBarOperator
         self.meditationViewModelFactory = meditationViewModelFactory
     }
 
@@ -40,6 +42,7 @@ class HomeViewModel: HomeViewModeling {
         disposable = actionOperator.actionHandler.addHandler(
             target: self,
             handler: HomeViewModel.handleAction)
+        tabBarOperator.isBarVisible = false
     }
 
     func viewWillDisappear() {
@@ -59,6 +62,7 @@ class HomeViewModel: HomeViewModeling {
     // MARK: - Privates
 
     private let actionOperator: ActionOperating
+    private let tabBarOperator: TabBarOperating
     private let meditationViewModelFactory: () -> MeditationViewModeling
     private var disposable: Disposable?
     private var meditationViewModel: MeditationViewModeling?
