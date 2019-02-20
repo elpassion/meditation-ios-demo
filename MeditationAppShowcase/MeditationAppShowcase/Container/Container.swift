@@ -11,4 +11,8 @@ class Container {
         return ActionViewModel()
     }()
 
+    lazy var sharedTabBarViewModel = {
+        return TabBarViewModel()
+    }()
+
 }
