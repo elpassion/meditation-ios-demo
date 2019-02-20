@@ -4,10 +4,7 @@ extension MeditationView {
         animator.animate(duration: 0.2,
                          delay: 0.05,
                          options: .curveEaseOut,
-                         animations: {
-                                self.navigationView.transform = .identity
-                                self.tabBarView.transform = .identity
-                         }
+                         animations: { self.navigationView.transform = .identity }
         )
         animator.animate(duration: 0.3,
                          delay: 0.1,

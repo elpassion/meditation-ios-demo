@@ -16,7 +16,6 @@ class MeditationView: GradientView {
 
     let navigationView = NavigationView()
     let tableView = SubviewFactory.tableView()
-    let tabBarView = SubviewFactory.tabBarView()
 
     // MARK: - Privates
 
@@ -29,7 +28,6 @@ class MeditationView: GradientView {
         addSubview(navigationView)
         addSubview(tableView)
         addSubview(bottomGradientView)
-        addSubview(tabBarView)
     }
 
     private func setupLayout() {
@@ -40,31 +38,25 @@ class MeditationView: GradientView {
         tableView.pinTop(to: navigationView.bottomAnchor, offset: 16)
         tableView.pinLeading(to: leadingAnchor, offset: 16)
         tableView.pinTrailing(to: trailingAnchor)
-        tableView.pinBottom(to: tabBarView.topAnchor)
+        tableView.pinBottom(to: bottomAnchor)
         bottomGradientView.pinLeading(to: leadingAnchor)
         bottomGradientView.pinTrailing(to: trailingAnchor)
         bottomGradientView.pinHeight(bottomGradientHeight)
-        bottomGradientView.pinBottom(to: tabBarView.centerYAnchor)
-        tabBarView.pinLeading(to: leadingAnchor)
-        tabBarView.pinTrailing(to: trailingAnchor)
-        tabBarView.pinBottom(to: safeAreaLayoutGuide.bottomAnchor)
+        bottomGradientView.pinBottom(to: bottomAnchor, offset: 10)
     }
 
     private func prepareAnimations() {
         navigationView.transform = CGAffineTransform(translationX: 0, y: -navigationBarHeight)
         tableView.transform = CGAffineTransform(translationX: 0, y: 50)
         tableView.alpha = 0
-        tabBarView.transform = CGAffineTransform(translationX: 0, y: tabBarHeight)
     }
 
     private func configureSubviews() {
         backgroundColor = .white
         tableView.contentInset = UIEdgeInsets(top: 0,
                                               left: 0,
-                                              bottom: bottomGradientHeight - tabBarHeight / 2,
+                                              bottom: bottomGradientHeight - 27,
                                               right: 0)
-        let shadow = SketchShadow(color: .gray, x: 0, y: 2, blur: 4, spread: 0)
-        tabBarView.layer.apply(shadow)
     }
 
 }
@@ -90,13 +82,6 @@ private extension MeditationView {
                                       direction: .vertical)
             let gradientView = GradientView(style: gradientStyle)
             return gradientView
-        }
-
-        static func tabBarView() -> UIImageView {
-            let imageView = UIImageView(frame: .zero)
-            imageView.image = UIImage(named: "tabBar")
-            imageView.contentMode = .center
-            return imageView
         }
 
     }
