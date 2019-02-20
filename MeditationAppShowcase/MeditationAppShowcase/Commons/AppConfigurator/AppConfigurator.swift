@@ -18,7 +18,8 @@ class AppConfigurator: AppConfiguring, ActionViewControllerOperating {
     // MARK: - AppConfiguring
 
     func configure(window: UIWindow) {
-        window.rootViewController = viewControllersFactory.home()
+        let tabBarViewController = viewControllersFactory.tabBar([viewControllersFactory.home()])
+        window.rootViewController = tabBarViewController
 
         let actionViewController = viewControllersFactory.action()
         self.actionViewController = actionViewController
