@@ -11,6 +11,10 @@ class NavigationView: UIView {
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: UIView.noIntrinsicMetric, height: 56)
+    }
+
     let arrowButton = SubviewFactory.arrorButton()
     let titleLabel = SubviewFactory.titleLabel()
 

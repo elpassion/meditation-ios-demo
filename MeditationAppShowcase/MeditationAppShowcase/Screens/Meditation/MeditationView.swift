@@ -3,26 +3,31 @@ import UIKit
 class MeditationView: GradientView {
 
     init() {
-        super.init(style: GradientStyle(colors: [GradientColor(location: 0.0, color: UIColor(rgb: 0xFBFCFC)),
-                                                 GradientColor(location: 1.0, color: UIColor(rgb: 0xF3F5F6))],
+        super.init(style: GradientStyle(colors: [GradientColor(location: 0.0,
+                                                               color: UIColor(rgb: 0xFBFCFC)),
+                                                 GradientColor(location: 1.0,
+                                                               color: UIColor(rgb: 0xF3F5F6))],
                                         direction: .vertical))
         addSubviews()
         setupLayout()
-        prepareAnimations()
-        configureSubviews()
+        backgroundColor = .white
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        tableView.contentInset = UIEdgeInsets(top: 0,
+                                              left: 0,
+                                              bottom: bottomGradientView.frame.size.height*0.8,
+                                              right: 0)
+    }
+
     let navigationView = NavigationView()
     let tableView = SubviewFactory.tableView()
+    let bottomGradientView = SubviewFactory.bottomGradientView()
 
     // MARK: - Privates
-
-    private let navigationBarHeight: CGFloat = 56
-    private let tabBarHeight: CGFloat = 54
-    private let bottomGradientHeight: CGFloat = 130
-    private let bottomGradientView = SubviewFactory.bottomGradientView()
 
     private func addSubviews() {
         addSubview(navigationView)
@@ -34,29 +39,14 @@ class MeditationView: GradientView {
         navigationView.pinTop(to: safeAreaLayoutGuide.topAnchor)
         navigationView.pinLeading(to: leadingAnchor)
         navigationView.pinTrailing(to: trailingAnchor)
-        navigationView.pinHeight(navigationBarHeight)
         tableView.pinTop(to: navigationView.bottomAnchor, offset: 16)
         tableView.pinLeading(to: leadingAnchor, offset: 16)
         tableView.pinTrailing(to: trailingAnchor)
         tableView.pinBottom(to: bottomAnchor)
         bottomGradientView.pinLeading(to: leadingAnchor)
         bottomGradientView.pinTrailing(to: trailingAnchor)
-        bottomGradientView.pinHeight(bottomGradientHeight)
+        bottomGradientView.pinHeight(180)
         bottomGradientView.pinBottom(to: bottomAnchor, offset: 10)
-    }
-
-    private func prepareAnimations() {
-        navigationView.transform = CGAffineTransform(translationX: 0, y: -navigationBarHeight)
-        tableView.transform = CGAffineTransform(translationX: 0, y: 50)
-        tableView.alpha = 0
-    }
-
-    private func configureSubviews() {
-        backgroundColor = .white
-        tableView.contentInset = UIEdgeInsets(top: 0,
-                                              left: 0,
-                                              bottom: bottomGradientHeight - 27,
-                                              right: 0)
     }
 
 }
@@ -79,7 +69,7 @@ private extension MeditationView {
                                                                      color: .white),
                                                        GradientColor(location: 1.0,
                                                                      color: UIColor(rgb: 0xF3F5F6))],
-                                      direction: .vertical)
+                                              direction: .vertical)
             let gradientView = GradientView(style: gradientStyle)
             return gradientView
         }

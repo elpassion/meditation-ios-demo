@@ -19,6 +19,7 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        meditationView.prepareAnimations()
         configureSubviews()
     }
 
