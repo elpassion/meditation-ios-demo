@@ -27,6 +27,7 @@
 		06325AB3221D22B200418954 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06325AB2221D22B200418954 /* TabBarViewModel.swift */; };
 		06325AB5221D26AC00418954 /* Container_TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06325AB4221D26AC00418954 /* Container_TabBar.swift */; };
 		064E8E4B221ED2D70019EB1A /* UIViewController_Embedding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E8E4A221ED2D70019EB1A /* UIViewController_Embedding.swift */; };
+		064E8E4D221F011E0019EB1A /* SongInteractionView_Resetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064E8E4C221F011E0019EB1A /* SongInteractionView_Resetting.swift */; };
 		0677959D2215D9C200A26913 /* ActionView_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0677959C2215D9C200A26913 /* ActionView_Mode.swift */; };
 		067A63EF221AB412001A20DF /* Animator_Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63EE221AB412001A20DF /* Animator_Convenience.swift */; };
 		067A63F1221ABD58001A20DF /* AppConfigurator_ActionViewControllerOperating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067A63F0221ABD58001A20DF /* AppConfigurator_ActionViewControllerOperating.swift */; };
@@ -103,6 +104,7 @@
 		06325AB2221D22B200418954 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		06325AB4221D26AC00418954 /* Container_TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_TabBar.swift; sourceTree = "<group>"; };
 		064E8E4A221ED2D70019EB1A /* UIViewController_Embedding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Embedding.swift; sourceTree = "<group>"; };
+		064E8E4C221F011E0019EB1A /* SongInteractionView_Resetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInteractionView_Resetting.swift; sourceTree = "<group>"; };
 		0677959C2215D9C200A26913 /* ActionView_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView_Mode.swift; sourceTree = "<group>"; };
 		067A63EE221AB412001A20DF /* Animator_Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator_Convenience.swift; sourceTree = "<group>"; };
 		067A63F0221ABD58001A20DF /* AppConfigurator_ActionViewControllerOperating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator_ActionViewControllerOperating.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				067A63FF221B1444001A20DF /* SongInteractiveView.swift */,
 				067A6403221B1D4C001A20DF /* SongInteractionView_Modes.swift */,
 				067A6405221B1F1C001A20DF /* SongInteractiveView_Animating.swift */,
+				064E8E4C221F011E0019EB1A /* SongInteractionView_Resetting.swift */,
 			);
 			path = SongInteractive;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				06959544221823DE009F966A /* EventEmitter.swift in Sources */,
 				067A6400221B1444001A20DF /* SongInteractiveView.swift in Sources */,
 				0625D2672214536500F13B30 /* MeditationViewModel_Data.swift in Sources */,
+				064E8E4D221F011E0019EB1A /* SongInteractionView_Resetting.swift in Sources */,
 				06B5E37E221480A900004D09 /* ActionViewController_Mode.swift in Sources */,
 				062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */,
 				0625D265221433C800F13B30 /* CheckBoxView.swift in Sources */,

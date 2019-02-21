@@ -25,10 +25,14 @@ class SongPickerViewCell: UITableViewCell {
                                           completion: { self.didPerformAppearanceAnimation = true })
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        interactiveView.reset()
+    }
+
     // MARK: - Privates
 
     private let separatorView = UIView(frame: .zero)
-    private let separatorColor = UIColor(rgb: 0xD7D7E7)
     private var didPerformAppearanceAnimation = false
 
     private func configureSubviews() {
