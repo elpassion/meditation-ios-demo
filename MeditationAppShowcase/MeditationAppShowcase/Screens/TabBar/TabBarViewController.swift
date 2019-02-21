@@ -40,11 +40,7 @@ class TabBarViewController: UIViewController {
 
     private func configureInitialViewController() {
         guard let initialViewController = viewControllers.first else { return }
-        tabBarView.addSubview(initialViewController.view)
-        initialViewController.willMove(toParent: self)
-        addChild(initialViewController)
-        initialViewController.view.pinEdges(to: tabBarView.containerLayoutGuide)
-        initialViewController.didMove(toParent: self)
+        embed(viewController: initialViewController, in: tabBarView.containerView)
     }
 
     private func configureSubviews() {

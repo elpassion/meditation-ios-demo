@@ -19,7 +19,7 @@ class TabBarView: UIView {
     }
 
     let topContainerView = UIView(frame: .zero)
-    let containerLayoutGuide = UILayoutGuide()
+    let containerView = UIView(frame: .zero)
     let bottomView = SubviewFactory.bottomView()
     var bottomBarConstraint: NSLayoutConstraint?
 
@@ -33,16 +33,16 @@ class TabBarView: UIView {
     }
 
     private func addSubviews() {
-        addLayoutGuide(containerLayoutGuide)
+        addSubview(containerView)
         addSubview(bottomView)
         addSubview(topContainerView)
     }
 
     private func setupLayout() {
-        containerLayoutGuide.pinTop(to: safeAreaLayoutGuide.topAnchor)
-        containerLayoutGuide.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
-        containerLayoutGuide.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
-        containerLayoutGuide.pinBottom(to: bottomView.topAnchor)
+        containerView.pinTop(to: safeAreaLayoutGuide.topAnchor)
+        containerView.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
+        containerView.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
+        containerView.pinBottom(to: bottomView.topAnchor)
         bottomView.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
         bottomView.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
         bottomBarConstraint = bottomView.pinBottom(to: safeAreaLayoutGuide.bottomAnchor)
