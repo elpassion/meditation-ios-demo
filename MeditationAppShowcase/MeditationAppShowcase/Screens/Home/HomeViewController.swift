@@ -35,9 +35,10 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateBackground()
-        let bottomOffset = homeView.frame.size.height -
-            (homeView.boardView.frame.origin.y + homeView.boardView.frame.size.height) - 20
-        actionViewControllerOperator.updateBottomOffset(bottomOffset, animated: true)
+        let topOffset = homeView.boardView.frame.origin.y +
+            homeView.boardView.frame.size.height -
+            actionViewControllerOperator.currentHeight() / 2 + 10
+        actionViewControllerOperator.updateTopOffset(topOffset, animated: true)
         addNotificationHandler()
         viewModel.viewDidAppear()
     }

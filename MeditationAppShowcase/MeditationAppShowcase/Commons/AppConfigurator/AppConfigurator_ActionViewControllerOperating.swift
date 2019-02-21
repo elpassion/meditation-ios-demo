@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ActionViewControllerOperating {
-    func updateBottomOffset(_ bottomOffset: CGFloat, animated: Bool)
+    func updateTopOffset(_ topOffset: CGFloat, animated: Bool)
     func currentHeight() -> CGFloat
 }
 
@@ -9,16 +9,17 @@ extension AppConfigurator {
 
     // MARK: - ActionViewControllerOperating
 
-    func updateBottomOffset(_ bottomOffset: CGFloat, animated: Bool) {
-        guard let bottomConstraintOffset = actionViewControllerBottomConstraint,
+    func updateTopOffset(_ topOffset: CGFloat, animated: Bool) {
+        guard let topConstraintOffset = actionViewControllerTopConstraint,
             let actionViewController = actionViewController else {
                 fatalError("AppConfigurator must be configured first")
         }
         animator.animate(duration: animated ? 0.25 : 0,
                          animations: {
-                            bottomConstraintOffset.constant = -bottomOffset
-                            actionViewController.view.layoutIfNeeded()
-        })
+                                topConstraintOffset.constant = topOffset
+                                actionViewController.view.layoutIfNeeded()
+                         }
+        )
     }
 
     func currentHeight() -> CGFloat {

@@ -45,7 +45,7 @@ class MeditationView: GradientView {
         tableView.pinBottom(to: bottomAnchor)
         bottomGradientView.pinLeading(to: leadingAnchor)
         bottomGradientView.pinTrailing(to: trailingAnchor)
-        bottomGradientView.pinHeight(180)
+        bottomGradientView.pinHeight(120)
         bottomGradientView.pinBottom(to: bottomAnchor, offset: 10)
     }
 
@@ -65,7 +65,7 @@ private extension MeditationView {
             let gradientStyle = GradientStyle(colors: [GradientColor(location: 0.0,
                                                                      color: UIColor(white: 1,
                                                                                     alpha: 0)),
-                                                       GradientColor(location: 0.2,
+                                                       GradientColor(location: 0.5,
                                                                      color: .white),
                                                        GradientColor(location: 1.0,
                                                                      color: UIColor(rgb: 0xF3F5F6))],
