@@ -7,8 +7,8 @@ class TabBarViewController: UIViewController {
     init(viewModel: TabBarViewModeling,
          viewControllers: [UIViewController],
          animator: Animating) {
-        self.viewControllers = viewControllers
         self.viewModel = viewModel
+        self.viewControllers = viewControllers
         self.animator = animator
         super.init(nibName: nil, bundle: nil)
     }
@@ -26,7 +26,7 @@ class TabBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInitialViewController()
-        configureSubviews()
+        configureViewModel()
     }
 
     // MARK: - Privates
@@ -43,7 +43,7 @@ class TabBarViewController: UIViewController {
         embed(viewController: initialViewController, in: tabBarView.containerView)
     }
 
-    private func configureSubviews() {
+    private func configureViewModel() {
         viewModel.isBarVisibleUpdated = { [weak self] in self?.updateBar(isVisible: $0) }
     }
 

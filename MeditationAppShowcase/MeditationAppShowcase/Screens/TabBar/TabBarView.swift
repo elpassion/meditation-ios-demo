@@ -15,10 +15,8 @@ class TabBarView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         bringSubviewToFront(bottomView)
-        bringSubviewToFront(topContainerView)
     }
 
-    let topContainerView = UIView(frame: .zero)
     let containerView = UIView(frame: .zero)
     let bottomView = SubviewFactory.bottomView()
     var bottomBarConstraint: NSLayoutConstraint?
@@ -28,14 +26,11 @@ class TabBarView: UIView {
     private func configureSubviews() {
         let shadow = SketchShadow(color: .gray, x: 0, y: 2, blur: 4, spread: 0)
         bottomView.layer.apply(shadow)
-        topContainerView.backgroundColor = .clear
-        topContainerView.isUserInteractionEnabled = false
     }
 
     private func addSubviews() {
         addSubview(containerView)
         addSubview(bottomView)
-        addSubview(topContainerView)
     }
 
     private func setupLayout() {
@@ -46,7 +41,6 @@ class TabBarView: UIView {
         bottomView.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
         bottomView.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
         bottomBarConstraint = bottomView.pinBottom(to: safeAreaLayoutGuide.bottomAnchor)
-        topContainerView.pinEdges(to: safeAreaLayoutGuide)
     }
 
 }

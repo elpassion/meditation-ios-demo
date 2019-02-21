@@ -1,5 +1,5 @@
 import UIKit
-
+//swiftlint:disable function_parameter_count
 protocol Animating {
     func animate(withDuration duration: TimeInterval,
                  delay: TimeInterval,
