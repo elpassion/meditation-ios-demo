@@ -1,4 +1,5 @@
 protocol MeditationViewModeling: class {
+    var navigationTitle: ((String) -> Void)? { get set }
     var latestSongViewModels: (([SongViewModeling]) -> Void)? { get set }
     func didSelect(isSelected: Bool, index: Int)
     func viewDidAppear()
@@ -21,6 +22,8 @@ class MeditationViewModel: MeditationViewModeling {
     }
 
     // MARK: - MeditationViewModeling
+
+    var navigationTitle: ((String) -> Void)?
 
     var latestSongViewModels: (([SongViewModeling]) -> Void)?
 
@@ -78,9 +81,11 @@ class MeditationViewModel: MeditationViewModeling {
             case .picking:
                 self?.actionOperator.set(mode: .singleButton(title: "START MEDITATION SESSION"))
                 self?.songManager.updateToPickingViewModels()
+                self?.navigationTitle?("Pick meditation song")
             case .listening:
                 self?.actionOperator.set(mode: .player)
                 self?.songManager.updateToListeningViewModels()
+                self?.navigationTitle?("Player")
             case .finished:
                 print("Present Finished")
             }

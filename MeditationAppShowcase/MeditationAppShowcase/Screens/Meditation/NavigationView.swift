@@ -50,7 +50,6 @@ private extension NavigationView {
             let label = UILabel(frame: .zero)
             label.font = UIFont(name: "AvenirNext-Medium", size: 15.0)
             label.textColor = UIColor(rgb: 0x292967)
-            label.text = "Meditation"
             return label
         }
 

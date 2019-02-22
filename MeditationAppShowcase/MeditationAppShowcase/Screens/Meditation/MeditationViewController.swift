@@ -86,6 +86,9 @@ class MeditationViewController: UIViewController, UITableViewDataSource, UITable
         meditationView.navigationView.arrowButton.addTarget(self,
                                                             action: #selector(backAction),
                                                             for: .touchUpInside)
+        viewModel.navigationTitle = { [weak self] in
+            self?.meditationView.navigationView.titleLabel.text = $0
+        }
         viewModel.latestSongViewModels = { [weak self] in self?.songViewModels = $0 }
     }
 
