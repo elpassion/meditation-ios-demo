@@ -44,6 +44,7 @@ class ActionViewModel: ActionViewModeling, ActionOperating {
     }
 
     func set(mode: ActionViewController.Mode) {
+        self.mode = mode
         currentMode?(mode)
     }
 
