@@ -95,8 +95,8 @@ class MeditationViewController: UIViewController, UITableViewDataSource, UITable
         cell.interactiveView.songView.subtitleLabel.text = viewModel.subtitle
         cell.interactiveView.songView.timeLabel.text = viewModel.time
         cell.update(mode: viewModel.songMode, animated: false)
-        viewModel.updateSongMode = { [cell] mode in cell.update(mode: mode,
-                                                                animated: true) }
+        cell.disposable = viewModel.songModeHandler.addHandler(target: cell,
+                                                               handler: SongViewCell.update)
     }
 
     // MARK: - Handlers

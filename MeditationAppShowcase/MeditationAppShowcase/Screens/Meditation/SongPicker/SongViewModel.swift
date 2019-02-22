@@ -6,7 +6,7 @@ protocol SongViewModeling: class {
     var subtitle: String { get }
     var time: String { get }
     var songMode: SongMode { get set }
-    var updateSongMode: ((SongMode) -> Void)? { get set }
+    var songModeHandler: SongModeHandling { get }
 }
 
 class SongViewModel: SongViewModeling {
@@ -28,10 +28,16 @@ class SongViewModel: SongViewModeling {
     var songMode: SongMode = .picking(.unselected) {
         didSet {
             guard oldValue != songMode else { return }
-            updateSongMode?(songMode)
+            emitter.emit(songMode)
         }
     }
 
-    var updateSongMode: ((SongMode) -> Void)?
+    var songModeHandler: SongModeHandling {
+        return emitter
+    }
+
+    // MARK: - Privates
+
+    private let emitter = SongModeEmitter()
 
 }

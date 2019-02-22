@@ -17,6 +17,7 @@ class MeditationViewModel: MeditationViewModeling {
         self.tabBarOperator = tabBarOperator
         self.songManager = songManager
         self.stateOperator = stateOperator
+        configure()
     }
 
     // MARK: - MeditationViewModeling
@@ -24,17 +25,16 @@ class MeditationViewModel: MeditationViewModeling {
     var latestSongViewModels: (([SongViewModeling]) -> Void)?
 
     func didSelect(isSelected: Bool, index: Int) {
-        let oldMode = songViewModels[index].songMode
-        let newMode = modeOperator.toSelected(isSelected, mode: oldMode)
-        songViewModels[index].songMode = newMode
+        songManager.select(isSelected: isSelected, index: index)
     }
 
     func viewDidAppear() {
-        latestSongViewModels?(songViewModels)
+        latestSongViewModels?(songManager.viewModels)
         disposable = actionOperator.actionHandler.addHandler(
             target: self,
             handler: MeditationViewModel.handleAction)
         tabBarOperator.isBarVisible = true
+        stateOperator.repeatCurrentState()
     }
 
     func viewWillDisappear() {
@@ -42,7 +42,7 @@ class MeditationViewModel: MeditationViewModeling {
     }
 
     func backAction() {
-        closeMeditation?()
+        stateOperator.previous()
     }
 
     // MARK: - MeditationViewOperating
@@ -58,7 +58,35 @@ class MeditationViewModel: MeditationViewModeling {
     private var disposable: Disposable?
 
     private func handleAction(action: ActionViewController.Action) {
-        actionOperator.set(mode: .player)
+        switch action {
+        case .button:
+            stateOperator.next()
+        case .rewind:
+            songManager.playPrevious()
+        case .play:
+            print("Play")
+        case .forward:
+            songManager.playNext()
+        }
+    }
+
+    private func configure() {
+        stateOperator.stateUpdated = { [weak self] state in
+            switch state {
+            case .dismiss:
+                self?.closeMeditation?()
+            case .picking:
+                self?.actionOperator.set(mode: .singleButton(title: "START MEDITATION SESSION"))
+                self?.songManager.updateToPickingViewModels()
+            case .listening:
+                self?.actionOperator.set(mode: .player)
+                self?.songManager.updateToListeningViewModels()
+            case .finished:
+                print("Present Finished")
+            }
+        }
+
+        songManager.didFinishPlaying = { [weak self] in self?.stateOperator.next() }
     }
 
 }

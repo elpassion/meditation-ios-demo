@@ -2,6 +2,10 @@ import UIKit
 
 extension SongViewCell {
 
+    func update(mode: SongMode) {
+        update(mode: mode, animated: true)
+    }
+
     func update(mode: SongMode, animated: Bool) {
         interactiveView.update(mode: mode, animated: animated)
         switch mode {

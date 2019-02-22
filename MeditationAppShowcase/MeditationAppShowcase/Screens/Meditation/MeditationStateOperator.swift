@@ -37,7 +37,7 @@ class MeditationStateOperator: MeditationStateOperating {
 
     private func nextState(from state: State) -> State {
         switch state {
-        case .dismiss: return .picking
+        case .dismiss: return .listening
         case .picking: return .listening
         case .listening: return .finished
         case .finished: return .finished
@@ -49,7 +49,7 @@ class MeditationStateOperator: MeditationStateOperating {
         case .dismiss: return .dismiss
         case .picking: return .dismiss
         case .listening: return .picking
-        case .finished: return .listening
+        case .finished: return .picking
         }
     }
 

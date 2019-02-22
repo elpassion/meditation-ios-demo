@@ -20,9 +20,12 @@ class SongViewCell: UITableViewCell {
                                           completion: { self.didPerformAppearanceAnimation = true })
     }
 
+    var disposable: Disposable?
+
     override func prepareForReuse() {
         super.prepareForReuse()
         interactiveView.reset()
+        disposable?.dispose()
     }
 
     // MARK: - Privates
