@@ -1,3 +1,3 @@
 enum SongMode {
-    case selectable, selected, active
+    case selectable, selected, playable, playing, hidden
 }

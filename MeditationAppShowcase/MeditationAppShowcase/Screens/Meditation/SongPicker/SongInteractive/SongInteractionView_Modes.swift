@@ -8,7 +8,9 @@ extension SongInteractiveView {
             setSelected(false, animator: animator)
         case .selected:
             setSelected(true, animator: animator)
-        case .active: ()
+        case .playable: ()
+        case .playing: ()
+        case .hidden: ()
         }
     }
 
