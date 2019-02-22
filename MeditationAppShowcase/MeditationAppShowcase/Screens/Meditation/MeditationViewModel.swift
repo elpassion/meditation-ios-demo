@@ -66,8 +66,7 @@ class MeditationViewModel: MeditationViewModeling {
             stateOperator.next()
         case .rewind:
             songManager.playPrevious()
-        case .play:
-            print("Play")
+        case .play: ()
         case .forward:
             songManager.playNext()
         }
@@ -87,7 +86,7 @@ class MeditationViewModel: MeditationViewModeling {
                 self?.songManager.updateToListeningViewModels()
                 self?.navigationTitle?("Player")
             case .finished:
-                print("Present Finished")
+                self?.closeMeditation?()
             }
         }
 
