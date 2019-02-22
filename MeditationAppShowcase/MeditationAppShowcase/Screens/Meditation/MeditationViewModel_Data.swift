@@ -1,5 +1,5 @@
 extension MeditationViewModel {
-
+//swiftlint:disable function_body_length
     static func preparedViewModels() -> [SongViewModeling] {
         return [
             SongViewModel(appearanceAnimationDelay: 0,
