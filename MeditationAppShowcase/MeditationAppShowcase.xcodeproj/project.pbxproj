@@ -61,6 +61,7 @@
 		06B41EAE222007AF00C7F935 /* SongModeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EAD222007AF00C7F935 /* SongModeOperator.swift */; };
 		06B41EB022200E1500C7F935 /* SongViewCell_Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EAF22200E1500C7F935 /* SongViewCell_Modes.swift */; };
 		06B41EB22220276B00C7F935 /* MeditationStateOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EB12220276B00C7F935 /* MeditationStateOperator.swift */; };
+		06B41EB622203C5700C7F935 /* SongManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EB522203C5700C7F935 /* SongManager.swift */; };
 		06B5E37C2214801500004D09 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37B2214801500004D09 /* ActionViewController.swift */; };
 		06B5E37E221480A900004D09 /* ActionViewController_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */; };
 		06B5E38022148F9E00004D09 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37F22148F9E00004D09 /* ActionView.swift */; };
@@ -145,6 +146,7 @@
 		06B41EAD222007AF00C7F935 /* SongModeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModeOperator.swift; sourceTree = "<group>"; };
 		06B41EAF22200E1500C7F935 /* SongViewCell_Modes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewCell_Modes.swift; sourceTree = "<group>"; };
 		06B41EB12220276B00C7F935 /* MeditationStateOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationStateOperator.swift; sourceTree = "<group>"; };
+		06B41EB522203C5700C7F935 /* SongManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongManager.swift; sourceTree = "<group>"; };
 		06B5E37B2214801500004D09 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController_Mode.swift; sourceTree = "<group>"; };
 		06B5E37F22148F9E00004D09 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				0625D2662214536500F13B30 /* MeditationViewModel_Data.swift */,
 				067A63F2221ADC86001A20DF /* MeditationView_Animating.swift */,
 				062022CE2213365D008DFECD /* NavigationView.swift */,
+				06B41EB522203C5700C7F935 /* SongManager.swift */,
 			);
 			path = Meditation;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				067A63FA221B1188001A20DF /* CheckBox_Selection.swift in Sources */,
 				069A83962212087E00D3E223 /* HomeView_Dismission.swift in Sources */,
 				0695954A22182432009F966A /* Subscription.swift in Sources */,
+				06B41EB622203C5700C7F935 /* SongManager.swift in Sources */,
 				062022D122135030008DFECD /* SongViewCell.swift in Sources */,
 				06A71A97220213E2001DE399 /* HomeView.swift in Sources */,
 				06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */,
