@@ -5,6 +5,8 @@ protocol SongViewModeling: class {
     var title: String { get }
     var subtitle: String { get }
     var time: String { get }
+    var songMode: SongMode { get set }
+    var updateSongMode: ((SongMode) -> Void)? { get set }
 }
 
 class SongViewModel: SongViewModeling {
@@ -22,5 +24,8 @@ class SongViewModel: SongViewModeling {
     var title: String
     var subtitle: String
     var time: String
+
+    var songMode: SongMode = .picking(.unselected)
+    var updateSongMode: ((SongMode) -> Void)?
 
 }
