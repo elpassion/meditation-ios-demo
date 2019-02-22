@@ -1,13 +1,20 @@
 import Foundation
 
-protocol SongPickerViewModeling {
+protocol SongPickerViewModeling: class {
     var appearanceAnimationDelay: TimeInterval { get }
     var title: String { get }
     var subtitle: String { get }
     var time: String { get }
 }
 
-struct SongPickerViewModel: SongPickerViewModeling {
+class SongPickerViewModel: SongPickerViewModeling {
+
+    init(appearanceAnimationDelay: TimeInterval, title: String, subtitle: String, time: String) {
+        self.appearanceAnimationDelay = appearanceAnimationDelay
+        self.title = title
+        self.subtitle = subtitle
+        self.time = time
+    }
 
     // MARK: - SongPickerViewModeling
 
