@@ -13,12 +13,6 @@ class SongViewCell: UITableViewCell {
 
     let interactiveView = SongInteractiveView()
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        interactiveView.update(mode: selected ? .selected : .selectable)
-        separatorView.backgroundColor = selected ? .clear : UIColor(rgb: 0xD7D7E7)
-    }
-
     func animateAppearance(delay: TimeInterval, animator: Animating = Animator()) {
         guard !didPerformAppearanceAnimation else { return }
         interactiveView.animateAppearance(delay: delay,
@@ -32,7 +26,7 @@ class SongViewCell: UITableViewCell {
 
     // MARK: - Privates
 
-    private let separatorView = UIView(frame: .zero)
+    let separatorView = UIView(frame: .zero)
     private var didPerformAppearanceAnimation = false
 
     private func configureSubviews() {
