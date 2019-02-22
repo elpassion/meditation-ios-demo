@@ -11,11 +11,11 @@
 		062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022C82212F8DE008DFECD /* Container_Meditation.swift */; };
 		062022CD221301EA008DFECD /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CC221301EA008DFECD /* AppConfigurator.swift */; };
 		062022CF2213365D008DFECD /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CE2213365D008DFECD /* NavigationView.swift */; };
-		062022D122135030008DFECD /* SongPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022D022135030008DFECD /* SongPickerViewCell.swift */; };
+		062022D122135030008DFECD /* SongViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022D022135030008DFECD /* SongViewCell.swift */; };
 		06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E20220DCA5C006525F5 /* HomeBoardView.swift */; };
 		06248E33220DE276006525F5 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E32220DE276006525F5 /* HomeViewModelTests.swift */; };
 		06248E35220DEF39006525F5 /* ActionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E34220DEF39006525F5 /* ActionControl.swift */; };
-		0625D260221420F800F13B30 /* SongPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D25F221420F800F13B30 /* SongPickerViewModel.swift */; };
+		0625D260221420F800F13B30 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D25F221420F800F13B30 /* SongViewModel.swift */; };
 		0625D263221421BF00F13B30 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D262221421BF00F13B30 /* MeditationViewModel.swift */; };
 		0625D265221433C800F13B30 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D264221433C800F13B30 /* CheckBoxView.swift */; };
 		0625D2672214536500F13B30 /* MeditationViewModel_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D2662214536500F13B30 /* MeditationViewModel_Data.swift */; };
@@ -87,13 +87,13 @@
 		062022C82212F8DE008DFECD /* Container_Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Meditation.swift; sourceTree = "<group>"; };
 		062022CC221301EA008DFECD /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
 		062022CE2213365D008DFECD /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
-		062022D022135030008DFECD /* SongPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPickerViewCell.swift; sourceTree = "<group>"; };
+		062022D022135030008DFECD /* SongViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewCell.swift; sourceTree = "<group>"; };
 		06248E20220DCA5C006525F5 /* HomeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
 		06248E26220DE150006525F5 /* MeditationAppShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationAppShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06248E2A220DE150006525F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06248E32220DE276006525F5 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		06248E34220DEF39006525F5 /* ActionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionControl.swift; sourceTree = "<group>"; };
-		0625D25F221420F800F13B30 /* SongPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPickerViewModel.swift; sourceTree = "<group>"; };
+		0625D25F221420F800F13B30 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
 		0625D262221421BF00F13B30 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
 		0625D264221433C800F13B30 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		0625D2662214536500F13B30 /* MeditationViewModel_Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel_Data.swift; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				067A63FE221B140E001A20DF /* SongInteractive */,
-				062022D022135030008DFECD /* SongPickerViewCell.swift */,
-				0625D25F221420F800F13B30 /* SongPickerViewModel.swift */,
+				062022D022135030008DFECD /* SongViewCell.swift */,
+				0625D25F221420F800F13B30 /* SongViewModel.swift */,
 			);
 			path = SongPicker;
 			sourceTree = "<group>";
@@ -215,14 +215,14 @@
 			isa = PBXGroup;
 			children = (
 				067A63ED221AB3F4001A20DF /* Animator */,
-				06959541221823A0009F966A /* Utilities */,
 				06FD1BFE2215A7440075A6C1 /* AppConfigurator */,
 				069A83922212032100D3E223 /* Presenters */,
-				062FD75F2208976900E237DA /* NotificationHandler.swift */,
-				062FD7702208A5C900E237DA /* GradientView.swift */,
+				06959541221823A0009F966A /* Utilities */,
 				062FD7722208A6F800E237DA /* Color_Hex.swift */,
-				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
+				062FD7702208A5C900E237DA /* GradientView.swift */,
 				067A6401221B1791001A20DF /* LayoutBuildingHelpers.swift */,
+				062FD75F2208976900E237DA /* NotificationHandler.swift */,
+				060679F2220C8FCE00D6A3FE /* SketchShadow.swift */,
 				064E8E4A221ED2D70019EB1A /* UIViewController_Embedding.swift */,
 			);
 			path = Commons;
@@ -231,8 +231,8 @@
 		06325AAD221D1E0600418954 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				06325AAE221D1E1D00418954 /* TabBarViewController.swift */,
 				06325AB0221D1F1100418954 /* TabBarView.swift */,
+				06325AAE221D1E1D00418954 /* TabBarViewController.swift */,
 				06325AB2221D22B200418954 /* TabBarViewModel.swift */,
 			);
 			path = TabBar;
@@ -261,8 +261,8 @@
 			children = (
 				067A63F8221B116E001A20DF /* CheckBox */,
 				067A63F4221AE13D001A20DF /* SongView.swift */,
-				067A63F6221AE456001A20DF /* SongView_Selection.swift */,
 				064E8E4E221F2B810019EB1A /* SongView_Playable.swift */,
+				067A63F6221AE456001A20DF /* SongView_Selection.swift */,
 			);
 			path = Song;
 			sourceTree = "<group>";
@@ -271,10 +271,10 @@
 			isa = PBXGroup;
 			children = (
 				067A63FB221B130F001A20DF /* Song */,
-				067A63FF221B1444001A20DF /* SongInteractiveView.swift */,
 				067A6403221B1D4C001A20DF /* SongInteractionView_Modes.swift */,
-				067A6405221B1F1C001A20DF /* SongInteractiveView_Animating.swift */,
 				064E8E4C221F011E0019EB1A /* SongInteractionView_Resetting.swift */,
+				067A63FF221B1444001A20DF /* SongInteractiveView.swift */,
+				067A6405221B1F1C001A20DF /* SongInteractiveView_Animating.swift */,
 			);
 			path = SongInteractive;
 			sourceTree = "<group>";
@@ -290,9 +290,9 @@
 		06959542221823C7009F966A /* Observer */ = {
 			isa = PBXGroup;
 			children = (
+				0695954722182416009F966A /* Disposable.swift */,
 				06959543221823DE009F966A /* EventEmitter.swift */,
 				06959545221823F6009F966A /* Invoctable.swift */,
-				0695954722182416009F966A /* Disposable.swift */,
 				0695954922182432009F966A /* Subscription.swift */,
 			);
 			path = Observer;
@@ -302,12 +302,12 @@
 			isa = PBXGroup;
 			children = (
 				0625D2612214218100F13B30 /* SongPicker */,
-				069A838E2211FC8100D3E223 /* MeditationViewController.swift */,
 				069A83902211FF9800D3E223 /* MeditationView.swift */,
-				062022CE2213365D008DFECD /* NavigationView.swift */,
+				069A838E2211FC8100D3E223 /* MeditationViewController.swift */,
 				0625D262221421BF00F13B30 /* MeditationViewModel.swift */,
 				0625D2662214536500F13B30 /* MeditationViewModel_Data.swift */,
 				067A63F2221ADC86001A20DF /* MeditationView_Animating.swift */,
+				062022CE2213365D008DFECD /* NavigationView.swift */,
 			);
 			path = Meditation;
 			sourceTree = "<group>";
@@ -323,12 +323,12 @@
 		06A71A6C2201F2A1001DE399 = {
 			isa = PBXGroup;
 			children = (
+				9ECAB40E3B2CF84718114382 /* Frameworks */,
 				06A71A772201F2A1001DE399 /* MeditationAppShowcase */,
 				06248E27220DE150006525F5 /* MeditationAppShowcaseTests */,
+				5816F91E5DD055EA95DA51C7 /* Pods */,
 				06A71A762201F2A1001DE399 /* Products */,
 				06A71A922201F946001DE399 /* Default-568h@2x.png */,
-				5816F91E5DD055EA95DA51C7 /* Pods */,
-				9ECAB40E3B2CF84718114382 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,10 +357,10 @@
 			isa = PBXGroup;
 			children = (
 				06A71A8B2201F59F001DE399 /* Container.swift */,
+				06FD1C032215B6B60075A6C1 /* Container_ActionController.swift */,
+				06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */,
 				06A71A902201F7A1001DE399 /* Container_Home.swift */,
 				062022C82212F8DE008DFECD /* Container_Meditation.swift */,
-				06FD1C012215B5CB0075A6C1 /* Container_Configurator.swift */,
-				06FD1C032215B6B60075A6C1 /* Container_ActionController.swift */,
 				06325AB4221D26AC00418954 /* Container_TabBar.swift */,
 			);
 			path = Container;
@@ -369,10 +369,10 @@
 		06A71A8D2201F6BB001DE399 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				06325AAD221D1E0600418954 /* TabBar */,
 				06B5E37A22147FF600004D09 /* ActionController */,
-				069A838D2211FC1B00D3E223 /* Meditation */,
 				06A71A8E2201F6C8001DE399 /* Home */,
+				069A838D2211FC1B00D3E223 /* Meditation */,
+				06325AAD221D1E0600418954 /* TabBar */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -380,10 +380,10 @@
 		06A71A8E2201F6C8001DE399 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				06248E20220DCA5C006525F5 /* HomeBoardView.swift */,
+				06A71A96220213E2001DE399 /* HomeView.swift */,
 				06A71A7A2201F2A1001DE399 /* HomeViewController.swift */,
 				06A71A9422020874001DE399 /* HomeViewModel.swift */,
-				06A71A96220213E2001DE399 /* HomeView.swift */,
-				06248E20220DCA5C006525F5 /* HomeBoardView.swift */,
 				069A83952212087E00D3E223 /* HomeView_Dismission.swift */,
 			);
 			path = Home;
@@ -402,15 +402,15 @@
 		06B5E37A22147FF600004D09 /* ActionController */ = {
 			isa = PBXGroup;
 			children = (
-				06B5E37B2214801500004D09 /* ActionViewController.swift */,
-				06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */,
-				06B5E37F22148F9E00004D09 /* ActionView.swift */,
 				06248E34220DEF39006525F5 /* ActionControl.swift */,
-				06B5E38122149EFA00004D09 /* ActionViewController_Event.swift */,
-				06FD1C052215BE3D0075A6C1 /* NSAttributedString_ButtonTitle.swift */,
-				0677959C2215D9C200A26913 /* ActionView_Mode.swift */,
 				06B6E86D22187DA4005102C6 /* ActionEmitter.swift */,
+				06B5E37F22148F9E00004D09 /* ActionView.swift */,
+				06B5E37B2214801500004D09 /* ActionViewController.swift */,
+				06B5E38122149EFA00004D09 /* ActionViewController_Event.swift */,
+				06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */,
 				06B6E86F221885EB005102C6 /* ActionViewModel.swift */,
+				0677959C2215D9C200A26913 /* ActionView_Mode.swift */,
+				06FD1C052215BE3D0075A6C1 /* NSAttributedString_ButtonTitle.swift */,
 			);
 			path = ActionController;
 			sourceTree = "<group>";
@@ -419,8 +419,8 @@
 			isa = PBXGroup;
 			children = (
 				062022CC221301EA008DFECD /* AppConfigurator.swift */,
-				06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */,
 				067A63F0221ABD58001A20DF /* AppConfigurator_ActionViewControllerOperating.swift */,
+				06FD1BFF2215AB130075A6C1 /* AppViewControllersFactory.swift */,
 			);
 			path = AppConfigurator;
 			sourceTree = "<group>";
@@ -653,7 +653,7 @@
 				067A63FA221B1188001A20DF /* CheckBox_Selection.swift in Sources */,
 				069A83962212087E00D3E223 /* HomeView_Dismission.swift in Sources */,
 				0695954A22182432009F966A /* Subscription.swift in Sources */,
-				062022D122135030008DFECD /* SongPickerViewCell.swift in Sources */,
+				062022D122135030008DFECD /* SongViewCell.swift in Sources */,
 				06A71A97220213E2001DE399 /* HomeView.swift in Sources */,
 				06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */,
 				06B5E37C2214801500004D09 /* ActionViewController.swift in Sources */,
@@ -678,7 +678,7 @@
 				06FD1C042215B6B60075A6C1 /* Container_ActionController.swift in Sources */,
 				0625D263221421BF00F13B30 /* MeditationViewModel.swift in Sources */,
 				06248E35220DEF39006525F5 /* ActionControl.swift in Sources */,
-				0625D260221420F800F13B30 /* SongPickerViewModel.swift in Sources */,
+				0625D260221420F800F13B30 /* SongViewModel.swift in Sources */,
 				06FD1C002215AB130075A6C1 /* AppViewControllersFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

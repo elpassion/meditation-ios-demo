@@ -38,16 +38,16 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return songPickerViewModels.count
+        return songViewModels.count
     }
 
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SongPickerViewCell.description(),
-                                                       for: indexPath) as? SongPickerViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SongViewCell.description(),
+                                                       for: indexPath) as? SongViewCell else {
                                                         fatalError("Could not dequeue such cell")
         }
-        configure(cell: cell, with: songPickerViewModels[indexPath.row])
+        configure(cell: cell, with: songViewModels[indexPath.row])
         return cell
     }
 
@@ -55,7 +55,7 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
 
     private let viewModel: MeditationViewModeling
 
-    private var songPickerViewModels = [SongPickerViewModeling]() {
+    private var songViewModels = [SongViewModeling]() {
         didSet {
             meditationView.tableView.reloadData()
         }
@@ -69,16 +69,16 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
         meditationView.tableView.dataSource = self
         meditationView.tableView.allowsMultipleSelection = true
         meditationView.tableView.showsVerticalScrollIndicator = false
-        meditationView.tableView.register(SongPickerViewCell.self,
-                                          forCellReuseIdentifier: SongPickerViewCell.description())
+        meditationView.tableView.register(SongViewCell.self,
+                                          forCellReuseIdentifier: SongViewCell.description())
         meditationView.tableView.separatorStyle = .none
         meditationView.navigationView.arrowButton.addTarget(self,
                                                             action: #selector(backAction),
                                                             for: .touchUpInside)
-        viewModel.songPickerViewModels = { [weak self] in self?.songPickerViewModels = $0 }
+        viewModel.latestSongViewModels = { [weak self] in self?.songViewModels = $0 }
     }
 
-    private func configure(cell: SongPickerViewCell, with viewModel: SongPickerViewModeling) {
+    private func configure(cell: SongViewCell, with viewModel: SongViewModeling) {
         cell.animateAppearance(delay: viewModel.appearanceAnimationDelay)
         cell.interactiveView.songView.titleLabel.text = viewModel.title
         cell.interactiveView.songView.subtitleLabel.text = viewModel.subtitle

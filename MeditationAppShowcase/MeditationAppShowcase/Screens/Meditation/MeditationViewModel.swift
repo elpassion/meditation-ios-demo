@@ -1,5 +1,5 @@
 protocol MeditationViewModeling: class {
-    var songPickerViewModels: (([SongPickerViewModeling]) -> Void)? { get set }
+    var latestSongViewModels: (([SongViewModeling]) -> Void)? { get set }
     func viewDidAppear()
     func viewWillDisappear()
     func backAction()
@@ -10,7 +10,7 @@ class MeditationViewModel: MeditationViewModeling {
 
     init(actionOperator: ActionOperating,
          tabBarOperator: TabBarOperating,
-         songViewModels: [SongPickerViewModeling]) {
+         songViewModels: [SongViewModeling]) {
         self.actionOperator = actionOperator
         self.tabBarOperator = tabBarOperator
         self.songViewModels = songViewModels
@@ -18,10 +18,10 @@ class MeditationViewModel: MeditationViewModeling {
 
     // MARK: - MeditationViewModeling
 
-    var songPickerViewModels: (([SongPickerViewModeling]) -> Void)?
+    var latestSongViewModels: (([SongViewModeling]) -> Void)?
 
     func viewDidAppear() {
-        songPickerViewModels?(songViewModels)
+        latestSongViewModels?(songViewModels)
         disposable = actionOperator.actionHandler.addHandler(
             target: self,
             handler: MeditationViewModel.handleAction)
@@ -44,7 +44,7 @@ class MeditationViewModel: MeditationViewModeling {
 
     private let actionOperator: ActionOperating
     private let tabBarOperator: TabBarOperating
-    private let songViewModels: [SongPickerViewModeling]
+    private let songViewModels: [SongViewModeling]
     private var disposable: Disposable?
 
     private func handleAction(action: ActionViewController.Action) {

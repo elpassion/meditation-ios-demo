@@ -1,13 +1,13 @@
 import Foundation
 
-protocol SongPickerViewModeling: class {
+protocol SongViewModeling: class {
     var appearanceAnimationDelay: TimeInterval { get }
     var title: String { get }
     var subtitle: String { get }
     var time: String { get }
 }
 
-class SongPickerViewModel: SongPickerViewModeling {
+class SongViewModel: SongViewModeling {
 
     init(appearanceAnimationDelay: TimeInterval, title: String, subtitle: String, time: String) {
         self.appearanceAnimationDelay = appearanceAnimationDelay
@@ -16,7 +16,7 @@ class SongPickerViewModel: SongPickerViewModeling {
         self.time = time
     }
 
-    // MARK: - SongPickerViewModeling
+    // MARK: - SongViewModeling
 
     let appearanceAnimationDelay: TimeInterval
     var title: String
