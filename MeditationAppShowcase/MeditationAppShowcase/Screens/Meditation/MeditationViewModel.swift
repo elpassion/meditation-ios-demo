@@ -11,12 +11,12 @@ class MeditationViewModel: MeditationViewModeling {
 
     init(actionOperator: ActionOperating,
          tabBarOperator: TabBarOperating,
-         songViewModels: [SongViewModeling],
-         modeOperator: SongModeOperating = SongModeOperator()) {
+         songManager: SongManaging,
+         stateOperator: MeditationStateOperating) {
         self.actionOperator = actionOperator
         self.tabBarOperator = tabBarOperator
-        self.songViewModels = songViewModels
-        self.modeOperator = modeOperator
+        self.songManager = songManager
+        self.stateOperator = stateOperator
     }
 
     // MARK: - MeditationViewModeling
@@ -53,8 +53,8 @@ class MeditationViewModel: MeditationViewModeling {
 
     private let actionOperator: ActionOperating
     private let tabBarOperator: TabBarOperating
-    private let songViewModels: [SongViewModeling]
-    private let modeOperator: SongModeOperating
+    private let songManager: SongManaging
+    private let stateOperator: MeditationStateOperating
     private var disposable: Disposable?
 
     private func handleAction(action: ActionViewController.Action) {
