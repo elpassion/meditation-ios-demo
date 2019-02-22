@@ -57,6 +57,7 @@
 		06A71A932201F946001DE399 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A71A922201F946001DE399 /* Default-568h@2x.png */; };
 		06A71A9522020874001DE399 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A9422020874001DE399 /* HomeViewModel.swift */; };
 		06A71A97220213E2001DE399 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A71A96220213E2001DE399 /* HomeView.swift */; };
+		06B41EAC222006E100C7F935 /* SongMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EAB222006E100C7F935 /* SongMode.swift */; };
 		06B5E37C2214801500004D09 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37B2214801500004D09 /* ActionViewController.swift */; };
 		06B5E37E221480A900004D09 /* ActionViewController_Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */; };
 		06B5E38022148F9E00004D09 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37F22148F9E00004D09 /* ActionView.swift */; };
@@ -137,6 +138,7 @@
 		06A71A922201F946001DE399 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		06A71A9422020874001DE399 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06A71A96220213E2001DE399 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		06B41EAB222006E100C7F935 /* SongMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongMode.swift; sourceTree = "<group>"; };
 		06B5E37B2214801500004D09 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		06B5E37D221480A900004D09 /* ActionViewController_Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController_Mode.swift; sourceTree = "<group>"; };
 		06B5E37F22148F9E00004D09 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				067A63FE221B140E001A20DF /* SongInteractive */,
 				062022D022135030008DFECD /* SongViewCell.swift */,
 				0625D25F221420F800F13B30 /* SongViewModel.swift */,
+				06B41EAB222006E100C7F935 /* SongMode.swift */,
 			);
 			path = SongPicker;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				062FD7732208A6F800E237DA /* Color_Hex.swift in Sources */,
 				0625D265221433C800F13B30 /* CheckBoxView.swift in Sources */,
 				06A71A8C2201F59F001DE399 /* Container.swift in Sources */,
+				06B41EAC222006E100C7F935 /* SongMode.swift in Sources */,
 				06959546221823F6009F966A /* Invoctable.swift in Sources */,
 				06FD1C062215BE3D0075A6C1 /* NSAttributedString_ButtonTitle.swift in Sources */,
 				062FD7602208976900E237DA /* NotificationHandler.swift in Sources */,

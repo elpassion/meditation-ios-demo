@@ -2,11 +2,7 @@ import UIKit
 
 extension SongInteractiveView {
 
-    enum `Mode` {
-        case selectable, selected, active
-    }
-
-    func update(mode: Mode, animator: Animating = Animator()) {
+    func update(mode: SongMode, animator: Animating = Animator()) {
         switch mode {
         case .selectable:
             setSelected(false, animator: animator)
