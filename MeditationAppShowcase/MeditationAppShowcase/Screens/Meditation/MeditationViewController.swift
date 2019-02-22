@@ -1,6 +1,6 @@
 import UIKit
 
-class MeditationViewController: UIViewController, UITableViewDataSource {
+class MeditationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     init(viewModel: MeditationViewModeling) {
         self.viewModel = viewModel
@@ -51,6 +51,16 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
         return cell
     }
 
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelect(isSelected: true, index: indexPath.row)
+    }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        viewModel.didSelect(isSelected: false, index: indexPath.row)
+    }
+
     // MARK: - Privates
 
     private let viewModel: MeditationViewModeling
@@ -67,6 +77,7 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
 
     private func configureSubviews() {
         meditationView.tableView.dataSource = self
+        meditationView.tableView.delegate = self
         meditationView.tableView.allowsMultipleSelection = true
         meditationView.tableView.showsVerticalScrollIndicator = false
         meditationView.tableView.register(SongViewCell.self,
@@ -83,6 +94,9 @@ class MeditationViewController: UIViewController, UITableViewDataSource {
         cell.interactiveView.songView.titleLabel.text = viewModel.title
         cell.interactiveView.songView.subtitleLabel.text = viewModel.subtitle
         cell.interactiveView.songView.timeLabel.text = viewModel.time
+        cell.update(mode: viewModel.songMode, animated: false)
+        viewModel.updateSongMode = { [cell] mode in cell.update(mode: mode,
+                                                                animated: true) }
     }
 
     // MARK: - Handlers

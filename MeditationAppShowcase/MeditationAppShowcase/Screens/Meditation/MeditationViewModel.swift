@@ -1,5 +1,6 @@
 protocol MeditationViewModeling: class {
     var latestSongViewModels: (([SongViewModeling]) -> Void)? { get set }
+    func didSelect(isSelected: Bool, index: Int)
     func viewDidAppear()
     func viewWillDisappear()
     func backAction()
@@ -10,15 +11,23 @@ class MeditationViewModel: MeditationViewModeling {
 
     init(actionOperator: ActionOperating,
          tabBarOperator: TabBarOperating,
-         songViewModels: [SongViewModeling]) {
+         songViewModels: [SongViewModeling],
+         modeOperator: SongModeOperating = SongModeOperator()) {
         self.actionOperator = actionOperator
         self.tabBarOperator = tabBarOperator
         self.songViewModels = songViewModels
+        self.modeOperator = modeOperator
     }
 
     // MARK: - MeditationViewModeling
 
     var latestSongViewModels: (([SongViewModeling]) -> Void)?
+
+    func didSelect(isSelected: Bool, index: Int) {
+        let oldMode = songViewModels[index].songMode
+        let newMode = modeOperator.toSelected(isSelected, mode: oldMode)
+        songViewModels[index].songMode = newMode
+    }
 
     func viewDidAppear() {
         latestSongViewModels?(songViewModels)
@@ -45,6 +54,7 @@ class MeditationViewModel: MeditationViewModeling {
     private let actionOperator: ActionOperating
     private let tabBarOperator: TabBarOperating
     private let songViewModels: [SongViewModeling]
+    private let modeOperator: SongModeOperating
     private var disposable: Disposable?
 
     private func handleAction(action: ActionViewController.Action) {

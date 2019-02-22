@@ -2,8 +2,8 @@ import UIKit
 
 extension SongViewCell {
 
-    func updateMode(mode: SongMode) {
-        interactiveView.update(mode: mode)
+    func update(mode: SongMode, animated: Bool) {
+        interactiveView.update(mode: mode, animated: animated)
         switch mode {
         case .picking(.unselected): setSeparator(isVisible: true)
         default: setSeparator(isVisible: false)

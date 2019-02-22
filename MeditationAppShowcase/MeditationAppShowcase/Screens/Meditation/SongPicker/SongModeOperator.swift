@@ -1,9 +1,10 @@
 protocol SongModeOperating {
     func toListening(from mode: SongMode) -> SongMode
     func toPicking(from mode: SongMode) -> SongMode
+    func toSelected(_ isSelected: Bool, mode: SongMode) -> SongMode
 }
 
-class SongModeOperator {
+class SongModeOperator: SongModeOperating {
 
     func toListening(from mode: SongMode) -> SongMode {
         switch mode {
@@ -24,6 +25,22 @@ class SongModeOperator {
             case .hidden: return .picking(.unselected)
             }
         case .picking: return mode
+        }
+    }
+
+    func toSelected(_ isSelected: Bool, mode: SongMode) -> SongMode {
+        switch mode {
+        case .picking(let picking):
+            switch picking {
+            case .unselected: return .picking(.selected)
+            case .selected: return .picking(.unselected)
+            }
+        case .listening(let listening):
+            switch listening {
+            case .playable: return .listening(.playing)
+            case .playing: return .listening(.playable)
+            case .hidden: return .listening(.hidden)
+            }
         }
     }
 

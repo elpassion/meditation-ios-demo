@@ -25,7 +25,13 @@ class SongViewModel: SongViewModeling {
     var subtitle: String
     var time: String
 
-    var songMode: SongMode = .picking(.unselected)
+    var songMode: SongMode = .picking(.unselected) {
+        didSet {
+            guard oldValue != songMode else { return }
+            updateSongMode?(songMode)
+        }
+    }
+
     var updateSongMode: ((SongMode) -> Void)?
 
 }

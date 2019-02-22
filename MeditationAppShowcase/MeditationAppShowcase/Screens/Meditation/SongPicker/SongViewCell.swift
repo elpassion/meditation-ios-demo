@@ -7,6 +7,7 @@ class SongViewCell: UITableViewCell {
         configureSubviews()
         addSubviews()
         setupLayout()
+        interactiveView.reset()
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }
