@@ -1,6 +1,6 @@
 extension MeditationViewModel {
 
-    var preparedViewModels: [SongPickerViewModeling] {
+    static func preparedViewModels() -> [SongPickerViewModeling] {
         return [
             SongPickerViewModel(appearanceAnimationDelay: 0,
                                 title: "Walking with the wolves",

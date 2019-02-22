@@ -9,9 +9,11 @@ protocol MeditationViewModeling: class {
 class MeditationViewModel: MeditationViewModeling {
 
     init(actionOperator: ActionOperating,
-         tabBarOperator: TabBarOperating) {
+         tabBarOperator: TabBarOperating,
+         songViewModels: [SongPickerViewModeling]) {
         self.actionOperator = actionOperator
         self.tabBarOperator = tabBarOperator
+        self.songViewModels = songViewModels
     }
 
     // MARK: - MeditationViewModeling
@@ -19,7 +21,7 @@ class MeditationViewModel: MeditationViewModeling {
     var songPickerViewModels: (([SongPickerViewModeling]) -> Void)?
 
     func viewDidAppear() {
-        songPickerViewModels?(preparedViewModels)
+        songPickerViewModels?(songViewModels)
         disposable = actionOperator.actionHandler.addHandler(
             target: self,
             handler: MeditationViewModel.handleAction)
@@ -42,6 +44,7 @@ class MeditationViewModel: MeditationViewModeling {
 
     private let actionOperator: ActionOperating
     private let tabBarOperator: TabBarOperating
+    private let songViewModels: [SongPickerViewModeling]
     private var disposable: Disposable?
 
     private func handleAction(action: ActionViewController.Action) {

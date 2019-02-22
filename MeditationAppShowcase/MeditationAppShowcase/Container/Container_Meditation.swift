@@ -14,7 +14,8 @@ extension Container: MeditationContaining {
 
     func meditationViewModel() -> MeditationViewModeling {
         return MeditationViewModel(actionOperator: sharedActionViewModel,
-                                   tabBarOperator: tabBarViewModel())
+                                   tabBarOperator: tabBarViewModel(),
+                                   songViewModels: MeditationViewModel.preparedViewModels())
     }
 
 }
