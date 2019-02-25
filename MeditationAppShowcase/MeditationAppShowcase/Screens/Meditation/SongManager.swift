@@ -10,9 +10,8 @@ protocol SongManaging: class {
 
 class SongManager: SongManaging {
 
-    init(viewModels: [SongViewModeling], songModeOperator: SongModeOperating) {
+    init(viewModels: [SongViewModeling]) {
         self.viewModels = viewModels
-        self.songModeOperator = songModeOperator
     }
 
     let viewModels: [SongViewModeling]
@@ -21,7 +20,7 @@ class SongManager: SongManaging {
         switch viewModels[index].songMode {
         case .picking:
             let oldMode = viewModels[index].songMode
-            let newMode = songModeOperator.toSelected(isSelected, mode: oldMode)
+            let newMode = toSelected(isSelected, mode: oldMode)
             viewModels[index].songMode = newMode
         case .listening(.playable):
             viewModels
@@ -33,11 +32,13 @@ class SongManager: SongManaging {
     }
 
     func updateToPickingViewModels() {
-        viewModels.forEach { [unowned self] viewModel in
-            let oldMode = viewModel.songMode
-            let newMode = self.songModeOperator.toPicking(from: oldMode)
-            viewModel.songMode = newMode
-        }
+        viewModels
+            .filter { $0.songMode == .listening(.playing) || $0.songMode == .listening(.playable) }
+            .forEach { $0.songMode = .picking(.selected) }
+
+        viewModels
+            .filter { $0.songMode == .listening(.hidden) }
+            .forEach { $0.songMode = .picking(.unselected) }
     }
 
     func updateToListeningViewModels() {
@@ -77,6 +78,20 @@ class SongManager: SongManaging {
 
     // MARK: - Privates
 
-    private let songModeOperator: SongModeOperating
+    private func toSelected(_ isSelected: Bool, mode: SongMode) -> SongMode {
+        switch mode {
+        case .picking(let picking):
+            switch picking {
+            case .unselected: return .picking(.selected)
+            case .selected: return .picking(.unselected)
+            }
+        case .listening(let listening):
+            switch listening {
+            case .playable: return .listening(.playing)
+            case .playing: return .listening(.playing)
+            case .hidden: return .listening(.hidden)
+            }
+        }
+    }
 
 }

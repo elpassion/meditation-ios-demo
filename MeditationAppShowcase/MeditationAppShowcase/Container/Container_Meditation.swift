@@ -20,8 +20,7 @@ extension Container: MeditationContaining {
     }
 
     func songManager() -> SongManaging {
-        return SongManager(viewModels: MeditationViewModel.preparedViewModels(),
-                           songModeOperator: SongModeOperator())
+        return SongManager(viewModels: MeditationViewModel.preparedViewModels())
     }
 
 }
