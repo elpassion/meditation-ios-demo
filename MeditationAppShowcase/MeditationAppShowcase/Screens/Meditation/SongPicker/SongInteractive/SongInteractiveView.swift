@@ -34,7 +34,8 @@ class SongInteractiveView: UIView {
     }
 
     private func setupLayout() {
-        interactiveView.pinEdges(to: self)
+        interactiveView.pinEdges(to: self,
+                                 edgeInsets: UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 16))
         songView.pinEdges(to: self)
     }
 

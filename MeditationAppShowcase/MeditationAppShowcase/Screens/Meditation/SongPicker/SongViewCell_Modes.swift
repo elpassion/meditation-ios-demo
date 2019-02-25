@@ -18,4 +18,12 @@ extension SongViewCell {
         separatorView.backgroundColor = isVisible ? UIColor(rgb: 0xD7D7E7) : .clear
     }
 
+    static func height(for mode: SongMode) -> CGFloat {
+        switch mode {
+        case .picking, .listening(.playable): return 76
+        case .listening(.playing): return 110
+        case .listening(.hidden): return 0
+        }
+    }
+
 }

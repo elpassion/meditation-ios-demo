@@ -61,6 +61,10 @@ class MeditationViewController: UIViewController, UITableViewDataSource, UITable
         viewModel.didSelect(isSelected: false, index: indexPath.row)
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return SongViewCell.height(for: songViewModels[indexPath.row].songMode)
+    }
+
     // MARK: - Privates
 
     private let viewModel: MeditationViewModeling
@@ -90,6 +94,8 @@ class MeditationViewController: UIViewController, UITableViewDataSource, UITable
             self?.meditationView.navigationView.titleLabel.text = $0
         }
         viewModel.latestSongViewModels = { [weak self] in self?.songViewModels = $0 }
+        viewModel.beginHeightUpdate = { [meditationView] in meditationView?.tableView.beginUpdates() }
+        viewModel.endHeightUpdate = { [meditationView] in meditationView?.tableView.endUpdates() }
     }
 
     private func configure(cell: SongViewCell, with viewModel: SongViewModeling) {

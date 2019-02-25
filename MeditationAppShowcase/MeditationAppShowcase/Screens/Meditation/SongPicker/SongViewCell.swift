@@ -13,6 +13,7 @@ class SongViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) { return nil }
 
     let interactiveView = SongInteractiveView()
+    let separatorView = UIView(frame: .zero)
 
     func animateAppearance(delay: TimeInterval, animator: Animating = Animator()) {
         guard !didPerformAppearanceAnimation else { return }
@@ -30,7 +31,6 @@ class SongViewCell: UITableViewCell {
 
     // MARK: - Privates
 
-    let separatorView = UIView(frame: .zero)
     private var didPerformAppearanceAnimation = false
 
     private func configureSubviews() {
@@ -44,8 +44,9 @@ class SongViewCell: UITableViewCell {
     }
 
     private func setupLayout() {
-        interactiveView.pinEdges(to: contentView,
-                                 edgeInsets: UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 16))
+        interactiveView.pinTop(to: contentView.topAnchor)
+        interactiveView.pinLeading(to: contentView.leadingAnchor)
+        interactiveView.pinTrailing(to: contentView.trailingAnchor)
         separatorView.pinLeading(to: interactiveView.songView.checkBoxView.leadingAnchor)
         separatorView.pinTrailing(to: trailingAnchor)
         separatorView.pinHeight(0.5)

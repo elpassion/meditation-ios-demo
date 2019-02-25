@@ -5,6 +5,8 @@ protocol MeditationViewModeling: class {
     func viewDidAppear()
     func viewWillDisappear()
     func backAction()
+    var beginHeightUpdate: (() -> Void)? { get set }
+    var endHeightUpdate: (() -> Void)? { get set }
     var closeMeditation: (() -> Void)? { get set }
 }
 
@@ -28,7 +30,9 @@ class MeditationViewModel: MeditationViewModeling {
     var latestSongViewModels: (([SongViewModeling]) -> Void)?
 
     func didSelect(isSelected: Bool, index: Int) {
+        beginHeightUpdate?()
         songManager.select(isSelected: isSelected, index: index)
+        endHeightUpdate?()
     }
 
     func viewDidAppear() {
@@ -48,7 +52,8 @@ class MeditationViewModel: MeditationViewModeling {
         screenStateOperator.previous()
     }
 
-    // MARK: - MeditationViewOperating
+    var beginHeightUpdate: (() -> Void)?
+    var endHeightUpdate: (() -> Void)?
 
     var closeMeditation: (() -> Void)?
 
@@ -65,10 +70,14 @@ class MeditationViewModel: MeditationViewModeling {
         case .button:
             screenStateOperator.next()
         case .rewind:
+            beginHeightUpdate?()
             songManager.playPrevious()
+            endHeightUpdate?()
         case .play: ()
         case .forward:
+            beginHeightUpdate?()
             songManager.playNext()
+            endHeightUpdate?()
         }
     }
 
@@ -79,11 +88,15 @@ class MeditationViewModel: MeditationViewModeling {
                 self?.closeMeditation?()
             case .picking:
                 self?.actionOperator.set(mode: .singleButton(title: "START MEDITATION SESSION"))
+                self?.beginHeightUpdate?()
                 self?.songManager.updateToPickingViewModels()
+                self?.endHeightUpdate?()
                 self?.navigationTitle?("Pick meditation song")
             case .listening:
                 self?.actionOperator.set(mode: .player)
+                self?.beginHeightUpdate?()
                 self?.songManager.updateToListeningViewModels()
+                self?.endHeightUpdate?()
                 self?.navigationTitle?("Player")
             case .finished:
                 self?.closeMeditation?()
