@@ -14,33 +14,33 @@ class TabBarView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        bringSubviewToFront(bottomView)
+        bringSubviewToFront(bottomImageView)
     }
 
     let containerView = UIView(frame: .zero)
-    let bottomView = SubviewFactory.bottomView()
+    let bottomImageView = SubviewFactory.bottomView()
     var bottomBarConstraint: NSLayoutConstraint?
 
     // MARK: - Privates
 
     private func configureSubviews() {
         let shadow = SketchShadow(color: .gray, x: 0, y: 2, blur: 4, spread: 0)
-        bottomView.layer.apply(shadow)
+        bottomImageView.layer.apply(shadow)
     }
 
     private func addSubviews() {
         addSubview(containerView)
-        addSubview(bottomView)
+        addSubview(bottomImageView)
     }
 
     private func setupLayout() {
         containerView.pinTop(to: safeAreaLayoutGuide.topAnchor)
         containerView.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
         containerView.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
-        containerView.pinBottom(to: bottomView.topAnchor)
-        bottomView.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
-        bottomView.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
-        bottomBarConstraint = bottomView.pinBottom(to: safeAreaLayoutGuide.bottomAnchor)
+        containerView.pinBottom(to: bottomImageView.topAnchor)
+        bottomImageView.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
+        bottomImageView.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
+        bottomBarConstraint = bottomImageView.pinBottom(to: safeAreaLayoutGuide.bottomAnchor)
     }
 
 }

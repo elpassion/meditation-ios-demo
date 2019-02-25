@@ -48,7 +48,7 @@ class TabBarViewController: UIViewController {
     }
 
     private func updateBar(isVisible: Bool) {
-        let offset = isVisible ? 0 : tabBarView.bottomView.frame.height
+        let offset = isVisible ? 0 : tabBarView.bottomImageView.frame.height
         animator.animate(duration: 0.3,
                          animations: {
                                 self.tabBarView.bottomBarConstraint?.constant = offset
