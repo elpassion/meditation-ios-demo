@@ -41,12 +41,12 @@ class SongManager: SongManaging {
     }
 
     func updateToListeningViewModels() {
-        viewModels.forEach { [unowned self] viewModel in
-            let oldMode = viewModel.songMode
-            let newMode = self.songModeOperator.toListening(from: oldMode)
-            viewModel.songMode = newMode
+        let selected = viewModels.filter { $0.songMode == .picking(.selected) }
+        for (index, viewModel) in selected.enumerated() {
+            viewModel.songMode = index == 0 ? .listening(.playing) : .listening(.playable)
         }
-        playFirst()
+        let unselected = viewModels.filter { $0.songMode == .picking(.unselected) }
+        unselected.forEach { $0.songMode = .listening(.hidden) }
     }
 
     func playNext() {
@@ -78,12 +78,5 @@ class SongManager: SongManaging {
     // MARK: - Privates
 
     private let songModeOperator: SongModeOperating
-
-    private func playFirst() {
-        let playables = viewModels.filter { $0.songMode == .listening(.playable) }
-        if let firstPlayable = playables.first {
-            firstPlayable.songMode = .listening(.playing)
-        }
-    }
 
 }
