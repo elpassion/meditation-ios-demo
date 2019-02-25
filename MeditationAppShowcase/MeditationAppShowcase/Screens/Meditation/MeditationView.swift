@@ -1,16 +1,12 @@
 import UIKit
 
-class MeditationView: GradientView {
+class MeditationView: UIView {
 
     init() {
-        super.init(style: GradientStyle(colors: [GradientColor(location: 0.0,
-                                                               color: UIColor(rgb: 0xFBFCFC)),
-                                                 GradientColor(location: 1.0,
-                                                               color: UIColor(rgb: 0xF3F5F6))],
-                                        direction: .vertical))
+        super.init(frame: .zero)
         addSubviews()
         setupLayout()
-        backgroundColor = .white
+        backgroundColor = UIColor(rgb: 0xF9FAFB)
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }

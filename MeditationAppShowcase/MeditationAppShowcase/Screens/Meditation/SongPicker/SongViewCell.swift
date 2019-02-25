@@ -35,6 +35,7 @@ class SongViewCell: UITableViewCell {
 
     private func configureSubviews() {
         selectionStyle = .none
+        contentView.backgroundColor = interactiveView.unselectedBackgroundColor
         setSelected(false, animated: false)
     }
 
