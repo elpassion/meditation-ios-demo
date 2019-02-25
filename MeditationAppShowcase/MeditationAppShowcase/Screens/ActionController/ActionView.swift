@@ -26,7 +26,7 @@ class ActionView: UIView {
     }
 
     private func setupLayout() {
-        let distance: CGFloat = 40
+        let distance: CGFloat = 50
         pinHeight(73)
         rewindButton.pinTop(to: middleControl.topAnchor)
         rewindButton.pinLeading(to: leadingAnchor)
