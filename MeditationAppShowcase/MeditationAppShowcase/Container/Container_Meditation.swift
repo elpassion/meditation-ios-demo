@@ -13,14 +13,11 @@ extension Container: MeditationContaining {
     }
 
     func meditationViewModel() -> MeditationViewModeling {
-        return MeditationViewModel(actionOperator: sharedActionViewModel,
+        return MeditationViewModel(viewModels: MeditationViewModel.preparedViewModels(),
+                                   actionOperator: sharedActionViewModel,
                                    tabBarOperator: tabBarViewModel(),
-                                   songManager: songManager(),
+                                   songManager: SongManager(),
                                    screenStateOperator: MeditationScreenStateOperator())
-    }
-
-    func songManager() -> SongManaging {
-        return SongManager(viewModels: MeditationViewModel.preparedViewModels())
     }
 
 }
