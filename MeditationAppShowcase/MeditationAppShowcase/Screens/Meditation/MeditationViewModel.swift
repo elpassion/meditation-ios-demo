@@ -103,8 +103,8 @@ class MeditationViewModel: MeditationViewModeling {
                 self.endHeightUpdate?()
                 self.navigationTitle?("Player")
             case .finished:
-                self.closeMeditation?()
                 self.endHeightUpdate = nil
+                self.closeMeditation?()
             }
         }
 
