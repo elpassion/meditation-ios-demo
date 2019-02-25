@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0604A603222491BF00D40DC2 /* SongInteractionView_Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0604A602222491BF00D40DC2 /* SongInteractionView_Height.swift */; };
 		060679F3220C8FCE00D6A3FE /* SketchShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060679F2220C8FCE00D6A3FE /* SketchShadow.swift */; };
 		062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022C82212F8DE008DFECD /* Container_Meditation.swift */; };
 		062022CD221301EA008DFECD /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CC221301EA008DFECD /* AppConfigurator.swift */; };
@@ -88,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0604A602222491BF00D40DC2 /* SongInteractionView_Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInteractionView_Height.swift; sourceTree = "<group>"; };
 		060679F2220C8FCE00D6A3FE /* SketchShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchShadow.swift; sourceTree = "<group>"; };
 		062022C82212F8DE008DFECD /* Container_Meditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container_Meditation.swift; sourceTree = "<group>"; };
 		062022CC221301EA008DFECD /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				064E8E4C221F011E0019EB1A /* SongInteractionView_Resetting.swift */,
 				067A63FF221B1444001A20DF /* SongInteractiveView.swift */,
 				067A6405221B1F1C001A20DF /* SongInteractiveView_Animating.swift */,
+				0604A602222491BF00D40DC2 /* SongInteractionView_Height.swift */,
 			);
 			path = SongInteractive;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				06325AAF221D1E1D00418954 /* TabBarViewController.swift in Sources */,
 				06B41EB22220276B00C7F935 /* MeditationScreenStateOperator.swift in Sources */,
 				062FD7712208A5C900E237DA /* GradientView.swift in Sources */,
+				0604A603222491BF00D40DC2 /* SongInteractionView_Height.swift in Sources */,
 				067A63F7221AE456001A20DF /* SongView_Selection.swift in Sources */,
 				06FD1C042215B6B60075A6C1 /* Container_ActionController.swift in Sources */,
 				0625D263221421BF00F13B30 /* MeditationViewModel.swift in Sources */,
