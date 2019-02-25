@@ -9,8 +9,10 @@ extension SongViewCell {
     func update(mode: SongMode, animated: Bool) {
         interactiveView.update(mode: mode, animated: animated)
         switch mode {
-        case .picking(.unselected): setSeparator(isVisible: true)
-        default: setSeparator(isVisible: false)
+        case .picking(.unselected):
+            setSeparator(isVisible: true)
+        case .picking(.selected), .listening:
+            setSeparator(isVisible: false)
         }
     }
 
