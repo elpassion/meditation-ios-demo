@@ -16,7 +16,7 @@ extension Container: MeditationContaining {
         return MeditationViewModel(actionOperator: sharedActionViewModel,
                                    tabBarOperator: tabBarViewModel(),
                                    songManager: songManager(),
-                                   stateOperator: MeditationStateOperator())
+                                   screenStateOperator: MeditationScreenStateOperator())
     }
 
     func songManager() -> SongManaging {

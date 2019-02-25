@@ -13,11 +13,11 @@ class MeditationViewModel: MeditationViewModeling {
     init(actionOperator: ActionOperating,
          tabBarOperator: TabBarOperating,
          songManager: SongManaging,
-         stateOperator: MeditationStateOperating) {
+         screenStateOperator: MeditationScreenStateOperating) {
         self.actionOperator = actionOperator
         self.tabBarOperator = tabBarOperator
         self.songManager = songManager
-        self.stateOperator = stateOperator
+        self.screenStateOperator = screenStateOperator
         configure()
     }
 
@@ -37,7 +37,7 @@ class MeditationViewModel: MeditationViewModeling {
             target: self,
             handler: MeditationViewModel.handleAction)
         tabBarOperator.isBarVisible = true
-        stateOperator.repeatCurrentState()
+        screenStateOperator.repeatCurrentState()
     }
 
     func viewWillDisappear() {
@@ -45,7 +45,7 @@ class MeditationViewModel: MeditationViewModeling {
     }
 
     func backAction() {
-        stateOperator.previous()
+        screenStateOperator.previous()
     }
 
     // MARK: - MeditationViewOperating
@@ -57,13 +57,13 @@ class MeditationViewModel: MeditationViewModeling {
     private let actionOperator: ActionOperating
     private let tabBarOperator: TabBarOperating
     private let songManager: SongManaging
-    private let stateOperator: MeditationStateOperating
+    private let screenStateOperator: MeditationScreenStateOperating
     private var disposable: Disposable?
 
     private func handleAction(action: ActionViewController.Action) {
         switch action {
         case .button:
-            stateOperator.next()
+            screenStateOperator.next()
         case .rewind:
             songManager.playPrevious()
         case .play: ()
@@ -73,7 +73,7 @@ class MeditationViewModel: MeditationViewModeling {
     }
 
     private func configure() {
-        stateOperator.stateUpdated = { [weak self] state in
+        screenStateOperator.stateUpdated = { [weak self] state in
             switch state {
             case .dismiss:
                 self?.closeMeditation?()
@@ -90,7 +90,7 @@ class MeditationViewModel: MeditationViewModeling {
             }
         }
 
-        songManager.didFinishPlaying = { [weak self] in self?.stateOperator.next() }
+        songManager.didFinishPlaying = { [weak self] in self?.screenStateOperator.next() }
     }
 
 }

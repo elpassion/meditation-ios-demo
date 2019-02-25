@@ -60,7 +60,7 @@
 		06B41EAC222006E100C7F935 /* SongMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EAB222006E100C7F935 /* SongMode.swift */; };
 		06B41EAE222007AF00C7F935 /* SongModeOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EAD222007AF00C7F935 /* SongModeOperator.swift */; };
 		06B41EB022200E1500C7F935 /* SongViewCell_Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EAF22200E1500C7F935 /* SongViewCell_Modes.swift */; };
-		06B41EB22220276B00C7F935 /* MeditationStateOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EB12220276B00C7F935 /* MeditationStateOperator.swift */; };
+		06B41EB22220276B00C7F935 /* MeditationScreenStateOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EB12220276B00C7F935 /* MeditationScreenStateOperator.swift */; };
 		06B41EB4222035BE00C7F935 /* SongModeEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EB3222035BE00C7F935 /* SongModeEmitter.swift */; };
 		06B41EB622203C5700C7F935 /* SongManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B41EB522203C5700C7F935 /* SongManager.swift */; };
 		06B5E37C2214801500004D09 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B5E37B2214801500004D09 /* ActionViewController.swift */; };
@@ -146,7 +146,7 @@
 		06B41EAB222006E100C7F935 /* SongMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongMode.swift; sourceTree = "<group>"; };
 		06B41EAD222007AF00C7F935 /* SongModeOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModeOperator.swift; sourceTree = "<group>"; };
 		06B41EAF22200E1500C7F935 /* SongViewCell_Modes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewCell_Modes.swift; sourceTree = "<group>"; };
-		06B41EB12220276B00C7F935 /* MeditationStateOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationStateOperator.swift; sourceTree = "<group>"; };
+		06B41EB12220276B00C7F935 /* MeditationScreenStateOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationScreenStateOperator.swift; sourceTree = "<group>"; };
 		06B41EB3222035BE00C7F935 /* SongModeEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModeEmitter.swift; sourceTree = "<group>"; };
 		06B41EB522203C5700C7F935 /* SongManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongManager.swift; sourceTree = "<group>"; };
 		06B5E37B2214801500004D09 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
@@ -217,12 +217,12 @@
 			isa = PBXGroup;
 			children = (
 				067A63FE221B140E001A20DF /* SongInteractive */,
-				062022D022135030008DFECD /* SongViewCell.swift */,
-				0625D25F221420F800F13B30 /* SongViewModel.swift */,
 				06B41EAB222006E100C7F935 /* SongMode.swift */,
 				06B41EB3222035BE00C7F935 /* SongModeEmitter.swift */,
 				06B41EAD222007AF00C7F935 /* SongModeOperator.swift */,
+				062022D022135030008DFECD /* SongViewCell.swift */,
 				06B41EAF22200E1500C7F935 /* SongViewCell_Modes.swift */,
+				0625D25F221420F800F13B30 /* SongViewModel.swift */,
 			);
 			path = SongPicker;
 			sourceTree = "<group>";
@@ -318,9 +318,9 @@
 			isa = PBXGroup;
 			children = (
 				0625D2612214218100F13B30 /* SongPicker */,
+				06B41EB12220276B00C7F935 /* MeditationScreenStateOperator.swift */,
 				069A83902211FF9800D3E223 /* MeditationView.swift */,
 				069A838E2211FC8100D3E223 /* MeditationViewController.swift */,
-				06B41EB12220276B00C7F935 /* MeditationStateOperator.swift */,
 				0625D262221421BF00F13B30 /* MeditationViewModel.swift */,
 				0625D2662214536500F13B30 /* MeditationViewModel_Data.swift */,
 				067A63F2221ADC86001A20DF /* MeditationView_Animating.swift */,
@@ -696,7 +696,7 @@
 				06A71A792201F2A1001DE399 /* AppDelegate.swift in Sources */,
 				062022C92212F8DE008DFECD /* Container_Meditation.swift in Sources */,
 				06325AAF221D1E1D00418954 /* TabBarViewController.swift in Sources */,
-				06B41EB22220276B00C7F935 /* MeditationStateOperator.swift in Sources */,
+				06B41EB22220276B00C7F935 /* MeditationScreenStateOperator.swift in Sources */,
 				062FD7712208A5C900E237DA /* GradientView.swift in Sources */,
 				067A63F7221AE456001A20DF /* SongView_Selection.swift in Sources */,
 				06FD1C042215B6B60075A6C1 /* Container_ActionController.swift in Sources */,

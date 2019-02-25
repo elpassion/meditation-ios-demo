@@ -1,11 +1,11 @@
-protocol MeditationStateOperating: class {
+protocol MeditationScreenStateOperating: class {
     func next()
     func previous()
     func repeatCurrentState()
-    var stateUpdated: ((MeditationStateOperator.State) -> Void)? { get set }
+    var stateUpdated: ((MeditationScreenStateOperator.State) -> Void)? { get set }
 }
 
-class MeditationStateOperator: MeditationStateOperating {
+class MeditationScreenStateOperator: MeditationScreenStateOperating {
 
     enum State {
         case dismiss, picking, listening, finished
@@ -25,7 +25,7 @@ class MeditationStateOperator: MeditationStateOperating {
         stateUpdated?(currentState)
     }
 
-    var stateUpdated: ((MeditationStateOperator.State) -> Void)?
+    var stateUpdated: ((MeditationScreenStateOperator.State) -> Void)?
 
     // MARK: - Privates
 
