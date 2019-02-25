@@ -18,9 +18,18 @@ class SongManager: SongManaging {
     let viewModels: [SongViewModeling]
 
     func select(isSelected: Bool, index: Int) {
-        let oldMode = viewModels[index].songMode
-        let newMode = songModeOperator.toSelected(isSelected, mode: oldMode)
-        viewModels[index].songMode = newMode
+        switch viewModels[index].songMode {
+        case .picking:
+            let oldMode = viewModels[index].songMode
+            let newMode = songModeOperator.toSelected(isSelected, mode: oldMode)
+            viewModels[index].songMode = newMode
+        case .listening(.playable):
+            viewModels
+                .filter { $0.songMode == .listening(.playing) }
+                .forEach { $0.songMode = .listening(.playable) }
+            viewModels[index].songMode = .listening(.playing)
+        case .listening(.playing), .listening(.hidden): ()
+        }
     }
 
     func updateToPickingViewModels() {

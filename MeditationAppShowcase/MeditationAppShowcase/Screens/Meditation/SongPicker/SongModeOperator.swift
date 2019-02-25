@@ -38,7 +38,7 @@ class SongModeOperator: SongModeOperating {
         case .listening(let listening):
             switch listening {
             case .playable: return .listening(.playing)
-            case .playing: return .listening(.playable)
+            case .playing: return .listening(.playing)
             case .hidden: return .listening(.hidden)
             }
         }
