@@ -22,9 +22,12 @@ extension SongViewCell {
 
     static func height(for mode: SongMode) -> CGFloat {
         switch mode {
-        case .picking, .listening(.playable): return 76
-        case .listening(.playing): return 110
-        case .listening(.hidden): return 0
+        case .picking, .listening(.playable):
+            return SongInteractiveView.playableHeight
+        case .listening(.playing):
+            return SongInteractiveView.playingHeight
+        case .listening(.hidden):
+            return 0
         }
     }
 
