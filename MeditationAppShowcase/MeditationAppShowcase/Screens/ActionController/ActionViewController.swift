@@ -37,11 +37,11 @@ class ActionViewController: UIViewController {
                                           action: #selector(rewindButtonAction),
                                           for: .touchUpInside)
         actionView.middleControl.addTarget(self,
-                                          action: #selector(middleButtonAction),
-                                          for: .touchUpInside)
+                                           action: #selector(middleButtonAction),
+                                           for: .touchUpInside)
         actionView.forwardButton.addTarget(self,
-                                          action: #selector(forwardButtonAction),
-                                          for: .touchUpInside)
+                                           action: #selector(forwardButtonAction),
+                                           for: .touchUpInside)
         viewModel.currentMode = { [weak self] in self?.mode = $0 }
     }
 

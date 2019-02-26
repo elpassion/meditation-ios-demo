@@ -3,16 +3,16 @@ import UIKit
 class Container {
 
     lazy var sharedAppConfigurator = {
-        return AppConfigurator(viewControllersFactory: appViewControllersFactory(),
-                               animator: Animator())
+        AppConfigurator(viewControllersFactory: appViewControllersFactory(),
+                        animator: Animator())
     }()
 
     lazy var sharedActionViewModel = {
-        return ActionViewModel()
+        ActionViewModel()
     }()
 
     lazy var sharedTabBarViewModel = {
-        return TabBarViewModel()
+        TabBarViewModel()
     }()
 
 }

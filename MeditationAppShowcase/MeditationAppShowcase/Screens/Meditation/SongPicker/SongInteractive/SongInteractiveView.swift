@@ -24,7 +24,10 @@ class SongInteractiveView: UIView {
 
     private func configureSubviews() {
         let shadow = SketchShadow(color: selectedBackgroundColor,
-                                  x: 0, y: 6, blur: 15, spread: 0)
+                                  x: 0,
+                                  y: 6,
+                                  blur: 15,
+                                  spread: 0)
         interactiveView.layer.apply(shadow)
         interactiveView.clipsToBounds = true
         interactiveView.layer.cornerRadius = 3.0

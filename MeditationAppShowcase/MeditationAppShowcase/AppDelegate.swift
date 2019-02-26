@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Privates
 
     private lazy var container: AppConfiguratorContaining = {
-        return Container()
+        Container()
     }()
 
 }

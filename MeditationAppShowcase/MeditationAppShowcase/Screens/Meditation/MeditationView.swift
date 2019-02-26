@@ -15,7 +15,7 @@ class MeditationView: UIView {
         super.layoutSubviews()
         tableView.contentInset = UIEdgeInsets(top: 0,
                                               left: 0,
-                                              bottom: bottomGradientView.frame.size.height*0.9,
+                                              bottom: bottomGradientView.frame.size.height * 0.9,
                                               right: 0)
     }
 
