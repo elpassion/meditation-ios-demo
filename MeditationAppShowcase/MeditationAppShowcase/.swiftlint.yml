@@ -1,0 +1,71 @@
+opt_in_rules:
+  - file_name
+  - empty_count
+  - sorted_imports
+  - force_unwrapping
+  - operator_usage_whitespace
+  - number_separator
+  - implicit_return
+  - overridden_super_call
+  - nimble_operator
+  - first_where
+  - closure_spacing
+  - closure_end_indentation
+  - explicit_init
+  - fatal_error_message
+  - redundant_nil_coalescing
+  - private_outlet
+  - prohibited_super_call
+  - vertical_parameter_alignment_on_call
+  - unneeded_parentheses_in_closure_argument
+  - single_test_class
+  - quick_discouraged_call
+  - pattern_matching_keywords
+  - multiline_parameters
+  - joined_default_parameter
+  - strict_fileprivate
+  - contains_over_first_not_nil
+  - switch_case_alignment
+  - multiline_arguments
+  - unneeded_break_in_switch
+  - literal_expression_end_indentation
+  - sorted_first_last
+  - override_in_extension 
+  - yoda_condition
+  - prefixed_toplevel_constant
+  - for_where
+  - unused_closure_parameter
+  - discouraged_optional_boolean
+  - empty_string
+  - legacy_constructor
+  - untyped_error_in_catch
+file_length:
+  warning: 140
+  error: 150
+line_length:
+  warning: 200
+  error: 300
+type_name:
+  min_length: 2
+  max_length:
+    warning: 50
+    error: 55
+identifier_name:
+  min_length: 3
+  max_length:
+    warning: 40
+    error: 50
+  excluded:
+    - ui
+    - cg
+    - id
+    - x
+    - y
+    - dx
+    - me
+    - Pods
+explicit_type_interface:
+  excluded:
+    - local
+excluded:
+  - Generated
