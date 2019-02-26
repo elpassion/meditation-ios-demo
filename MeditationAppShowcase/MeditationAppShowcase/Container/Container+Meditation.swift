@@ -17,7 +17,7 @@ extension Container: MeditationContaining {
         return MeditationViewModel(viewModels: MeditationViewModel.preparedViewModels(),
                                    actionOperator: sharedActionViewModel,
                                    tabBarOperator: tabBarViewModel(),
-                                   songManager: SongManager(),
+                                   musicPlayer: MusicPlayer(),
                                    screenStateOperator: MeditationScreenStateOperator())
     }
 

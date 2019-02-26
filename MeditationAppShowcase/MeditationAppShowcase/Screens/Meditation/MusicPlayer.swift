@@ -1,13 +1,13 @@
-protocol SongManaging: class {
+protocol MusicPlaying: class {
     func select(isSelected: Bool, index: Int, viewModels: [SongViewModeling])
-    func updateToPickingViewModels(viewModels: [SongViewModeling])
-    func updateToListeningViewModels(viewModels: [SongViewModeling])
+    func updateToSongPicking(viewModels: [SongViewModeling])
+    func updateToSongListening(viewModels: [SongViewModeling])
     func playNext(viewModels: [SongViewModeling])
     func playPrevious(viewModels: [SongViewModeling])
     var didFinishPlaying: (() -> Void)? { get set }
 }
 
-class SongManager: SongManaging {
+class MusicPlayer: MusicPlaying {
 
     func select(isSelected: Bool, index: Int, viewModels: [SongViewModeling]) {
         switch viewModels[index].songMode {
@@ -24,7 +24,7 @@ class SongManager: SongManaging {
         }
     }
 
-    func updateToPickingViewModels(viewModels: [SongViewModeling]) {
+    func updateToSongPicking(viewModels: [SongViewModeling]) {
         viewModels
             .filter { $0.songMode == .listening(.playing) || $0.songMode == .listening(.playable) }
             .forEach { $0.songMode = .picking(.selected) }
@@ -34,7 +34,7 @@ class SongManager: SongManaging {
             .forEach { $0.songMode = .picking(.unselected) }
     }
 
-    func updateToListeningViewModels(viewModels: [SongViewModeling]) {
+    func updateToSongListening(viewModels: [SongViewModeling]) {
         let selected = viewModels.filter { $0.songMode == .picking(.selected) }
         for (index, viewModel) in selected.enumerated() {
             viewModel.songMode = index == 0 ? .listening(.playing) : .listening(.playable)

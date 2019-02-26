@@ -15,12 +15,12 @@ class MeditationViewModel: MeditationViewModeling {
     init(viewModels: [SongViewModeling],
          actionOperator: ActionOperating,
          tabBarOperator: TabBarOperating,
-         songManager: SongManaging,
+         musicPlayer: MusicPlaying,
          screenStateOperator: MeditationScreenStateOperating) {
         self.viewModels = viewModels
         self.actionOperator = actionOperator
         self.tabBarOperator = tabBarOperator
-        self.songManager = songManager
+        self.musicPlayer = musicPlayer
         self.screenStateOperator = screenStateOperator
         configure()
     }
@@ -33,7 +33,7 @@ class MeditationViewModel: MeditationViewModeling {
 
     func didSelect(isSelected: Bool, index: Int) {
         beginHeightUpdate?()
-        songManager.select(isSelected: isSelected, index: index, viewModels: viewModels)
+        musicPlayer.select(isSelected: isSelected, index: index, viewModels: viewModels)
         endHeightUpdate?()
     }
 
@@ -64,7 +64,7 @@ class MeditationViewModel: MeditationViewModeling {
     private let viewModels: [SongViewModeling]
     private let actionOperator: ActionOperating
     private let tabBarOperator: TabBarOperating
-    private let songManager: SongManaging
+    private let musicPlayer: MusicPlaying
     private let screenStateOperator: MeditationScreenStateOperating
     private var disposable: Disposable?
 
@@ -74,12 +74,12 @@ class MeditationViewModel: MeditationViewModeling {
             screenStateOperator.next()
         case .rewind:
             beginHeightUpdate?()
-            songManager.playPrevious(viewModels: viewModels)
+            musicPlayer.playPrevious(viewModels: viewModels)
             endHeightUpdate?()
         case .play: ()
         case .forward:
             beginHeightUpdate?()
-            songManager.playNext(viewModels: viewModels)
+            musicPlayer.playNext(viewModels: viewModels)
             endHeightUpdate?()
         }
     }
@@ -93,13 +93,13 @@ class MeditationViewModel: MeditationViewModeling {
             case .picking:
                 self.actionOperator.set(mode: .singleButton(title: "START MEDITATION SESSION"))
                 self.beginHeightUpdate?()
-                self.songManager.updateToPickingViewModels(viewModels: self.viewModels)
+                self.musicPlayer.updateToSongPicking(viewModels: self.viewModels)
                 self.endHeightUpdate?()
                 self.navigationTitle?("Pick meditation song")
             case .listening:
                 self.actionOperator.set(mode: .player)
                 self.beginHeightUpdate?()
-                self.songManager.updateToListeningViewModels(viewModels: self.viewModels)
+                self.musicPlayer.updateToSongListening(viewModels: self.viewModels)
                 self.endHeightUpdate?()
                 self.navigationTitle?("Player")
             case .finished:
@@ -108,7 +108,7 @@ class MeditationViewModel: MeditationViewModeling {
             }
         }
 
-        songManager.didFinishPlaying = { [weak self] in self?.screenStateOperator.next() }
+        musicPlayer.didFinishPlaying = { [weak self] in self?.screenStateOperator.next() }
     }
 
 }
