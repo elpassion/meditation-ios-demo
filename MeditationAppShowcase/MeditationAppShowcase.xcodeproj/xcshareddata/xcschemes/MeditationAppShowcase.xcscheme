@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "06248E25220DE150006525F5"
-               BuildableName = "MeditationAppShowcaseTests.xctest"
-               BlueprintName = "MeditationAppShowcaseTests"
-               ReferencedContainer = "container:MeditationAppShowcase.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
