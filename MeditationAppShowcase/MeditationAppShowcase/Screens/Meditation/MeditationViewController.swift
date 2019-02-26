@@ -2,8 +2,10 @@ import UIKit
 
 class MeditationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    init(viewModel: MeditationViewModeling) {
+    init(viewModel: MeditationViewModeling,
+         actionViewControllerOperator: ActionViewControllerOperating) {
         self.viewModel = viewModel
+        self.actionViewControllerOperator = actionViewControllerOperator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -25,6 +27,10 @@ class MeditationViewController: UIViewController, UITableViewDataSource, UITable
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        meditationView.layoutIfNeeded()
+        let topOffset = meditationView.frame.size.height -
+            1.9 * actionViewControllerOperator.currentHeight()
+        actionViewControllerOperator.updateTopOffset(topOffset, animated: true)
         meditationView.animateAppearance()
         viewModel.viewDidAppear()
     }
@@ -68,6 +74,7 @@ class MeditationViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: - Privates
 
     private let viewModel: MeditationViewModeling
+    private let actionViewControllerOperator: ActionViewControllerOperating
 
     private var songViewModels = [SongViewModeling]() {
         didSet {

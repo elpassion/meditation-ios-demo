@@ -27,6 +27,7 @@ class TabBarViewController: UIViewController {
         super.viewDidLoad()
         configureInitialViewController()
         configureViewModel()
+        updateBar(isVisible: false, animated: false)
     }
 
     // MARK: - Privates
@@ -47,8 +48,8 @@ class TabBarViewController: UIViewController {
         viewModel.isBarVisibleUpdated = { [weak self] in self?.updateBar(isVisible: $0) }
     }
 
-    private func updateBar(isVisible: Bool) {
-        let offset = isVisible ? 0 : tabBarView.bottomImageView.frame.height
+    private func updateBar(isVisible: Bool, animated: Bool = true) {
+        let offset = isVisible ? 0 : tabBarView.frame.size.height
         animator.animate(duration: 0.3,
                          animations: {
                                 self.tabBarView.bottomBarConstraint?.constant = offset

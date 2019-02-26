@@ -1,13 +1,14 @@
 import UIKit
 
-class TabBarView: UIView {
+class TabBarView: GradientView {
 
     init() {
-        super.init(frame: .zero)
+        super.init(style: GradientStyle(colors: [GradientColor(location: 0.0, color: UIColor(rgb: 0xFBFCFC)),
+                                                 GradientColor(location: 1.0, color: UIColor(rgb: 0xF3F5F6))],
+                                        direction: .vertical))
         configureSubviews()
         addSubviews()
         setupLayout()
-        backgroundColor = .white
     }
 
     required init?(coder aDecoder: NSCoder) { return nil }
@@ -34,10 +35,7 @@ class TabBarView: UIView {
     }
 
     private func setupLayout() {
-        containerView.pinTop(to: safeAreaLayoutGuide.topAnchor)
-        containerView.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
-        containerView.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
-        containerView.pinBottom(to: bottomImageView.topAnchor)
+        containerView.pinEdges(to: safeAreaLayoutGuide)
         bottomImageView.pinLeading(to: safeAreaLayoutGuide.leadingAnchor)
         bottomImageView.pinTrailing(to: safeAreaLayoutGuide.trailingAnchor)
         bottomBarConstraint = bottomImageView.pinBottom(to: safeAreaLayoutGuide.bottomAnchor)
@@ -52,7 +50,7 @@ private extension TabBarView {
         static func bottomView() -> UIImageView {
             let imageView = UIImageView(frame: .zero)
             imageView.image = UIImage(named: "tabBar")
-            imageView.contentMode = .center
+            imageView.contentMode = .scaleAspectFill
             return imageView
         }
 

@@ -15,7 +15,7 @@ class MeditationView: UIView {
         super.layoutSubviews()
         tableView.contentInset = UIEdgeInsets(top: 0,
                                               left: 0,
-                                              bottom: bottomGradientView.frame.size.height*0.8,
+                                              bottom: bottomGradientView.frame.size.height*0.9,
                                               right: 0)
     }
 
@@ -41,7 +41,7 @@ class MeditationView: UIView {
         tableView.pinBottom(to: bottomAnchor)
         bottomGradientView.pinLeading(to: leadingAnchor)
         bottomGradientView.pinTrailing(to: trailingAnchor)
-        bottomGradientView.pinHeight(120)
+        bottomGradientView.pinHeight(to: heightAnchor, multiplier: 0.25)
         bottomGradientView.pinBottom(to: bottomAnchor, offset: 10)
     }
 
@@ -61,12 +61,13 @@ private extension MeditationView {
             let gradientStyle = GradientStyle(colors: [GradientColor(location: 0.0,
                                                                      color: UIColor(white: 1,
                                                                                     alpha: 0)),
-                                                       GradientColor(location: 0.5,
+                                                       GradientColor(location: 0.3,
                                                                      color: .white),
                                                        GradientColor(location: 1.0,
                                                                      color: UIColor(rgb: 0xF3F5F6))],
                                               direction: .vertical)
             let gradientView = GradientView(style: gradientStyle)
+            gradientView.isUserInteractionEnabled = false
             return gradientView
         }
 

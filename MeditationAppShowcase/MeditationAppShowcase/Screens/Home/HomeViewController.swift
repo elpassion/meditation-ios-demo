@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         animateBackground()
         let topOffset = homeView.boardView.frame.origin.y +
             homeView.boardView.frame.size.height -
-            actionViewControllerOperator.currentHeight() / 2 + 10
+            actionViewControllerOperator.currentHeight() * 0.8
         actionViewControllerOperator.updateTopOffset(topOffset, animated: true)
         addNotificationHandler()
         viewModel.viewDidAppear()
