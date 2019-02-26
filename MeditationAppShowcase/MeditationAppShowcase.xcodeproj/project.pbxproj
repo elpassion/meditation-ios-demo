@@ -94,8 +94,6 @@
 		062022CE2213365D008DFECD /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		062022D022135030008DFECD /* SongViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewCell.swift; sourceTree = "<group>"; };
 		06248E20220DCA5C006525F5 /* HomeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
-		06248E26220DE150006525F5 /* MeditationAppShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationAppShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06248E2A220DE150006525F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06248E34220DEF39006525F5 /* ActionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionControl.swift; sourceTree = "<group>"; };
 		0625D25F221420F800F13B30 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
 		0625D262221421BF00F13B30 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
@@ -182,30 +180,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06248E27220DE150006525F5 /* MeditationAppShowcaseTests */ = {
-			isa = PBXGroup;
-			children = (
-				06248E30220DE1CE006525F5 /* Screens */,
-				06248E2A220DE150006525F5 /* Info.plist */,
-			);
-			path = MeditationAppShowcaseTests;
-			sourceTree = "<group>";
-		};
-		06248E30220DE1CE006525F5 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				06248E31220DE1D9006525F5 /* Home */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		06248E31220DE1D9006525F5 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		0625D2612214218100F13B30 /* SongPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,7 +310,6 @@
 			children = (
 				9ECAB40E3B2CF84718114382 /* Frameworks */,
 				06A71A772201F2A1001DE399 /* MeditationAppShowcase */,
-				06248E27220DE150006525F5 /* MeditationAppShowcaseTests */,
 				5816F91E5DD055EA95DA51C7 /* Pods */,
 				06A71A762201F2A1001DE399 /* Products */,
 				06A71A922201F946001DE399 /* Default-568h@2x.png */,
@@ -347,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				06A71A752201F2A1001DE399 /* MeditationAppShowcase.app */,
-				06248E26220DE150006525F5 /* MeditationAppShowcaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -457,24 +429,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		06248E25220DE150006525F5 /* MeditationAppShowcaseTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 06248E2D220DE150006525F5 /* Build configuration list for PBXNativeTarget "MeditationAppShowcaseTests" */;
-			buildPhases = (
-				06248E22220DE150006525F5 /* Sources */,
-				06248E23220DE150006525F5 /* Frameworks */,
-				06248E24220DE150006525F5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				06248E2C220DE150006525F5 /* PBXTargetDependency */,
-			);
-			name = MeditationAppShowcaseTests;
-			productName = MeditationAppShowcaseTests;
-			productReference = 06248E26220DE150006525F5 /* MeditationAppShowcaseTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		06A71A742201F2A1001DE399 /* MeditationAppShowcase */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06A71A872201F2A3001DE399 /* Build configuration list for PBXNativeTarget "MeditationAppShowcase" */;
