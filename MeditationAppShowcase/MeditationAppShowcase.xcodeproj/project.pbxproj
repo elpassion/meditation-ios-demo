@@ -312,9 +312,9 @@
 		06A71A6C2201F2A1001DE399 = {
 			isa = PBXGroup;
 			children = (
-				06C56B9E22257E1800230334 /* MeditationAppShowcaseTests */,
 				9ECAB40E3B2CF84718114382 /* Frameworks */,
 				06A71A772201F2A1001DE399 /* MeditationAppShowcase */,
+				06C56B9E22257E1800230334 /* MeditationAppShowcaseTests */,
 				5816F91E5DD055EA95DA51C7 /* Pods */,
 				06A71A762201F2A1001DE399 /* Products */,
 				06A71A922201F946001DE399 /* Default-568h@2x.png */,
@@ -407,8 +407,8 @@
 		06C56B9E22257E1800230334 /* MeditationAppShowcaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				06C56B9F22257E1800230334 /* MeditationAppShowcaseTests.swift */,
 				06C56BA122257E1800230334 /* Info.plist */,
+				06C56B9F22257E1800230334 /* MeditationAppShowcaseTests.swift */,
 			);
 			path = MeditationAppShowcaseTests;
 			sourceTree = "<group>";
