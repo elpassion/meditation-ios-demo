@@ -474,6 +474,7 @@
 				06248E22220DE150006525F5 /* Sources */,
 				06248E23220DE150006525F5 /* Frameworks */,
 				06248E24220DE150006525F5 /* Resources */,
+				426875129D8DE7E38BA2FB7E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -581,6 +582,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		426875129D8DE7E38BA2FB7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MeditationAppShowcaseTests/Pods-MeditationAppShowcaseTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeditationAppShowcaseTests/Pods-MeditationAppShowcaseTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		823DB1EE154F605A8D7329C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
