@@ -26,7 +26,7 @@ class AppConfigurator: AppConfiguring, ActionViewControllerOperating {
         window.addSubview(actionViewController.view)
 
         actionViewController.view.pinCenterX(to: window.centerXAnchor)
-        actionViewControllerTopConstraint = actionViewController.view.pinTop(to: window.topAnchor)
+        actionViewControllerTopConstraint = actionViewController.view.pinTop(to: window.safeAreaLayoutGuide.topAnchor)
 
         window.makeKeyAndVisible()
         window.bringSubviewToFront(actionViewController.view)
