@@ -5,5 +5,4 @@ target 'MeditationAppShowcase' do
 
   pod 'SwiftLint'
 
- 
 end
