@@ -63,9 +63,9 @@ identifier_name:
     - y
     - dx
     - me
-    - Pods
 explicit_type_interface:
   excluded:
     - local
 excluded:
   - Generated
+  - Pods
