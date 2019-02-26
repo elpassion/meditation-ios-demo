@@ -14,7 +14,6 @@
 		062022CF2213365D008DFECD /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022CE2213365D008DFECD /* NavigationView.swift */; };
 		062022D122135030008DFECD /* SongViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062022D022135030008DFECD /* SongViewCell.swift */; };
 		06248E21220DCA5C006525F5 /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E20220DCA5C006525F5 /* HomeBoardView.swift */; };
-		06248E33220DE276006525F5 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E32220DE276006525F5 /* HomeViewModelTests.swift */; };
 		06248E35220DEF39006525F5 /* ActionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06248E34220DEF39006525F5 /* ActionControl.swift */; };
 		0625D260221420F800F13B30 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D25F221420F800F13B30 /* SongViewModel.swift */; };
 		0625D263221421BF00F13B30 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0625D262221421BF00F13B30 /* MeditationViewModel.swift */; };
@@ -98,7 +97,6 @@
 		06248E20220DCA5C006525F5 /* HomeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
 		06248E26220DE150006525F5 /* MeditationAppShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeditationAppShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06248E2A220DE150006525F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06248E32220DE276006525F5 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		06248E34220DEF39006525F5 /* ActionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionControl.swift; sourceTree = "<group>"; };
 		0625D25F221420F800F13B30 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
 		0625D262221421BF00F13B30 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 		06248E31220DE1D9006525F5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				06248E32220DE276006525F5 /* HomeViewModelTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -658,7 +655,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06248E33220DE276006525F5 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
