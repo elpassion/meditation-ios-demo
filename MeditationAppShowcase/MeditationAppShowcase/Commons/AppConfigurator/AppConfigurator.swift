@@ -1,7 +1,7 @@
 import UIKit
 
 protocol AppConfiguring {
-    func configure(window: UIWindow)
+    func configure()
 }
 
 class AppConfigurator: AppConfiguring, ActionViewControllerOperating {
@@ -13,11 +13,12 @@ class AppConfigurator: AppConfiguring, ActionViewControllerOperating {
          animator: Animating) {
         self.viewControllersFactory = viewControllersFactory
         self.animator = animator
+        self.window = UIWindow(frame: UIScreen.main.bounds)
     }
 
     // MARK: - AppConfiguring
 
-    func configure(window: UIWindow) {
+    func configure() {
         let tabBarViewController = viewControllersFactory.tabBar([viewControllersFactory.home()])
         window.rootViewController = tabBarViewController
 
@@ -34,5 +35,6 @@ class AppConfigurator: AppConfiguring, ActionViewControllerOperating {
 
     var actionViewControllerTopConstraint: NSLayoutConstraint?
     var actionViewController: UIViewController?
+    let window: UIWindow
 
 }
