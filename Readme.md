@@ -11,8 +11,6 @@
 Requirements: 
 
 - Xcode 10.1
-- [SwiftLint](https://github.com/realm/SwiftLint)
-- [Cocoapods](https://cocoapods.org)
 
 To set up the project, open terminal in MeditationAppShowcase folder and run `pod install`.
 
@@ -22,8 +20,7 @@ Open `MeditationAppShowcase.xcworkspace` and run production scheme in a chosen s
 
 ## Some implementation details
 
-- 100% unit-testable code 🔥
-- There are no code library dependencies, only swiftLint for helping to keep the code clean 👓
+- There are no external dependencies 🔥
 - MVVM design architecture ❤️
 - The `Business logic` is fully separated from `View logic`. The business logic is performed in viewModels, child viewModels and helpers, and view logic in viewControllers and it's childs / subviews ⚡️
 - All dependencies are being protocol-injected via simple dependency container 👌
