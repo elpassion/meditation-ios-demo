@@ -22,14 +22,15 @@ Open `MeditationAppShowcase.xcworkspace` and run production scheme in a chosen s
 
 ## Some implementation details
 
-- 100% unit-testable code 🙏
+- 100% unit-testable code 🔥
 - There are no code library dependencies, only swiftLint for helping to keep the code clean 👓
 - MVVM design architecture ❤️
 - The `Business logic` is fully separated from `View logic`. The business logic is performed in viewModels, child viewModels and helpers, and view logic in viewControllers and it's childs / subviews ⚡️
 - All dependencies are being protocol-injected via simple dependency container 👌
 - Most of the subviews and it's interesting autolayout constraints are exposed to the interface so the animations can be implemented in decorators ☝️
 - The `Observer design pattern` is realized by generic `EventEmitter<T>` [EventEmitter.swift](MeditationAppShowcase/MeditationAppShowcase/Commons/Utilities/Observer/EventEmitter.swift) 🙏
-- Data on play list is mocked up in [MeditationViewModel+Data.swift](⁨⁨⁨⁨⁨⁨MeditationAppShowcase/MeditationAppShowcase/Screens/Meditation/MeditationViewModel+Data.swift) file 🍺
+- Playlist is build on `UITableView` for resource optimisation and speed so it can handle thousands of songs with no fear 🚀
+- Data on play list is mocked up in [MeditationViewModel+Data.swift](MeditationAppShowcase/MeditationAppShowcase/Screens/Meditation/MeditationViewModel+Data.swift) file 🍺
 
 ## License
 
